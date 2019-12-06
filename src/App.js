@@ -1,26 +1,59 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
+import { enquireScreen } from "enquire-js";
+import Header from "./Components/Nav0";
+import Footer from "./Components/Footer0";
+import Home from "./Home";
+import Introduce from "./Introduce";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {
+  Nav00DataSource,
+  Footer00DataSource
+} from "./Components/basicData.source.js";
+
+let isMobile;
+enquireScreen(b => {
+  isMobile = b;
+});
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isMobile
+    };
+  }
+  componentDidMount() {
+    // 适配手机屏幕;
+    enquireScreen(b => {
+      this.setState({ isMobile: !!b });
+    });
+  }
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <div>
+            <Header dataSource={Nav00DataSource} isMobile={this.isMobile} />
+            <Route
+              exact
+              path="/"
+              render={() => <Redirect to="/home"></Redirect>}
+            ></Route>
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/introduce" component={Introduce} />
+            <Footer dataSource={Footer00DataSource} isMobile={this.isMobile} />
+          </div>
+        </Switch>
+      </Router>
+    );
+  }
 }
 
 export default App;
