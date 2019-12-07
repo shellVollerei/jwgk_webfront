@@ -54,7 +54,7 @@ class App extends Component {
             <Route exact path="/introduce" component={Introduce} />
             <Route exact path="/products" render={() => 
               <Products>
-                <Route exact path="/products/introduce" component={Introduce} />
+                <Route path="/products/introduce" component={Introduce} />
               </Products>
             } />
             <Route exact path="/activities" component={Activities} />
