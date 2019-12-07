@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 
 export const Feature60DataSource = {
   wrapper: { className: 'home-page-wrapper feature6-wrapper' },

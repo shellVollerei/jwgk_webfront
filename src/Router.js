@@ -52,11 +52,15 @@ class App extends Component {
             ></Route>
             <Route exact path="/home" component={Home} />
             <Route exact path="/introduce" component={Introduce} />
-            <Route exact path="/products" render={() => 
-              <Products>
-                <Route path="/products/introduce" component={Introduce} />
-              </Products>
-            } />
+            <Route
+              exact
+              path="/products"
+              render={() => (
+                <Products>
+                  <Route path="/products/introduce" component={Introduce} />
+                </Products>
+              )}
+            />
             <Route exact path="/activities" component={Activities} />
             <Route exact path="/aboutus" component={Aboutus} />
             <Footer

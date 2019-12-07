@@ -46,7 +46,7 @@ export default class Home extends React.Component {
 
   render() {
     const children = [
-      // <MyCarousel />,
+      <MyCarousel />,
       <Feature5
         id="Feature5_0"
         key="Feature5_0"

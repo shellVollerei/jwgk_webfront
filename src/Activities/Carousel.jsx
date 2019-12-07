@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel } from "antd";
+import "./less/carousel.less";
 
 class MyCarousel extends React.Component {
   constructor(props) {
@@ -11,18 +12,18 @@ class MyCarousel extends React.Component {
 
   render() {
     return (
-      <Carousel autoplay>
+      <Carousel autoplay className="my_carousel">
         <div>
-          <h3>1</h3>
+          <div className="img">1</div>
         </div>
         <div>
-          <h3>2</h3>
+        <div className="img">2</div>
         </div>
         <div>
-          <h3>3</h3>
+        <div className="img">3</div>
         </div>
         <div>
-          <h3>4</h3>
+        <div className="img">4</div>
         </div>
       </Carousel>
     );
