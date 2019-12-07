@@ -33,10 +33,10 @@ class Content extends React.PureComponent {
                 const { children: item, ...blockProps } = block;
                 return (
                   <Col key={i.toString()} {...blockProps}>
-                    <Link to="/home/index">
+                    <Link to="/products/introduce">
+                      {/* TODO：这里加上路由 */}
                       <div {...item}>
                         {item.children.map(getChildrenToRender)}
-                        {/* TODO：这里加上路由 */}
                       </div>
                     </Link>
                   </Col>

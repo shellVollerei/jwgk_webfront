@@ -52,9 +52,13 @@ class App extends Component {
             ></Route>
             <Route exact path="/home" component={Home} />
             <Route exact path="/introduce" component={Introduce} />
-            <Route exact path="/aboutus" component={Aboutus} />
+            <Route exact path="/products" render={() => 
+              <Products>
+                <Route exact path="/products/introduce" component={Introduce} />
+              </Products>
+            } />
             <Route exact path="/activities" component={Activities} />
-            <Route exact path="/products" component={Products} />
+            <Route exact path="/aboutus" component={Aboutus} />
             <Footer
               id="Footer1_0"
               key="Footer1_0"

@@ -142,7 +142,6 @@ export const Feature00DataSource = {
         xs: 24,
         children: {
           className: "content0-block-item",
-          href: "/home",
           children: [
             {
               name: "image",
@@ -166,7 +165,6 @@ export const Feature00DataSource = {
         xs: 24,
         children: {
           className: "content0-block-item",
-          href: "/home",
           children: [
             {
               name: "image",
