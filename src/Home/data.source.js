@@ -99,7 +99,7 @@ export const Content70DataSource = {
         name: "block0",
         tag: {
           className: "content7-tag",
-          text: { children: "PHONE", className: "content7-tag-name" },
+          text: { children: "展会活动", className: "content7-tag-name" },
           icon: { children: "mobile" }
         },
         content: {
@@ -110,18 +110,21 @@ export const Content70DataSource = {
             xs: 24,
             children: (
               <span>
-                <h3>技术</h3>
+                <h3>2020.3.21西安会展中心医疗器械展</h3>
                 <p>
-                  丰富的技术组件，简单组装即可快速搭建金融级应用，丰富的技术组件，简单组装即可快速搭建金融级应用。
+                  丰富的医学组件，简单组装即可快速搭医疗工作环境。丰富的医学组件，简单组装即可快速搭医疗工作环境。丰富的医学组件，简单组装即可快速搭医疗工作环境。丰富的医学组件，简单组装即可快速搭医疗工作环境。
                 </p>
                 <br />
-                <h3>融合</h3>
+                <h3>2020.3.21西安会展中心医疗器械展</h3>
                 <p>
-                  解放业务及技术生产力，推动金融服务底层创新，推动金融服务底层创新。解放业务及技术生产力，推动金融服务底层创新。
+                  丰富的医学组件，简单组装即可快速搭医疗工作环境。丰富的医学组件，简单组装即可快速搭医疗工作环境。丰富的医学组件，简单组装即可快速搭医疗工作环境。丰富的医学组件，简单组装即可快速搭医疗工作环境。
                 </p>
                 <br />
-                <h3>开放</h3>
-                符合金融及要求的安全可靠、高可用、高性能的服务能力，符合金融及要求的安全可靠、高可用、高性能的服务能力。
+                <h3>2020.3.21西安会展中心医疗器械展</h3>
+                <p>
+                  丰富的医学组件，简单组装即可快速搭医疗工作环境。丰富的医学组件，简单组装即可快速搭医疗工作环境。丰富的医学组件，简单组装即可快速搭医疗工作环境。丰富的医学组件，简单组装即可快速搭医疗工作环境。
+                </p>
+                <br />
               </span>
             )
           },
@@ -139,7 +142,7 @@ export const Content70DataSource = {
         tag: {
           className: "content7-tag",
           icon: { children: "tablet" },
-          text: { className: "content7-tag-name", children: "TABLET" }
+          text: { className: "content7-tag-name", children: "医院活动" }
         },
         content: {
           className: "content7-content",
@@ -177,7 +180,7 @@ export const Content70DataSource = {
         name: "block2",
         tag: {
           className: "content7-tag",
-          text: { children: "DESKTOP", className: "content7-tag-name" },
+          text: { children: "国际交流", className: "content7-tag-name" },
           icon: { children: "laptop" }
         },
         content: {

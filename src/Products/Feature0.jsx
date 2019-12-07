@@ -1,8 +1,9 @@
-import React from 'react';
-import QueueAnim from 'rc-queue-anim';
-import { Row, Col } from 'antd';
-import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
-import { getChildrenToRender } from './utils';
+import React from "react";
+import QueueAnim from "rc-queue-anim";
+import { Row, Col } from "antd";
+import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
+import { getChildrenToRender } from "./utils";
+import { Link } from "react-router-dom";
 
 class Content extends React.PureComponent {
   render() {
@@ -12,7 +13,7 @@ class Content extends React.PureComponent {
       titleWrapper,
       page,
       OverPack: overPackData,
-      childWrapper,
+      childWrapper
     } = dataSource;
     return (
       <div {...props} {...wrapper}>
@@ -32,9 +33,12 @@ class Content extends React.PureComponent {
                 const { children: item, ...blockProps } = block;
                 return (
                   <Col key={i.toString()} {...blockProps}>
-                    <div {...item}>
-                      {item.children.map(getChildrenToRender)}
-                    </div>
+                    <Link to="/home/index">
+                      <div {...item}>
+                        {item.children.map(getChildrenToRender)}
+                        {/* TODO：这里加上路由 */}
+                      </div>
+                    </Link>
                   </Col>
                 );
               })}

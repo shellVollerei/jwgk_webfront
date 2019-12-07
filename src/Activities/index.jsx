@@ -1,23 +1,16 @@
 /* eslint no-undef: 0 */
 /* eslint arrow-parens: 0 */
-import React from 'react';
-import { enquireScreen } from 'enquire-js';
+import React from "react";
+import { enquireScreen } from "enquire-js";
 
-import Nav0 from './Nav0';
-import Feature5 from './Feature5';
-import Footer2 from './Footer2';
-import Footer1 from './Footer1';
+import Feature5 from "./Feature5";
+import Footer2 from "./Footer2";
 
-import {
-  Nav00DataSource,
-  Feature50DataSource,
-  Footer20DataSource,
-  Footer10DataSource,
-} from './data.source';
-import './less/antMotionStyle.less';
+import { Feature50DataSource, Footer20DataSource } from "./data.source";
+import "./less/antMotionStyle.less";
 
 let isMobile;
-enquireScreen((b) => {
+enquireScreen(b => {
   isMobile = b;
 });
 
@@ -28,13 +21,13 @@ export default class Home extends React.Component {
     super(props);
     this.state = {
       isMobile,
-      show: !location.port, // 如果不是 dva 2.0 请删除
+      show: !location.port // 如果不是 dva 2.0 请删除
     };
   }
 
   componentDidMount() {
     // 适配手机屏幕;
-    enquireScreen((b) => {
+    enquireScreen(b => {
       this.setState({ isMobile: !!b });
     });
     // dva 2.0 样式在组件渲染之后动态加载，导致滚动组件不生效；线上不影响；
@@ -43,7 +36,7 @@ export default class Home extends React.Component {
       // 样式 build 时间在 200-300ms 之间;
       setTimeout(() => {
         this.setState({
-          show: true,
+          show: true
         });
       }, 500);
     }
@@ -52,12 +45,6 @@ export default class Home extends React.Component {
 
   render() {
     const children = [
-      <Nav0
-        id="Nav0_0"
-        key="Nav0_0"
-        dataSource={Nav00DataSource}
-        isMobile={this.state.isMobile}
-      />,
       <Feature5
         id="Feature5_0"
         key="Feature5_0"
@@ -69,18 +56,12 @@ export default class Home extends React.Component {
         key="Footer2_0"
         dataSource={Footer20DataSource}
         isMobile={this.state.isMobile}
-      />,
-      <Footer1
-        id="Footer1_0"
-        key="Footer1_0"
-        dataSource={Footer10DataSource}
-        isMobile={this.state.isMobile}
-      />,
+      />
     ];
     return (
       <div
         className="templates-wrapper"
-        ref={(d) => {
+        ref={d => {
           this.dom = d;
         }}
       >

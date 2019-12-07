@@ -8,13 +8,17 @@ import {
 } from "react-router-dom";
 import { enquireScreen } from "enquire-js";
 import Header from "./Components/Nav0";
-import Footer from "./Components/Footer0";
+import Footer from "./Components/Footer1";
 import Home from "./Home";
 import Introduce from "./Introduce";
+import Aboutus from "./Aboutus";
+import Activities from "./Activities";
+import Products from "./Products";
 
 import {
   Nav00DataSource,
-  Footer00DataSource
+  // Footer00DataSource,
+  Footer10DataSource
 } from "./Components/basicData.source.js";
 
 let isMobile;
@@ -48,7 +52,16 @@ class App extends Component {
             ></Route>
             <Route exact path="/home" component={Home} />
             <Route exact path="/introduce" component={Introduce} />
-            <Footer dataSource={Footer00DataSource} isMobile={this.isMobile} />
+            <Route exact path="/aboutus" component={Aboutus} />
+            <Route exact path="/activities" component={Activities} />
+            <Route exact path="/products" component={Products} />
+            <Footer
+              id="Footer1_0"
+              key="Footer1_0"
+              dataSource={Footer10DataSource}
+              isMobile={this.state.isMobile}
+            />
+            ,
           </div>
         </Switch>
       </Router>
