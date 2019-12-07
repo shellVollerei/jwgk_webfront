@@ -1,588 +1,453 @@
-import React from "react";
-export const Nav00DataSource = {
-  wrapper: { className: "header0 home-page-wrapper" },
-  page: { className: "home-page" },
-  logo: {
-    className: "header0-logo",
-    children: "https://os.alipayobjects.com/rmsportal/mlcYmsRilwraoAe.svg"
-  },
-  Menu: {
-    className: "header0-menu",
+import React from 'react';
+export const Teams00DataSource = {
+  wrapper: { className: 'home-page-wrapper teams0-wrapper' },
+  OverPack: { playScale: 0.3, className: 'home-page teams0' },
+  BannerAnim: {
+    className: 'banner-anim',
     children: [
       {
-        name: "item0",
-        className: "header0-item",
-        children: {
-          href: "#",
+        name: 'elem0',
+        className: 'teams0-banner-user-elem',
+        titleWrapper: {
+          className: 'teams0-content-wrapper',
           children: [
             {
+              name: 'image',
+              children:
+                'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*njqxS5Ky7CQAAAAAAAAAAABjARQnAQ',
+              className: 'teams0-image',
+            },
+            {
+              name: 'content',
+              children:
+                'SEE = Seeking Experience & Engineering，意为探索用户体验与工程实践，由蚂蚁金服集团每年举办 1-2 次，包括专业分享、产品展台、Workshop 等内容。',
+              className: 'teams0-content',
+            },
+            {
+              name: 'title',
               children: (
                 <>
-                  <p>产品</p>
+                  <p>陈浩南</p>
                 </>
               ),
-              name: "text"
-            }
-          ]
+              className: 'teams0-h1',
+            },
+            {
+              name: 'content2',
+              children: (
+                <>
+                  <p>极为感控公司总经理&nbsp; &nbsp;前***公司CEO</p>
+                </>
+              ),
+              className: 'teams0-content',
+            },
+          ],
         },
-        subItem: [
-          {
-            name: "sub0",
-            className: "item-sub",
-            children: {
-              className: "item-sub-item",
-              children: [
-                {
-                  name: "image0",
-                  className: "item-image",
-                  children:
-                    "https://gw.alipayobjects.com/zos/rmsportal/ruHbkzzMKShUpDYMEmHM.svg"
-                },
-                {
-                  name: "title",
-                  className: "item-title",
-                  children: "Ant Design"
-                },
-                {
-                  name: "content",
-                  className: "item-content",
-                  children: "企业级 UI 设计体系"
-                }
-              ]
-            }
-          },
-          {
-            name: "sub1",
-            className: "item-sub",
-            children: {
-              className: "item-sub-item",
-              children: [
-                {
-                  name: "image0",
-                  className: "item-image",
-                  children:
-                    "https://gw.alipayobjects.com/zos/rmsportal/ruHbkzzMKShUpDYMEmHM.svg"
-                },
-                {
-                  name: "title",
-                  className: "item-title",
-                  children: "Ant Design"
-                },
-                {
-                  name: "content",
-                  className: "item-content",
-                  children: "企业级 UI 设计体系"
-                }
-              ]
-            }
-          }
-        ]
       },
-      {
-        name: "item1",
-        className: "header0-item",
-        children: {
-          href: "#",
-          children: [{ children: "活动<br />", name: "text" }]
-        }
-      },
-      {
-        name: "item2",
-        className: "header0-item",
-        children: {
-          href: "#",
-          children: [
-            {
-              children: (
-                <>
-                  <p>
-                    关于我们
-                    <br />
-                  </p>
-                </>
-              ),
-              name: "text"
-            }
-          ]
-        }
-      },
-      {
-        name: "item3",
-        className: "header0-item",
-        children: {
-          href: "#",
-          children: [{ children: "导航四", name: "text" }]
-        }
-      }
-    ]
+    ],
   },
-  mobileMenu: { className: "header0-mobile-menu" }
-};
-export const Feature20DataSource = {
-  wrapper: { className: "home-page-wrapper content2-wrapper" },
-  OverPack: { className: "home-page content2", playScale: 0.3 },
-  imgWrapper: { className: "content2-img", md: 10, xs: 24 },
-  img: {
-    children: "https://zos.alipayobjects.com/rmsportal/tvQTfCupGUFKSfQ.png"
-  },
-  textWrapper: { className: "content2-text", md: 14, xs: 24 },
-  title: {
-    className: "content2-title",
-    children: (
-      <div>
-        <p>陈浩南</p>
-      </div>
-    )
-  },
-  content: {
-    className: "content2-content",
-    children: (
-      <div>
-        <p>
-          我们遇到什么困难，也不要怕。微笑着面对它。消除恐惧的最好办法就是面对恐惧，坚持，就是胜利！我们遇到什么困难，也不要怕。微笑着面对它。消除恐惧的最好办法就是面对恐惧，坚持，就是胜利！我们遇到什么困难，也不要怕。微笑着面对它。消除恐惧的最好办法就是面对恐惧，坚持，就是胜利！我们遇到什么困难，也不要怕。微笑着面对它。消除恐惧的最好办法就是面对恐惧，坚持，就是胜利！
-        </p>
-        <br />
-      </div>
-    )
-  }
 };
 export const Content90DataSource = {
-  wrapper: { className: "home-page-wrapper content9-wrapper" },
-  page: { className: "home-page content9" },
+  wrapper: { className: 'home-page-wrapper content9-wrapper' },
+  page: { className: 'home-page content9' },
   titleWrapper: {
-    className: "title-wrapper",
+    className: 'title-wrapper',
     children: [
       {
-        name: "image",
+        name: 'image',
         children:
-          "https://gw.alipayobjects.com/zos/rmsportal/PiqyziYmvbgAudYfhuBr.svg",
-        className: "title-image"
+          'https://gw.alipayobjects.com/zos/rmsportal/PiqyziYmvbgAudYfhuBr.svg',
+        className: 'title-image',
       },
       {
-        name: "title",
+        name: 'title',
         children: (
           <>
-            <p>公司介绍及历史</p>
+            <p>公司介绍&amp;历史</p>
           </>
         ),
-        className: "title-h1"
-      }
-    ]
+        className: 'title-h1',
+      },
+    ],
   },
   block: {
-    className: "timeline",
+    className: 'timeline',
     children: [
       {
-        name: "block0",
-        className: "block-wrapper",
+        name: 'block0',
+        className: 'block-wrapper',
         playScale: 0.3,
         children: {
-          imgWrapper: { className: "image-wrapper" },
-          textWrapper: { className: "text-wrapper" },
+          imgWrapper: { className: 'image-wrapper' },
+          textWrapper: { className: 'text-wrapper' },
           img: {
-            className: "block-img",
+            className: 'block-img',
             children:
-              "https://gw.alipayobjects.com/zos/rmsportal/SlFgHDtOTLzccvFrQHLg.png"
+              'https://gw.alipayobjects.com/zos/rmsportal/SlFgHDtOTLzccvFrQHLg.png',
           },
           icon: {
-            className: "block-icon",
+            className: 'block-icon',
             children:
-              "https://gw.alipayobjects.com/zos/rmsportal/qJnGrvjXPxdKETlVSrbe.svg"
+              'https://gw.alipayobjects.com/zos/rmsportal/qJnGrvjXPxdKETlVSrbe.svg',
           },
-          name: { className: "block-name", children: "事件" },
-          post: { className: "block-post", children: "公司 职位" },
-          time: {
-            className: "block-time",
-            children: (
-              <>
-                <p>2011.5.31</p>
-              </>
-            )
-          },
-          title: { className: "block-title", children: "开幕致辞" },
-          content: { className: "block-content", children: "" }
-        }
-      },
-      {
-        name: "block1",
-        className: "block-wrapper",
-        playScale: 0.3,
-        children: {
-          imgWrapper: { className: "image-wrapper" },
-          textWrapper: { className: "text-wrapper" },
-          img: {
-            className: "block-img",
-            children:
-              "https://gw.alipayobjects.com/zos/rmsportal/SlFgHDtOTLzccvFrQHLg.png"
-          },
-          icon: {
-            className: "block-icon",
-            children:
-              "https://gw.alipayobjects.com/zos/rmsportal/QviGtUPvTFxdhsTUAacr.svg"
-          },
-          name: { className: "block-name", children: "姓名" },
-          post: { className: "block-post", children: "公司 职位" },
-          time: { className: "block-time", children: "09:00 - 10:00" },
-          title: {
-            className: "block-title",
-            children: (
-              <>
-                <p>2019.6.1</p>
-              </>
-            )
-          },
-          content: {
-            className: "block-content",
-            children: (
-              <>
-                <p>介绍</p>
-              </>
-            )
-          }
-        }
-      },
-      {
-        name: "block2",
-        className: "block-wrapper",
-        playScale: 0.3,
-        children: {
-          imgWrapper: { className: "image-wrapper" },
-          textWrapper: { className: "text-wrapper" },
-          img: {
-            className: "block-img",
-            children:
-              "https://gw.alipayobjects.com/zos/rmsportal/SlFgHDtOTLzccvFrQHLg.png"
-          },
-          icon: {
-            className: "block-icon",
-            children:
-              "https://gw.alipayobjects.com/zos/rmsportal/QviGtUPvTFxdhsTUAacr.svg"
-          },
-          name: { className: "block-name", children: "姓名" },
-          post: { className: "block-post", children: "公司 职位" },
-          time: { className: "block-time", children: "09:00 - 10:00" },
-          title: {
-            className: "block-title",
-            children: (
-              <>
-                <p>时间</p>
-              </>
-            )
-          },
-          content: {
-            className: "block-content",
-            children: (
-              <>
-                <p>介绍</p>
-              </>
-            )
-          }
-        }
-      },
-      {
-        name: "block3",
-        className: "block-wrapper",
-        playScale: 0.3,
-        children: {
-          imgWrapper: { className: "image-wrapper" },
-          textWrapper: { className: "text-wrapper" },
-          img: {
-            className: "block-img",
-            children:
-              "https://gw.alipayobjects.com/zos/rmsportal/SlFgHDtOTLzccvFrQHLg.png"
-          },
-          icon: {
-            className: "block-icon",
-            children:
-              "https://gw.alipayobjects.com/zos/rmsportal/agOOBdKEIJlQhfeYhHJc.svg"
-          },
-          name: { className: "block-name", children: "姓名" },
-          post: { className: "block-post", children: "公司 职位" },
-          time: { className: "block-time", children: "09:00 - 10:00" },
-          title: {
-            className: "block-title",
-            children: (
-              <>
-                <p>时间</p>
-              </>
-            )
-          },
-          content: {
-            className: "block-content",
-            children: (
-              <>
-                <p>介绍</p>
-              </>
-            )
-          }
-        }
-      }
-    ]
-  }
-};
-export const Teams40DataSource = {
-  wrapper: { className: "home-page-wrapper content8-wrapper" },
-  page: { className: "home-page content8" },
-  OverPack: { playScale: 0.3 },
-  titleWrapper: {
-    className: "title-wrapper",
-    children: [
-      {
-        name: "image",
-        children:
-          "https://gw.alipayobjects.com/zos/rmsportal/PiqyziYmvbgAudYfhuBr.svg",
-        className: "title-image"
-      },
-      {
-        name: "title",
-        children: (
-          <>
-            <p>团队介绍</p>
-          </>
-        ),
-        className: "title-h1"
-      }
-    ]
-  },
-  block: {
-    className: "content-wrapper",
-    children: [
-      {
-        name: "block0",
-        md: 6,
-        xs: 24,
-        className: "content8-block-wrapper",
-        children: {
-          className: "content8-block",
-          img: {
-            className: "content8-img",
-            children:
-              "https://gw.alipayobjects.com/zos/rmsportal/JahzbVrdHdJlkJjkNsBJ.png"
-          },
-          title: { className: "content8-title", children: "Jack" },
-          content: {
-            className: "content8-content",
-            children: "公司+职位 信息暂缺"
-          }
-        }
-      },
-      {
-        name: "block1",
-        md: 6,
-        xs: 24,
-        className: "content8-block-wrapper",
-        children: {
-          className: "content8-block",
-          img: {
-            className: "content8-img",
-            children:
-              "https://gw.alipayobjects.com/zos/rmsportal/JahzbVrdHdJlkJjkNsBJ.png"
-          },
-          title: { className: "content8-title", children: "Jack" },
-          content: {
-            className: "content8-content",
-            children: "公司+职位 信息暂缺"
-          }
-        }
-      },
-      {
-        name: "block2",
-        md: 6,
-        xs: 24,
-        className: "content8-block-wrapper",
-        children: {
-          className: "content8-block",
-          img: {
-            className: "content8-img",
-            children:
-              "https://gw.alipayobjects.com/zos/rmsportal/JahzbVrdHdJlkJjkNsBJ.png"
-          },
-          title: { className: "content8-title", children: "Jack" },
-          content: {
-            className: "content8-content",
-            children: "公司+职位 信息暂缺"
-          }
-        }
-      },
-      {
-        name: "block3",
-        md: 6,
-        xs: 24,
-        className: "content8-block-wrapper",
-        children: {
-          className: "content8-block",
-          img: {
-            className: "content8-img",
-            children:
-              "https://gw.alipayobjects.com/zos/rmsportal/JahzbVrdHdJlkJjkNsBJ.png"
-          },
-          title: { className: "content8-title", children: "Jack" },
-          content: {
-            className: "content8-content",
-            children: "公司+职位 信息暂缺"
-          }
-        }
-      },
-      {
-        name: "block4",
-        md: 6,
-        xs: 24,
-        className: "content8-block-wrapper",
-        children: {
-          className: "content8-block",
-          img: {
-            className: "content8-img",
-            children:
-              "https://gw.alipayobjects.com/zos/rmsportal/JahzbVrdHdJlkJjkNsBJ.png"
-          },
-          title: { className: "content8-title", children: "Jack" },
-          content: {
-            className: "content8-content",
-            children: "公司+职位 信息暂缺"
-          }
-        }
-      },
-      {
-        name: "block5",
-        md: 6,
-        xs: 24,
-        className: "content8-block-wrapper",
-        children: {
-          className: "content8-block",
-          img: {
-            className: "content8-img",
-            children:
-              "https://gw.alipayobjects.com/zos/rmsportal/JahzbVrdHdJlkJjkNsBJ.png"
-          },
-          title: { className: "content8-title", children: "Jack" },
-          content: {
-            className: "content8-content",
-            children: "公司+职位 信息暂缺"
-          }
-        }
-      },
-      {
-        name: "block6",
-        md: 6,
-        xs: 24,
-        className: "content8-block-wrapper",
-        children: {
-          className: "content8-block",
-          img: {
-            className: "content8-img",
-            children:
-              "https://gw.alipayobjects.com/zos/rmsportal/JahzbVrdHdJlkJjkNsBJ.png"
-          },
-          title: { className: "content8-title", children: "Jack" },
-          content: {
-            className: "content8-content",
-            children: "公司+职位 信息暂缺"
-          }
-        }
-      },
-      {
-        name: "block7",
-        md: 6,
-        xs: 24,
-        className: "content8-block-wrapper",
-        children: {
-          className: "content8-block",
-          img: {
-            className: "content8-img",
-            children:
-              "https://gw.alipayobjects.com/zos/rmsportal/JahzbVrdHdJlkJjkNsBJ.png"
-          },
-          title: { className: "content8-title", children: "Jack" },
-          content: {
-            className: "content8-content",
-            children: "公司+职位 信息暂缺"
-          }
-        }
-      }
-    ]
-  }
-};
-export const Footer10DataSource = {
-  wrapper: { className: "home-page-wrapper footer1-wrapper" },
-  OverPack: { className: "footer1", playScale: 0.2 },
-  block: {
-    className: "home-page",
-    gutter: 0,
-    children: [
-      {
-        name: "block0",
-        xs: 24,
-        md: 6,
-        className: "block",
-        title: {
-          className: "logo",
-          children:
-            "https://zos.alipayobjects.com/rmsportal/qqaimmXZVSwAhpL.svg"
+          name: { className: 'block-name', children: '姓名' },
+          post: { className: 'block-post', children: '公司 职位' },
+          time: { className: 'block-time', children: '09:00 - 10:00' },
+          title: { className: 'block-title', children: '开幕致辞' },
+          content: { className: 'block-content', children: '' },
         },
-        childWrapper: {
-          className: "slogan",
-          children: [
-            {
-              name: "content0",
-              children: "Animation specification and components of Ant Design."
-            }
-          ]
-        }
       },
       {
-        name: "block1",
-        xs: 24,
-        md: 6,
-        className: "block",
-        title: { children: "产品" },
-        childWrapper: {
-          children: [
-            { name: "link0", href: "#", children: "产品更新记录" },
-            { name: "link1", href: "#", children: "API文档" },
-            { name: "link2", href: "#", children: "快速入门" },
-            { name: "link3", href: "#", children: "参考指南" }
-          ]
-        }
+        name: 'block1',
+        className: 'block-wrapper',
+        playScale: 0.3,
+        children: {
+          imgWrapper: { className: 'image-wrapper' },
+          textWrapper: { className: 'text-wrapper' },
+          img: {
+            className: 'block-img',
+            children:
+              'https://gw.alipayobjects.com/zos/rmsportal/SlFgHDtOTLzccvFrQHLg.png',
+          },
+          icon: {
+            className: 'block-icon',
+            children:
+              'https://gw.alipayobjects.com/zos/rmsportal/QviGtUPvTFxdhsTUAacr.svg',
+          },
+          name: { className: 'block-name', children: '姓名' },
+          post: { className: 'block-post', children: '公司 职位' },
+          time: { className: 'block-time', children: '09:00 - 10:00' },
+          title: { className: 'block-title', children: '演示标题 - XYZ' },
+          content: {
+            className: 'block-content',
+            children:
+              '经过近 3 年的打磨，在助力中台产品研发效能提升的目标之上，包含设计语言、UI 资产、可视化以及产品体验相关的蚂蚁中台设计体系正在逐步成型。此次分享包含两部分，在介绍蚂蚁设计体系的同时，也会和大家分享我们在设计语言的部分探索。',
+          },
+        },
       },
       {
-        name: "block2",
-        xs: 24,
-        md: 6,
-        className: "block",
-        title: { children: "关于" },
-        childWrapper: {
-          children: [
-            { href: "#", name: "link0", children: "FAQ" },
-            { href: "#", name: "link1", children: "联系我们" }
-          ]
-        }
+        name: 'block2',
+        className: 'block-wrapper',
+        playScale: 0.3,
+        children: {
+          imgWrapper: { className: 'image-wrapper' },
+          textWrapper: { className: 'text-wrapper' },
+          img: {
+            className: 'block-img',
+            children:
+              'https://gw.alipayobjects.com/zos/rmsportal/SlFgHDtOTLzccvFrQHLg.png',
+          },
+          icon: {
+            className: 'block-icon',
+            children:
+              'https://gw.alipayobjects.com/zos/rmsportal/QviGtUPvTFxdhsTUAacr.svg',
+          },
+          name: { className: 'block-name', children: '姓名' },
+          post: { className: 'block-post', children: '公司 职位' },
+          time: { className: 'block-time', children: '09:00 - 10:00' },
+          title: { className: 'block-title', children: '演示标题 - XYZ' },
+          content: {
+            className: 'block-content',
+            children:
+              '经过近 3 年的打磨，在助力中台产品研发效能提升的目标之上，包含设计语言、UI 资产、可视化以及产品体验相关的蚂蚁中台设计体系正在逐步成型。此次分享包含两部分，在介绍蚂蚁设计体系的同时，也会和大家分享我们在设计语言的部分探索。',
+          },
+        },
       },
       {
-        name: "block3",
-        xs: 24,
-        md: 6,
-        className: "block",
-        title: { children: "资源" },
-        childWrapper: {
-          children: [
-            { href: "#", name: "link0", children: "Ant Design" },
-            { href: "#", name: "link1", children: "Ant Motion" }
-          ]
-        }
-      }
-    ]
+        name: 'block3',
+        className: 'block-wrapper',
+        playScale: 0.3,
+        children: {
+          imgWrapper: { className: 'image-wrapper' },
+          textWrapper: { className: 'text-wrapper' },
+          img: {
+            className: 'block-img',
+            children:
+              'https://gw.alipayobjects.com/zos/rmsportal/SlFgHDtOTLzccvFrQHLg.png',
+          },
+          icon: {
+            className: 'block-icon',
+            children:
+              'https://gw.alipayobjects.com/zos/rmsportal/agOOBdKEIJlQhfeYhHJc.svg',
+          },
+          name: { className: 'block-name', children: '姓名' },
+          post: { className: 'block-post', children: '公司 职位' },
+          time: { className: 'block-time', children: '09:00 - 10:00' },
+          title: { className: 'block-title', children: '演示标题 - XYZ' },
+          content: {
+            className: 'block-content',
+            children:
+              '经过近 3 年的打磨，在助力中台产品研发效能提升的目标之上，包含设计语言、UI 资产、可视化以及产品体验相关的蚂蚁中台设计体系正在逐步成型。此次分享包含两部分，在介绍蚂蚁设计体系的同时，也会和大家分享我们在设计语言的部分探索。',
+          },
+        },
+      },
+    ],
   },
-  copyrightWrapper: { className: "copyright-wrapper" },
-  copyrightPage: { className: "home-page" },
-  copyright: {
-    className: "copyright",
-    children: (
-      <>
-        <span>
-          ©2018 by <a href="https://motion.ant.design">Ant Motion</a> All Rights
-          Reserved
-        </span>
-      </>
-    )
-  }
+};
+export const Teams20DataSource = {
+  wrapper: { className: 'home-page-wrapper teams2-wrapper' },
+  page: { className: 'home-page teams2' },
+  OverPack: { playScale: 0.3, className: '' },
+  titleWrapper: {
+    className: 'title-wrapper',
+    children: [{ name: 'title', children: '团队成员' }],
+  },
+  block: {
+    className: 'block-wrapper',
+    gutter: 72,
+    children: [
+      {
+        name: 'block0',
+        className: 'block',
+        md: 8,
+        xs: 24,
+        image: {
+          name: 'image',
+          className: 'teams2-image',
+          children:
+            'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*--rVR4hclJYAAAAAAAAAAABjARQnAQ',
+        },
+        titleWrapper: {
+          className: 'teams2-textWrapper',
+          children: [
+            { name: 'title', className: 'teams2-title', children: '叶秀英' },
+            {
+              name: 'content',
+              className: 'teams2-job',
+              children: '公司+职位 信息暂缺',
+            },
+            {
+              name: 'content1',
+              className: 'teams2-content',
+              children: 'AntV 是蚂蚁金服全新一代数据可视化解决方案。',
+            },
+          ],
+        },
+      },
+      {
+        name: 'block1',
+        className: 'block',
+        md: 8,
+        xs: 24,
+        image: {
+          name: 'image',
+          className: 'teams2-image',
+          children:
+            'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*njqxS5Ky7CQAAAAAAAAAAABjARQnAQ',
+        },
+        titleWrapper: {
+          className: 'teams2-textWrapper',
+          children: [
+            { name: 'title', className: 'teams2-title', children: '韩勇' },
+            {
+              name: 'content',
+              className: 'teams2-job',
+              children: '公司+职位 信息暂缺',
+            },
+            {
+              name: 'content1',
+              className: 'teams2-content',
+              children: '语雀是一款优雅高效的在线文档编辑与协同工具。',
+            },
+          ],
+        },
+      },
+      {
+        name: 'block2',
+        className: 'block',
+        md: 8,
+        xs: 24,
+        image: {
+          name: 'image',
+          className: 'teams2-image',
+          children:
+            'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*--rVR4hclJYAAAAAAAAAAABjARQnAQ',
+        },
+        titleWrapper: {
+          className: 'teams2-textWrapper',
+          children: [
+            { name: 'title', className: 'teams2-title', children: '叶秀英' },
+            {
+              name: 'content',
+              className: 'teams2-job',
+              children: '公司+职位 信息暂缺',
+            },
+            {
+              name: 'content1',
+              className: 'teams2-content',
+              children: 'AntV 是蚂蚁金服全新一代数据可视化解决方案。',
+            },
+          ],
+        },
+      },
+      {
+        name: 'block3',
+        className: 'block',
+        md: 8,
+        xs: 24,
+        image: {
+          name: 'image',
+          className: 'teams2-image',
+          children:
+            'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*--rVR4hclJYAAAAAAAAAAABjARQnAQ',
+        },
+        titleWrapper: {
+          className: 'teams2-textWrapper',
+          children: [
+            { name: 'title', className: 'teams2-title', children: '叶秀英' },
+            {
+              name: 'content',
+              className: 'teams2-job',
+              children: '公司+职位 信息暂缺',
+            },
+            {
+              name: 'content1',
+              className: 'teams2-content',
+              children: 'AntV 是蚂蚁金服全新一代数据可视化解决方案。',
+            },
+          ],
+        },
+      },
+      {
+        name: 'block4',
+        className: 'block',
+        md: 8,
+        xs: 24,
+        image: {
+          name: 'image',
+          className: 'teams2-image',
+          children:
+            'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*njqxS5Ky7CQAAAAAAAAAAABjARQnAQ',
+        },
+        titleWrapper: {
+          className: 'teams2-textWrapper',
+          children: [
+            { name: 'title', className: 'teams2-title', children: '韩勇' },
+            {
+              name: 'content',
+              className: 'teams2-job',
+              children: '公司+职位 信息暂缺',
+            },
+            {
+              name: 'content1',
+              className: 'teams2-content',
+              children: '语雀是一款优雅高效的在线文档编辑与协同工具。',
+            },
+          ],
+        },
+      },
+      {
+        name: 'block5',
+        className: 'block',
+        md: 8,
+        xs: 24,
+        image: {
+          name: 'image',
+          className: 'teams2-image',
+          children:
+            'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*--rVR4hclJYAAAAAAAAAAABjARQnAQ',
+        },
+        titleWrapper: {
+          className: 'teams2-textWrapper',
+          children: [
+            { name: 'title', className: 'teams2-title', children: '叶秀英' },
+            {
+              name: 'content',
+              className: 'teams2-job',
+              children: '公司+职位 信息暂缺',
+            },
+            {
+              name: 'content1',
+              className: 'teams2-content',
+              children: 'AntV 是蚂蚁金服全新一代数据可视化解决方案。',
+            },
+          ],
+        },
+      },
+      {
+        name: 'block6',
+        className: 'block',
+        md: 8,
+        xs: 24,
+        image: {
+          name: 'image',
+          className: 'teams2-image',
+          children:
+            'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*--rVR4hclJYAAAAAAAAAAABjARQnAQ',
+        },
+        titleWrapper: {
+          className: 'teams2-textWrapper',
+          children: [
+            { name: 'title', className: 'teams2-title', children: '叶秀英' },
+            {
+              name: 'content',
+              className: 'teams2-job',
+              children: '公司+职位 信息暂缺',
+            },
+            {
+              name: 'content1',
+              className: 'teams2-content',
+              children: 'AntV 是蚂蚁金服全新一代数据可视化解决方案。',
+            },
+          ],
+        },
+      },
+      {
+        name: 'block7',
+        className: 'block',
+        md: 8,
+        xs: 24,
+        image: {
+          name: 'image',
+          className: 'teams2-image',
+          children:
+            'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*njqxS5Ky7CQAAAAAAAAAAABjARQnAQ',
+        },
+        titleWrapper: {
+          className: 'teams2-textWrapper',
+          children: [
+            { name: 'title', className: 'teams2-title', children: '韩勇' },
+            {
+              name: 'content',
+              className: 'teams2-job',
+              children: '公司+职位 信息暂缺',
+            },
+            {
+              name: 'content1',
+              className: 'teams2-content',
+              children: '语雀是一款优雅高效的在线文档编辑与协同工具。',
+            },
+          ],
+        },
+      },
+      {
+        name: 'block8',
+        className: 'block',
+        md: 8,
+        xs: 24,
+        image: {
+          name: 'image',
+          className: 'teams2-image',
+          children:
+            'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*--rVR4hclJYAAAAAAAAAAABjARQnAQ',
+        },
+        titleWrapper: {
+          className: 'teams2-textWrapper',
+          children: [
+            { name: 'title', className: 'teams2-title', children: '叶秀英' },
+            {
+              name: 'content',
+              className: 'teams2-job',
+              children: '公司+职位 信息暂缺',
+            },
+            {
+              name: 'content1',
+              className: 'teams2-content',
+              children: 'AntV 是蚂蚁金服全新一代数据可视化解决方案。',
+            },
+          ],
+        },
+      },
+    ],
+  },
 };

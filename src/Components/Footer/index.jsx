@@ -3,15 +3,9 @@
 import React from 'react';
 import { enquireScreen } from 'enquire-js';
 
-import Feature1 from './Feature1';
-import Feature4 from './Feature4';
-import Content9 from './Content9';
+import Footer2 from './Footer2';
 import Point from './Point';
-import {
-  Feature10DataSource,
-  Feature40DataSource,
-  Content90DataSource,
-} from './data.source';
+import { Footer20DataSource } from './data.source';
 import './less/antMotionStyle.less';
 
 let isMobile;
@@ -50,25 +44,13 @@ export default class Home extends React.Component {
 
   render() {
     const children = [
-      <Feature1
-        id="Feature1_0"
-        key="Feature1_0"
-        dataSource={Feature10DataSource}
-        isMobile={this.state.isMobile}
-      />,
-      <Feature4
-        id="Feature4_0"
-        key="Feature4_0"
-        dataSource={Feature40DataSource}
-        isMobile={this.state.isMobile}
-      />,
-      <Content9
-        id="Content9_0"
-        key="Content9_0"
-        dataSource={Content90DataSource}
+      <Footer2
+        id="Footer2_0"
+        key="Footer2_0"
+        dataSource={Footer20DataSource}
         isMobile={this.state.isMobile}
       />, // 导航和页尾不进入锚点区，如果需要，自行添加;
-      <Point key="list" data={['Feature1_0', 'Feature4_0', 'Content9_0']} />,
+      <Point key="list" data={['Footer2_0']} />,
     ];
     return (
       <div

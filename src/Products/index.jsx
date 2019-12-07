@@ -64,12 +64,12 @@ export default class Home extends React.Component {
         dataSource={Feature60DataSource}
         isMobile={this.state.isMobile}
       />,
-      <Feature3
-        id="Feature3_0"
-        key="Feature3_0"
-        dataSource={Feature30DataSource}
-        isMobile={this.state.isMobile}
-      />,
+      // <Feature3
+      //   id="Feature3_0"
+      //   key="Feature3_0"
+      //   dataSource={Feature30DataSource}
+      //   isMobile={this.state.isMobile}
+      // />,
       <Feature1
         id="Feature1_0"
         key="Feature1_0"
@@ -78,7 +78,7 @@ export default class Home extends React.Component {
       />, // 导航和页尾不进入锚点区，如果需要，自行添加;
       <Point
         key="list"
-        data={["Feature6_0", "Feature0_0", "Feature3_0", "Feature1_0"]}
+        data={["Feature6_0", "Feature0_0", "Feature1_0"]}
       />
     ];
     return (

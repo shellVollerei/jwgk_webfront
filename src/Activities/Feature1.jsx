@@ -4,13 +4,13 @@ import TweenOne from 'rc-tween-one';
 import { Row, Col } from 'antd';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
-function Content2(props) {
+function Content1(props) {
   const { ...tagProps } = props;
   const { dataSource, isMobile } = tagProps;
   delete tagProps.dataSource;
   delete tagProps.isMobile;
   const animType = {
-    queue: isMobile ? 'bottom' : 'left',
+    queue: isMobile ? 'bottom' : 'right',
     one: isMobile
       ? {
           scaleY: '+=0.3',
@@ -19,38 +19,35 @@ function Content2(props) {
           ease: 'easeOutQuad',
         }
       : {
-          x: '+=30',
+          x: '-=30',
           opacity: 0,
           type: 'from',
           ease: 'easeOutQuad',
         },
   };
-  const img = (
-    <TweenOne
-      key="img"
-      animation={animType.one}
-      resetStyle
-      {...dataSource.imgWrapper}
-      component={Col}
-      componentProps={{
-        md: dataSource.imgWrapper.md,
-        xs: dataSource.imgWrapper.xs,
-      }}
-    >
-      <span {...dataSource.img}>
-        <img src={dataSource.img.children} width="100%" alt="img" />
-      </span>
-    </TweenOne>
-  );
   return (
     <div {...tagProps} {...dataSource.wrapper}>
       <OverPack {...dataSource.OverPack} component={Row}>
-        {isMobile && img}
+        <TweenOne
+          key="img"
+          animation={animType.one}
+          resetStyle
+          {...dataSource.imgWrapper}
+          component={Col}
+          componentProps={{
+            md: dataSource.imgWrapper.md,
+            xs: dataSource.imgWrapper.xs,
+          }}
+        >
+          <span {...dataSource.img}>
+            <img src={dataSource.img.children} width="100%" alt="img" />
+          </span>
+        </TweenOne>
         <QueueAnim
-          type={animType.queue}
           key="text"
+          type={animType.queue}
           leaveReverse
-          ease={['easeOutCubic', 'easeInCubic']}
+          ease={['easeOutQuad', 'easeInQuad']}
           {...dataSource.textWrapper}
           component={Col}
           componentProps={{
@@ -65,10 +62,9 @@ function Content2(props) {
             {dataSource.content.children}
           </div>
         </QueueAnim>
-        {!isMobile && img}
       </OverPack>
     </div>
   );
 }
 
-export default Content2;
+export default Content1;
