@@ -147,12 +147,12 @@ export const Feature00DataSource = {
               name: "image",
               className: "content0-block-icon",
               children:
-                "https://zos.alipayobjects.com/rmsportal/WBnVOjtIlGWbzyQivuyq.png"
+                "https://zos.alipayobjects.com/rmsportal/YPMsLQuCEXtuEkmXTTdk.png"
             },
             {
               name: "title",
               className: "content0-block-title",
-              children: "一站式业务接入"
+              children: "消毒供应中心"
             },
             { name: "content", children: "支付、结算、核算接入产品效率翻四倍" }
           ]
@@ -175,7 +175,7 @@ export const Feature00DataSource = {
             {
               name: "title",
               className: "content0-block-title",
-              children: "一站式事中风险监控"
+              children: "院感管理科"
             },
             {
               name: "content",
@@ -196,12 +196,12 @@ export const Feature00DataSource = {
               name: "image",
               className: "content0-block-icon k3tytjwdlan-editor_css",
               children:
-                "https://zos.alipayobjects.com/rmsportal/EkXWVvAaFJKCzhMmQYiX.png"
+                "https://zos.alipayobjects.com/rmsportal/YPMsLQuCEXtuEkmXTTdk.png"
             },
             {
               name: "title",
               className: "content0-block-title",
-              children: "一站式数据运营"
+              children: "内镜中心"
             },
             {
               name: "content",
@@ -222,12 +222,12 @@ export const Feature00DataSource = {
               name: "image",
               className: "content0-block-icon",
               children:
-                "https://zos.alipayobjects.com/rmsportal/EkXWVvAaFJKCzhMmQYiX.png"
+                "https://zos.alipayobjects.com/rmsportal/YPMsLQuCEXtuEkmXTTdk.png"
             },
             {
               name: "title",
               className: "content0-block-title",
-              children: "一站式数据运营"
+              children: "手术室"
             },
             {
               name: "content",
@@ -248,12 +248,12 @@ export const Feature00DataSource = {
               name: "image",
               className: "content0-block-icon",
               children:
-                "https://zos.alipayobjects.com/rmsportal/EkXWVvAaFJKCzhMmQYiX.png"
+                "https://zos.alipayobjects.com/rmsportal/YPMsLQuCEXtuEkmXTTdk.png"
             },
             {
               name: "title",
               className: "content0-block-title",
-              children: "一站式数据运营"
+              children: "口腔科及口腔医院/诊所"
             },
             {
               name: "content",
