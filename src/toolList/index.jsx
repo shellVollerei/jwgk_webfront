@@ -52,28 +52,29 @@ export default class Home extends React.Component {
         dataSource={Teams20DataSource}
         isMobile={this.state.isMobile}
       />, // 导航和页尾不进入锚点区，如果需要，自行添加;
-      <Point key="list" data={["Teams2_0"]} />
+      // <Point key="list" data={["Teams2_0"]} />
     ];
-    const sideBar = () => {
-      return (
-        <Col>
-          <Menu
-            onClick={this.handleClick}
-            style={{ width: "auto", minWidth: 160 }}
-            defaultSelectedKeys={["1"]}
-            defaultOpenKeys={["sub1"]}
-            mode="inline"
-          >
-            <Menu.Item key="1">Option 1</Menu.Item>
-            <Menu.Item key="2">Option 2</Menu.Item>
-            <Menu.Item key="3">Option 3</Menu.Item>
-            <Menu.Item key="4">Option 4</Menu.Item>
-            <Menu.Item key="5">Option 5</Menu.Item>
-            <Menu.Item key="6">Option 6</Menu.Item>
-          </Menu>
-        </Col>
-      );
-    };
+    // const getSideBar = () => {
+    //   return (
+    //     <Col>
+    //       <Menu
+    //         onClick={this.handleClick}
+    //         style={{ width: "auto", minWidth: 160 }}
+    //         defaultSelectedKeys={["1"]}
+    //         defaultOpenKeys={["sub1"]}
+    //         mode="inline"
+    //       >
+    //         <Menu.Item key="1">Option 1</Menu.Item>
+    //         <Menu.Item key="2">Option 2</Menu.Item>
+    //         <Menu.Item key="3">Option 3</Menu.Item>
+    //         <Menu.Item key="4">Option 4</Menu.Item>
+    //         <Menu.Item key="5">Option 5</Menu.Item>
+    //         <Menu.Item key="6">Option 6</Menu.Item>
+    //       </Menu>
+    //     </Col>
+    //   );
+    // };
+    // const showSideBar = getSideBar();
     return (
       <div
         className="templates-wrapper"
@@ -82,7 +83,7 @@ export default class Home extends React.Component {
         }}
       >
         {/* 如果不是 dva 2.0 替换成 {children} start */}
-        {/* <Col span={6}>{sideBar()}</Col> */}
+        {/* <Col span={6}>{showSideBar}</Col> */}
         <Col>{this.state.show && children}</Col>
         {/* 如果不是 dva 2.0 替换成 {children} end */}
       </div>

@@ -3,7 +3,7 @@ import QueueAnim from "rc-queue-anim";
 import { Row, Col } from "antd";
 import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
 import { getChildrenToRender, isImg } from "./utils";
-import { Menu, Icon } from "antd";
+import { Menu } from "antd";
 import { Link } from "react-router-dom";
 
 class Teams2 extends React.PureComponent {
@@ -19,10 +19,10 @@ class Teams2 extends React.PureComponent {
         >
           <Menu.Item key="1">Option 1</Menu.Item>
           <Menu.Item key="2">Option 2</Menu.Item>
-          <Menu.Item key="2">Option 3</Menu.Item>
-          <Menu.Item key="2">Option 4</Menu.Item>
-          <Menu.Item key="2">Option 5</Menu.Item>
-          <Menu.Item key="2">Option 6</Menu.Item>
+          <Menu.Item key="3">Option 3</Menu.Item>
+          <Menu.Item key="4">Option 4</Menu.Item>
+          <Menu.Item key="5">Option 5</Menu.Item>
+          <Menu.Item key="6">Option 6</Menu.Item>
         </Menu>
       </Col>
     );
@@ -74,6 +74,7 @@ class Teams2 extends React.PureComponent {
                 component={Row}
               >
                 <Col span={6}>{sideNav}</Col>
+                {/* TODO 内容区域换为Route */}
                 <Col span={18}>{listChildren}</Col>
               </QueueAnim>
             </QueueAnim>
