@@ -51,7 +51,7 @@ export default class Home extends React.Component {
         key="Teams2_0"
         dataSource={Teams20DataSource}
         isMobile={this.state.isMobile}
-      />, // 导航和页尾不进入锚点区，如果需要，自行添加;
+      />,
       // <Point key="list" data={["Teams2_0"]} />
     ];
     // const getSideBar = () => {
