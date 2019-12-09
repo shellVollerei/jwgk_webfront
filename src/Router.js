@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Route,
   Switch,
   Redirect
 } from "react-router-dom";
 import { enquireScreen } from "enquire-js";
-import Header from "./Components/Nav0";
-import Footer from "./Components/Footer1";
+
+import Header from "./Components/Nav3";
+// import Footer from "./Components/Footer2";
+import Footer from "./Components/Footer0";
+import "./Components/less/antMotionStyle.less";
 
 import Income from "./Income";
 import Home from "./Home";
@@ -19,10 +22,9 @@ import Products from "./Products";
 import ToolList from "./toolList";
 
 import {
-  Nav00DataSource,
-  // Footer00DataSource,
-  Footer10DataSource
-} from "./Components/basicData.source.js";
+  Nav30DataSource,
+  Footer00DataSource
+} from "./Components/data.source";
 
 let isMobile;
 enquireScreen(b => {
@@ -47,7 +49,13 @@ class App extends Component {
       <Router>
         <Switch>
           <div>
-            <Header dataSource={Nav00DataSource} isMobile={this.isMobile} />
+            {/* <Header dataSource={Nav00DataSource} isMobile={this.isMobile} /> */}
+            <Header
+              id="Nav3_0"
+              key="Nav3_0"
+              dataSource={Nav30DataSource}
+              isMobile={this.state.isMobile}
+            />
             <Route
               exact
               path="/"
@@ -74,7 +82,12 @@ class App extends Component {
               dataSource={Footer10DataSource}
               isMobile={this.state.isMobile}
             /> */}
-            ,
+            <Footer
+              id="Footer0_0"
+              key="Footer0_0"
+              dataSource={Footer00DataSource}
+              isMobile={this.state.isMobile}
+            />
           </div>
         </Switch>
       </Router>
