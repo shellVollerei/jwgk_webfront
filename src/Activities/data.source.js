@@ -163,11 +163,11 @@ export const Content90DataSource = {
         children: {
           imgWrapper: { className: 'image-wrapper' },
           textWrapper: { className: 'text-wrapper' },
-          img: {
-            className: 'block-img',
-            children:
-              'https://gw.alipayobjects.com/zos/rmsportal/SlFgHDtOTLzccvFrQHLg.png',
-          },
+          // img: {
+          //   className: 'block-img',
+          //   children:
+          //     'https://gw.alipayobjects.com/zos/rmsportal/SlFgHDtOTLzccvFrQHLg.png',
+          // },
           icon: {
             className: 'block-icon',
             children:
@@ -187,11 +187,11 @@ export const Content90DataSource = {
         children: {
           imgWrapper: { className: 'image-wrapper' },
           textWrapper: { className: 'text-wrapper' },
-          img: {
-            className: 'block-img',
-            children:
-              'https://gw.alipayobjects.com/zos/rmsportal/SlFgHDtOTLzccvFrQHLg.png',
-          },
+          // img: {
+          //   className: 'block-img',
+          //   children:
+          //     'https://gw.alipayobjects.com/zos/rmsportal/SlFgHDtOTLzccvFrQHLg.png',
+          // },
           icon: {
             className: 'block-icon',
             children:
@@ -215,11 +215,11 @@ export const Content90DataSource = {
         children: {
           imgWrapper: { className: 'image-wrapper' },
           textWrapper: { className: 'text-wrapper' },
-          img: {
-            className: 'block-img',
-            children:
-              'https://gw.alipayobjects.com/zos/rmsportal/SlFgHDtOTLzccvFrQHLg.png',
-          },
+          // img: {
+          //   className: 'block-img',
+          //   children:
+          //     'https://gw.alipayobjects.com/zos/rmsportal/SlFgHDtOTLzccvFrQHLg.png',
+          // },
           icon: {
             className: 'block-icon',
             children:

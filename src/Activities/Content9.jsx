@@ -39,9 +39,9 @@ class Content9 extends React.PureComponent {
           delay={isMobile ? [100, 0] : 0}
           {...item.imgWrapper}
         >
-          <div key="image" {...item.img}>
+          {/* <div key="image" {...item.img}>
             <img src={item.img.children} alt="img" />
-          </div>
+          </div> */}
           <div key="name" className="name-wrapper">
             <div key="name" {...item.name}>
               {item.name.children}

@@ -73,9 +73,9 @@ class Teams2 extends React.PureComponent {
                 {...dataSource.block}
                 component={Row}
               >
-                <Col span={6}>{sideNav}</Col>
+                {/* <Col span={6}>{sideNav}</Col> */}
                 {/* TODO 内容区域换为Route */}
-                <Col span={18}>{listChildren}</Col>
+                <Col span={24}>{listChildren}</Col>
               </QueueAnim>
             </QueueAnim>
           </OverPack>
