@@ -3,30 +3,30 @@ import QueueAnim from "rc-queue-anim";
 import { Row, Col } from "antd";
 import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
 import { getChildrenToRender, isImg } from "./utils";
-import { Menu } from "antd";
+// import { Menu } from "antd";
 import { Link } from "react-router-dom";
 
 class Teams2 extends React.PureComponent {
-  getSideNav = () => {
-    return (
-      <Col>
-        <Menu
-          onClick={this.handleClick}
-          style={{ width: "auto", minWidth: 160 }}
-          defaultSelectedKeys={["1"]}
-          defaultOpenKeys={["sub1"]}
-          mode="inline"
-        >
-          <Menu.Item key="1">Option 1</Menu.Item>
-          <Menu.Item key="2">Option 2</Menu.Item>
-          <Menu.Item key="3">Option 3</Menu.Item>
-          <Menu.Item key="4">Option 4</Menu.Item>
-          <Menu.Item key="5">Option 5</Menu.Item>
-          <Menu.Item key="6">Option 6</Menu.Item>
-        </Menu>
-      </Col>
-    );
-  };
+  // getSideNav = () => {
+  //   return (
+  //     <Col>
+  //       <Menu
+  //         onClick={this.handleClick}
+  //         style={{ width: "auto", minWidth: 160 }}
+  //         defaultSelectedKeys={["1"]}
+  //         defaultOpenKeys={["sub1"]}
+  //         mode="inline"
+  //       >
+  //         <Menu.Item key="1">Option 1</Menu.Item>
+  //         <Menu.Item key="2">Option 2</Menu.Item>
+  //         <Menu.Item key="3">Option 3</Menu.Item>
+  //         <Menu.Item key="4">Option 4</Menu.Item>
+  //         <Menu.Item key="5">Option 5</Menu.Item>
+  //         <Menu.Item key="6">Option 6</Menu.Item>
+  //       </Menu>
+  //     </Col>
+  //   );
+  // };
 
   getBlockChildren = data =>
     data.map((item, i) => {
@@ -58,7 +58,7 @@ class Teams2 extends React.PureComponent {
     delete props.dataSource;
     delete props.isMobile;
     const listChildren = this.getBlockChildren(dataSource.block.children);
-    const sideNav = this.getSideNav();
+    // const sideNav = this.getSideNav();
     return (
       <div {...props} {...dataSource.wrapper}>
         <div {...dataSource.page}>

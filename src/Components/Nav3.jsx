@@ -2,15 +2,12 @@ import React from "react";
 import TweenOne from "rc-tween-one";
 import { Menu } from "antd";
 import { getChildrenToRender } from "./utils";
-
-import { HashRouter as Router, Link } from "react-router-dom";
-
 const { Item, SubMenu } = Menu;
 
 class Header3 extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    // console.log(props);
     this.state = {
       phoneOpen: undefined
     };

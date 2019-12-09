@@ -3,7 +3,7 @@
 import React from "react";
 import { enquireScreen } from "enquire-js";
 import { Col } from "antd";
-import { Menu, Icon } from "antd";
+import { Menu } from "antd";
 
 import Teams2 from "./Teams2";
 import { Teams20DataSource } from "./data.source";
