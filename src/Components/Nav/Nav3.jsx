@@ -1,8 +1,7 @@
-import React from "react";
-import TweenOne from "rc-tween-one";
-import { Menu } from "antd";
-import { getChildrenToRender } from "./utils";
-import { Link, Route } from "react-router-dom";
+import React from 'react';
+import TweenOne from 'rc-tween-one';
+import { Menu } from 'antd';
+import { getChildrenToRender } from './utils';
 
 const { Item, SubMenu } = Menu;
 
@@ -11,42 +10,21 @@ class Header3 extends React.Component {
     super(props);
     this.state = {
       phoneOpen: undefined,
-      currentKey: "/products"
     };
   }
 
   phoneClick = () => {
     const phoneOpen = !this.state.phoneOpen;
     this.setState({
-      phoneOpen
+      phoneOpen,
     });
   };
-
-  tabClick = item => {
-    console.log(item);
-    this.setState({
-      currentKey: `/${item.key}`
-    });
-    console.log(this.state.currentKey);
-  };
-
-  componentWillMount() {
-    // const currentKey = window.location.hash.replace(/#|\?.*$/g, "");  // hash模式
-    const currentKey = window.location.pathname.replace(/#|\?.*$/g, "");  // Browser模式
-
-    this.setState({
-      currentKey
-    });
-    
-    // console.log(currentKey);
-    // console.log(window.location);
-  }
 
   render() {
     const { dataSource, isMobile, ...props } = this.props;
-    const { phoneOpen, currentKey } = this.state;
+    const { phoneOpen } = this.state;
     const navData = dataSource.Menu.children;
-    const navChildren = navData.map(item => {
+    const navChildren = navData.map((item) => {
       const { children: a, subItem, ...itemProps } = item;
       if (subItem) {
         return (
@@ -66,11 +44,9 @@ class Header3 extends React.Component {
             {subItem.map(($item, ii) => {
               const { children: childItem } = $item;
               const child = childItem.href ? (
-                <Route>
-                  <Link {...childItem}>
-                    {childItem.children.map(getChildrenToRender)}
-                  </Link>
-                </Route>
+                <a {...childItem}>
+                  {childItem.children.map(getChildrenToRender)}
+                </a>
               ) : (
                 <div {...childItem}>
                   {childItem.children.map(getChildrenToRender)}
@@ -97,16 +73,16 @@ class Header3 extends React.Component {
     return (
       <TweenOne
         component="header"
-        animation={{ opacity: 0, type: "from" }}
+        animation={{ opacity: 0, type: 'from' }}
         {...dataSource.wrapper}
         {...props}
       >
         <div
           {...dataSource.page}
-          className={`${dataSource.page.className}${phoneOpen ? " open" : ""}`}
+          className={`${dataSource.page.className}${phoneOpen ? ' open' : ''}`}
         >
           <TweenOne
-            animation={{ x: -30, type: "from", ease: "easeOutQuad" }}
+            animation={{ x: -30, type: 'from', ease: 'easeOutQuad' }}
             {...dataSource.logo}
           >
             <img width="100%" src={dataSource.logo.children} alt="img" />
@@ -131,12 +107,12 @@ class Header3 extends React.Component {
                     x: 0,
                     height: 0,
                     duration: 300,
-                    onComplete: e => {
+                    onComplete: (e) => {
                       if (this.state.phoneOpen) {
-                        e.target.style.height = "auto";
+                        e.target.style.height = 'auto';
                       }
                     },
-                    ease: "easeInOutQuad"
+                    ease: 'easeInOutQuad',
                   }
                 : null
             }
@@ -144,10 +120,8 @@ class Header3 extends React.Component {
             reverse={!!phoneOpen}
           >
             <Menu
-              mode={isMobile ? "inline" : "horizontal"}
-              // defaultSelectedKeys={["products"]}
-              selectedKeys={[currentKey]}
-              onClick={this.tabClick}
+              mode={isMobile ? 'inline' : 'horizontal'}
+              defaultSelectedKeys={['sub0']}
               theme="light"
             >
               {navChildren}

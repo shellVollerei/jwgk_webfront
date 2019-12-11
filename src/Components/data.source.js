@@ -12,7 +12,7 @@ export const Nav30DataSource = {
     className: "header3-menu",
     children: [
       {
-        name: "item0",
+        name: "products",
         className: "header3-item",
         children: {
           href: "/products",
@@ -20,7 +20,7 @@ export const Nav30DataSource = {
         }
       },
       {
-        name: "item1",
+        name: "activities",
         className: "header3-item",
         children: {
           href: "/activities",
@@ -28,7 +28,7 @@ export const Nav30DataSource = {
         }
       },
       {
-        name: "item2",
+        name: "aboutus",
         className: "header3-item",
         children: {
           href: "/aboutus",
@@ -39,6 +39,7 @@ export const Nav30DataSource = {
   },
   mobileMenu: { className: "header3-mobile-menu" }
 };
+
 export const Footer00DataSource = {
   wrapper: { className: "home-page-wrapper footer0-wrapper" },
   OverPack: { className: "home-page footer0", playScale: 0.05 },
@@ -54,6 +55,7 @@ export const Footer00DataSource = {
     )
   }
 };
+
 export const Footer20DataSource = {
   wrapper: { className: "home-page-wrapper footer2-wrapper" },
   OverPack: { className: "home-page footer2", playScale: 0.05 },

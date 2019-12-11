@@ -5,8 +5,10 @@ import { enquireScreen } from "enquire-js";
 import { Col } from "antd";
 import { Menu } from "antd";
 
-import Teams2 from "./Teams2";
-import { Teams20DataSource } from "./data.source";
+// import Teams2 from "./Teams2";
+import Teams4 from "./Teams4";
+
+import { Teams4DataSource } from "./data.source";
 import "./less/antMotionStyle.less";
 
 let isMobile;
@@ -45,10 +47,16 @@ export default class Home extends React.Component {
 
   render() {
     const children = [
-      <Teams2
-        id="Teams2_0"
-        key="Teams2_0"
-        dataSource={Teams20DataSource}
+      // <Teams2
+      //   id="Teams2_0"
+      //   key="Teams2_0"
+      //   dataSource={Teams20DataSource}
+      //   isMobile={this.state.isMobile}
+      // />,
+      <Teams4
+        id="Teams4_1"
+        key="Teams4_1"
+        dataSource={Teams4DataSource}
         isMobile={this.state.isMobile}
       />
       // <Point key="list" data={["Teams2_0"]} />

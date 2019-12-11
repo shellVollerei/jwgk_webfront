@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import {
+  // HashRouter as Router,
   BrowserRouter as Router,
   Route,
   Switch,
@@ -21,10 +22,7 @@ import Activities from "./Activities";
 import Products from "./Products";
 import ToolList from "./toolList";
 
-import {
-  Nav30DataSource,
-  Footer00DataSource
-} from "./Components/data.source";
+import { Nav30DataSource, Footer00DataSource } from "./Components/data.source";
 
 let isMobile;
 enquireScreen(b => {
@@ -49,7 +47,6 @@ class App extends Component {
       <Router>
         <Switch>
           <div>
-            {/* <Header dataSource={Nav00DataSource} isMobile={this.isMobile} /> */}
             <Header
               id="Nav3_0"
               key="Nav3_0"
