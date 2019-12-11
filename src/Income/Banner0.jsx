@@ -36,18 +36,6 @@ class Banner extends React.PureComponent {
             </Button>
           </Link>
         </QueueAnim>
-        <TweenOne
-          animation={{
-            y: "-=20",
-            yoyo: true,
-            repeat: -1,
-            duration: 1000
-          }}
-          className="banner0-icon"
-          key="icon"
-        >
-          <Icon type="down" />
-        </TweenOne>
       </div>
     );
   }

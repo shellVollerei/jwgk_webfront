@@ -6,7 +6,7 @@ export const Nav30DataSource = {
   logo: {
     className: "header3-logo",
     children:
-      "https://gw.alipayobjects.com/zos/basement_prod/b30cdc2a-d91c-4c78-be9c-7c63b308d4b3.svg"
+      "https://pic2.superbed.cn/item/5df07f341f8f59f4d6d06301.png"
   },
   Menu: {
     className: "header3-menu",
