@@ -2,9 +2,11 @@
 /* eslint arrow-parens: 0 */
 import React from "react";
 import { enquireScreen } from "enquire-js";
-import { Col, Icon, Menu } from "antd";
+import { Col } from "antd";
 
 import Teams4 from "./Teams4";
+import SiderNav from "./SiderNav";
+import PhoneSiderNav from "./PhoneSiderNav";
 
 import { Teams4DataSource } from "./data.source";
 import "./less/antMotionStyle.less";
@@ -20,8 +22,7 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isMobile,
-      show: !location.port // 如果不是 dva 2.0 请删除
+      isMobile
     };
   }
 
@@ -52,35 +53,14 @@ export default class Home extends React.Component {
         isMobile={this.state.isMobile}
       />
     ];
-    const getSideBar = () => {
-      return (
-        <Col>
-          <Menu
-            onClick={this.handleClick}
-            style={{ width: "auto", minWidth: 160 }}
-            defaultSelectedKeys={["1"]}
-            defaultOpenKeys={["sub1"]}
-            mode="inline"
-          >
-            <Menu.Item key="1">Option 1</Menu.Item>
-            <Menu.Item key="2">Option 2</Menu.Item>
-            <Menu.Item key="3">Option 3</Menu.Item>
-            <Menu.Item key="4">Option 4</Menu.Item>
-            <Menu.Item key="5">Option 5</Menu.Item>
-            <Menu.Item key="6">Option 6</Menu.Item>
-          </Menu>
-        </Col>
-      );
-    };
-    const showSideBar = getSideBar();
     return (
       <div>
         <Col
           className="left-side-bar"
           span={5}
-          style={{ minWidth: 160, height: "100%", backgroundColor: "red" }}
+          style={{ minWidth: 160, height: "100%" }}
         >
-          {showSideBar}
+          <SiderNav />
         </Col>
         <Col
           span={19}
@@ -89,13 +69,9 @@ export default class Home extends React.Component {
             this.dom = d;
           }}
         >
-          {/* 如果不是 dva 2.0 替换成 {children} start */}
-          <Col>{this.state.show && children}</Col>
-          {/* 如果不是 dva 2.0 替换成 {children} end */}
+          {children}
         </Col>
-        <div className="phone-sider-bar">
-          <Icon type="double-left" style={{fontSize: 40, position: "absolute", transform: "translate(-50%, -50%)", top: "50%", left: "50%"}} />
-        </div>
+        <PhoneSiderNav />
       </div>
     );
   }
