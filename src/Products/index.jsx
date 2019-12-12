@@ -3,16 +3,17 @@
 import React from "react";
 import { enquireScreen } from "enquire-js";
 
-import Feature6 from "./Feature6";
+
 import Feature0 from "./Feature0";
-import Feature3 from "./Feature3";
-import Feature1 from "./Feature1";
-import Point from "./Point";
+// import Feature6 from "./Feature6";
+// import Feature3 from "./Feature3";
+// import Feature1 from "./Feature1";
+// import Point from "./Point";
 import {
-  Feature60DataSource,
   Feature00DataSource,
-  Feature30DataSource,
-  Feature10DataSource
+  // Feature60DataSource,
+  // Feature30DataSource,
+  // Feature10DataSource
 } from "./data.source";
 import "./less/antMotionStyle.less";
 
@@ -58,28 +59,23 @@ export default class Home extends React.Component {
         dataSource={Feature00DataSource}
         isMobile={this.state.isMobile}
       />,
-      <Feature6
-        id="Feature6_0"
-        key="Feature6_0"
-        dataSource={Feature60DataSource}
-        isMobile={this.state.isMobile}
-      />,
-      // <Feature3
-      //   id="Feature3_0"
-      //   key="Feature3_0"
-      //   dataSource={Feature30DataSource}
+      // <Feature6
+      //   id="Feature6_0"
+      //   key="Feature6_0"
+      //   dataSource={Feature60DataSource}
       //   isMobile={this.state.isMobile}
       // />,
-      <Feature1
-        id="Feature1_0"
-        key="Feature1_0"
-        dataSource={Feature10DataSource}
-        isMobile={this.state.isMobile}
-      />, // 导航和页尾不进入锚点区，如果需要，自行添加;
-      <Point
-        key="list"
-        data={["Feature6_0", "Feature0_0", "Feature1_0"]}
-      />
+      // <Feature1
+      //   id="Feature1_0"
+      //   key="Feature1_0"
+      //   dataSource={Feature10DataSource}
+      //   isMobile={this.state.isMobile}
+      // />,
+      // <Point
+      //   key="list"
+      //   // data={["Feature6_0", "Feature0_0", "Feature1_0"]}
+      //   data={["Feature6_0"]}
+      // />
     ];
     return (
       <div

@@ -2,10 +2,8 @@
 /* eslint arrow-parens: 0 */
 import React from "react";
 import { enquireScreen } from "enquire-js";
-import { Col } from "antd";
-import { Menu } from "antd";
+import { Col, Icon, Menu } from "antd";
 
-// import Teams2 from "./Teams2";
 import Teams4 from "./Teams4";
 
 import { Teams4DataSource } from "./data.source";
@@ -47,19 +45,12 @@ export default class Home extends React.Component {
 
   render() {
     const children = [
-      // <Teams2
-      //   id="Teams2_0"
-      //   key="Teams2_0"
-      //   dataSource={Teams20DataSource}
-      //   isMobile={this.state.isMobile}
-      // />,
       <Teams4
         id="Teams4_1"
         key="Teams4_1"
         dataSource={Teams4DataSource}
         isMobile={this.state.isMobile}
       />
-      // <Point key="list" data={["Teams2_0"]} />
     ];
     const getSideBar = () => {
       return (
@@ -86,13 +77,13 @@ export default class Home extends React.Component {
       <div>
         <Col
           className="left-side-bar"
-          span={6}
+          span={5}
           style={{ minWidth: 160, height: "100%", backgroundColor: "red" }}
         >
           {showSideBar}
         </Col>
         <Col
-          span={18}
+          span={19}
           className="templates-wrapper"
           ref={d => {
             this.dom = d;
@@ -103,6 +94,9 @@ export default class Home extends React.Component {
           <Col>{this.state.show && children}</Col>
           {/* 如果不是 dva 2.0 替换成 {children} end */}
         </Col>
+        <div className="phone-sider-bar">
+          <Icon type="double-left" style={{fontSize: 40, position: "absolute", transform: "translate(-50%, -50%)", top: "50%", left: "50%"}} />
+        </div>
       </div>
     );
   }

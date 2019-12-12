@@ -1,21 +1,23 @@
 /* eslint no-undef: 0 */
 /* eslint arrow-parens: 0 */
-import React from 'react';
-import { enquireScreen } from 'enquire-js';
+import React from "react";
+import { enquireScreen } from "enquire-js";
 
-import Teams0 from './Teams0';
-import Content9 from './Content9';
-import Teams2 from './Teams2';
-import Point from './Point';
+import Feature1 from "./Feature1";
+import Teams0 from "./Teams0";
+import Content9 from "./Content9";
+import Teams2 from "./Teams2";
+import Point from "./Point";
 import {
   Teams00DataSource,
   Content90DataSource,
   Teams20DataSource,
-} from './data.source';
-import './less/antMotionStyle.less';
+  Feature10DataSource
+} from "./data.source";
+import "./less/antMotionStyle.less";
 
 let isMobile;
-enquireScreen((b) => {
+enquireScreen(b => {
   isMobile = b;
 });
 
@@ -26,13 +28,13 @@ export default class Home extends React.Component {
     super(props);
     this.state = {
       isMobile,
-      show: !location.port, // 如果不是 dva 2.0 请删除
+      show: !location.port // 如果不是 dva 2.0 请删除
     };
   }
 
   componentDidMount() {
     // 适配手机屏幕;
-    enquireScreen((b) => {
+    enquireScreen(b => {
       this.setState({ isMobile: !!b });
     });
     // dva 2.0 样式在组件渲染之后动态加载，导致滚动组件不生效；线上不影响；
@@ -41,7 +43,7 @@ export default class Home extends React.Component {
       // 样式 build 时间在 200-300ms 之间;
       setTimeout(() => {
         this.setState({
-          show: true,
+          show: true
         });
       }, 500);
     }
@@ -67,13 +69,22 @@ export default class Home extends React.Component {
         key="Teams2_0"
         dataSource={Teams20DataSource}
         isMobile={this.state.isMobile}
-      />, // 导航和页尾不进入锚点区，如果需要，自行添加;
-      <Point key="list" data={['Teams0_0', 'Content9_0', 'Teams2_0']} />,
+      />,
+      <Feature1
+        id="Feature1_0"
+        key="Feature1_0"
+        dataSource={Feature10DataSource}
+        isMobile={this.state.isMobile}
+      />,
+      <Point
+        key="list"
+        data={["Teams0_0", "Content9_0", "Teams2_0", "Feature1_0"]}
+      />
     ];
     return (
       <div
         className="templates-wrapper"
-        ref={(d) => {
+        ref={d => {
           this.dom = d;
         }}
       >
