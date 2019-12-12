@@ -457,7 +457,7 @@ export const Feature10DataSource = {
   OverPack: { className: "home-page content1", playScale: 0.3 },
   imgWrapper: { className: "content1-img", md: 10, xs: 24 },
   img: {
-    children: "https://zos.alipayobjects.com/rmsportal/nLzbeGQLPyBJoli.png"
+    children: "https://pic.superbed.cn/item/5df223371f8f59f4d69f8897.jpg"
   },
   textWrapper: { className: "content1-text", md: 14, xs: 24 },
   title: { className: "content1-title", children: "企业资源管理" },

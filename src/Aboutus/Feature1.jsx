@@ -1,8 +1,8 @@
-import React from 'react';
-import QueueAnim from 'rc-queue-anim';
-import TweenOne from 'rc-tween-one';
-import { Row, Col } from 'antd';
-import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
+import React from "react";
+import QueueAnim from "rc-queue-anim";
+import TweenOne from "rc-tween-one";
+import { Row, Col } from "antd";
+import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
 
 function Content1(props) {
   const { ...tagProps } = props;
@@ -10,20 +10,20 @@ function Content1(props) {
   delete tagProps.dataSource;
   delete tagProps.isMobile;
   const animType = {
-    queue: isMobile ? 'bottom' : 'right',
+    queue: isMobile ? "bottom" : "right",
     one: isMobile
       ? {
-          scaleY: '+=0.3',
+          scaleY: "+=0.3",
           opacity: 0,
-          type: 'from',
-          ease: 'easeOutQuad',
+          type: "from",
+          ease: "easeOutQuad"
         }
       : {
-          x: '-=30',
+          x: "-=30",
           opacity: 0,
-          type: 'from',
-          ease: 'easeOutQuad',
-        },
+          type: "from",
+          ease: "easeOutQuad"
+        }
   };
   return (
     <div {...tagProps} {...dataSource.wrapper}>
@@ -36,23 +36,28 @@ function Content1(props) {
           component={Col}
           componentProps={{
             md: dataSource.imgWrapper.md,
-            xs: dataSource.imgWrapper.xs,
+            xs: dataSource.imgWrapper.xs
           }}
         >
           <span {...dataSource.img}>
-            <img src={dataSource.img.children} width="100%" alt="img" />
+            <img
+              src={dataSource.img.children}
+              width="100%"
+              alt="img"
+              style={{ borderRadius: "50%" }}
+            />
           </span>
         </TweenOne>
         <QueueAnim
           key="text"
           type={animType.queue}
           leaveReverse
-          ease={['easeOutQuad', 'easeInQuad']}
+          ease={["easeOutQuad", "easeInQuad"]}
           {...dataSource.textWrapper}
           component={Col}
           componentProps={{
             md: dataSource.textWrapper.md,
-            xs: dataSource.textWrapper.xs,
+            xs: dataSource.textWrapper.xs
           }}
         >
           <h2 key="h1" {...dataSource.title}>

@@ -154,7 +154,7 @@ export const Feature00DataSource = {
               className: "content0-block-title",
               children: "消毒供应中心"
             },
-            { name: "content", children: "支付、结算、核算接入产品效率翻四倍" }
+            { name: "content", children: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" }
           ]
         }
       },
@@ -179,7 +179,7 @@ export const Feature00DataSource = {
             },
             {
               name: "content",
-              children: "在所有需求配置环节事前风险控制和质量控制能力"
+              children: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
             }
           ]
         }
@@ -205,7 +205,7 @@ export const Feature00DataSource = {
             },
             {
               name: "content",
-              children: "沉淀产品接入效率和运营小二工作效率数据"
+              children: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
             }
           ]
         }
@@ -231,7 +231,7 @@ export const Feature00DataSource = {
             },
             {
               name: "content",
-              children: "沉淀产品接入效率和运营小二工作效率数据"
+              children: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
             }
           ]
         }
@@ -257,7 +257,7 @@ export const Feature00DataSource = {
             },
             {
               name: "content",
-              children: "沉淀产品接入效率和运营小二工作效率数据"
+              children: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
             }
           ]
         }

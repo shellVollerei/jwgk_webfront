@@ -4,7 +4,7 @@ export const Feature10DataSource = {
   OverPack: { className: 'home-page content1', playScale: 0.3 },
   imgWrapper: { className: 'content1-img', md: 10, xs: 24 },
   img: {
-    children: 'https://zos.alipayobjects.com/rmsportal/nLzbeGQLPyBJoli.png',
+    children: 'https://pic1.superbed.cn/item/5df21d2f1f8f59f4d699188c.png',
   },
   textWrapper: { className: 'content1-text', md: 14, xs: 24 },
   title: {
@@ -54,7 +54,7 @@ export const Feature40DataSource = {
     ],
   },
   img: {
-    children: 'https://zos.alipayobjects.com/rmsportal/VHGOVdYyBwuyqCx.png',
+    children: 'https://pic1.superbed.cn/item/5df21dde1f8f59f4d699c21e.jpg',
     className: 'content6-img',
     xs: 24,
     md: 14,
