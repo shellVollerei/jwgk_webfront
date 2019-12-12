@@ -90,7 +90,6 @@ export default class Home extends React.Component {
           }}
         >
           {/* 如果不是 dva 2.0 替换成 {children} start */}
-          {/* <Col span={6}>{showSideBar}</Col> */}
           <Col>{this.state.show && children}</Col>
           {/* 如果不是 dva 2.0 替换成 {children} end */}
         </Col>
