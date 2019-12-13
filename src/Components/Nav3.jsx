@@ -31,7 +31,7 @@ class Header3 extends React.Component {
   };
 
   componentWillMount() {
-    const currentKey = window.location.hash.replace(/#|\?.*$/g, "");  // hash模式
+    const currentKey = window.location.hash.replace(/#|\?.*$/g, ""); // hash模式
     // const currentKey = window.location.pathname.replace(/#|\?.*$/g, ""); // Browser模式
 
     this.setState({
@@ -48,7 +48,7 @@ class Header3 extends React.Component {
     const navData = dataSource.Menu.children;
     const navChildren = navData.map(item => {
       const { children: a, subItem, ...itemProps } = item;
-      console.log(a);
+      // console.log(a);
       if (subItem) {
         return (
           <SubMenu
@@ -89,7 +89,10 @@ class Header3 extends React.Component {
       return (
         <Item key={item.name} {...itemProps}>
           <Route>
-            <Link to={a.href} className={`header3-item-block ${a.className}`.trim()}>
+            <Link
+              to={a.href}
+              className={`header3-item-block ${a.className}`.trim()}
+            >
               {a.children.map(getChildrenToRender)}
             </Link>
           </Route>

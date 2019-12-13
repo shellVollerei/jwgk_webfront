@@ -45,13 +45,15 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <div>
+          <div style={{ overflow: "hidden" }}>
             <Header
               id="Nav3_0"
               key="Nav3_0"
               dataSource={Nav30DataSource}
               isMobile={this.state.isMobile}
+              style={{ position: 'fixed' }}
             />
+            <div className="nouse" style={{ width: "100%", height: "64px" }}></div>
             <Route
               exact
               path="/"

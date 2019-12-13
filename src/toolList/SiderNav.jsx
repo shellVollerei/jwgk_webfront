@@ -31,7 +31,7 @@ class SiderNav extends React.PureComponent {
           mode="inline"
           openKeys={this.state.openKeys}
           onOpenChange={this.onOpenChange}
-          style={{ width: 256 }}
+          style={{ width: 256, position: "fixed" }}
         >
           <SubMenu
             key="sub1"
