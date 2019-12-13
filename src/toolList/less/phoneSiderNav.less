@@ -8,6 +8,9 @@
     height: 50px;
     overflow: hidden;
   }
+  .nav-list {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -19,19 +22,32 @@
     width: 50px;
     height: 50px;
     overflow: hidden;
+    .right-icon {
+      font-size: 40;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
   }
   .nav-list-curtain {
+    // display: none;
     width: 100%;
     height: 100%;
-    background-color: red;
+    background-color: black;
     z-index: 1000;
-    .nav-list {
-      background-color: #333;
-      width: 70%;
-      height: 100%;
-      position: absolute;
-      right: 0;
-      z-index: 1001;
-    }
+    position: absolute;
+    opacity: 0.3;
+  }
+
+  .nav-list {
+    // display: none;
+    background-color: white;
+    opacity: 1;
+    width: auto;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 1001;
   }
 }
