@@ -30,8 +30,8 @@
       left: 50%;
     }
   }
-  .nav-list-curtain {
-    // display: none;
+
+  .nav-list-curtain-open {
     width: 100%;
     height: 100%;
     background-color: black;
@@ -40,8 +40,17 @@
     opacity: 0.3;
   }
 
-  .nav-list {
-    // display: none;
+  .nav-list-curtain-close {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1000;
+    position: fixed;
+    opacity: 0.3;
+  }
+
+  .nav-list-open {
     background-color: white;
     opacity: 1;
     width: auto;
@@ -49,5 +58,24 @@
     position: fixed;
     left: 0;
     z-index: 1001;
+  }
+
+  .nav-list-close {
+    display: none;
+    background-color: white;
+    opacity: 1;
+    width: auto;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    z-index: 1001;
+  }
+
+  .icon-show {
+    display: block;
+  }
+
+  .icon-hide {
+    display: none;
   }
 }

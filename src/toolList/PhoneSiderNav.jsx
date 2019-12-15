@@ -5,12 +5,35 @@ const { SubMenu } = Menu;
 // import { getChildrenToRender } from './utils';
 
 class SiderNav extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      iconStyle: "icon-show",
+      navStyle: "nav-list-curtain-close",
+      curtainStyle: "nav-list-close",
+      navOpen: "nav-list-curtain-open",
+      navClose: "nav-list-curtain-close",
+      curtainOpen: "nav-list-open",
+      curtainClose: "nav-list-close"
+    };
+  }
+
   closeCurtain = () => {
     console.log("close");
-    // TODO: 隐藏幕布 & phoneSiderNav
+    this.setState({
+      navStyle: "nav-list-curtain-close",
+      iconStyle: "icon-show",
+      curtainStyle: "nav-list-close"
+    });
+    // TODO: 隐藏幕布 & phoneSiderNav & 显示 Icon
   };
   openCurtain = () => {
     console.log("open");
+    this.setState({
+      navStyle: "nav-list-curtain-open",
+      iconStyle: "icon-hide",
+      curtainStyle: "nav-list-open"
+    });
     // TODO: 给幕布curtain和导航phoneSiderNav加闪出事件，并隐藏 Icon
   };
 
@@ -21,7 +44,7 @@ class SiderNav extends React.PureComponent {
           <Icon
             type="database"
             theme="filled"
-            className="right-icon"
+            className={this.iconStyle}
             onClick={this.openCurtain}
             style={{
               fontSize: 40,
@@ -32,8 +55,8 @@ class SiderNav extends React.PureComponent {
             }}
           />
         </div>
-        <div className="nav-list-curtain" onClick={this.closeCurtain}></div>
-        <div className="nav-list">
+        <div className={this.curtainStyle} onClick={this.closeCurtain}></div>
+        <div className={this.navStyle}>
           <Menu
             onClick={this.handleClick}
             style={{ width: 256 }}

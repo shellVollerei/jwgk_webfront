@@ -69,6 +69,7 @@ export default class Home extends React.Component {
             this.dom = d;
           }}
         >
+          {/* {this.props.children} */}
           {children}
         </Col>
         <PhoneSiderNav />

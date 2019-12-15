@@ -62,7 +62,7 @@ class App extends Component {
             <Route exact path="/home" component={Home} />
             <Route exact path="/income" component={Income} />
             <Route exact path="/introduce" component={Introduce} />
-            <Route
+            {/* <Route
               exact
               path="/products"
               render={() => (
@@ -70,7 +70,17 @@ class App extends Component {
                   <Route path="/products/introduce" component={Introduce} />
                 </Products>
               )}
+            /> */}
+            <Route
+              exact
+              path="/toollist"
+              render={() => (
+                <ToolList>
+                  <Route path="/toollist/introduce" component={Introduce} />
+                </ToolList>
+              )}
             />
+            <Route exact path="/products" component={Products} />
             <Route exact path="/activities" component={Activities} />
             <Route exact path="/aboutus" component={Aboutus} />
             <Route exact path="/toollist" component={ToolList} />
