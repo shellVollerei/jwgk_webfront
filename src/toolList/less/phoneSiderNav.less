@@ -63,17 +63,20 @@
     position: fixed;
     left: 0;
     z-index: 1001;
-    transition: 0 ease;
-    -moz-transition: 0 ease;
-    -webkit-transition: 0 ease;
-    -o-transition: 0 ease;
+    // 过度属性出了点问题？
+    // transition: left 4s ease-out;
+    // -moz-transition: left 4s ease-out;
+    // -o-transition: left 4s ease-out;
+    // -webkit-transition: left 4s ease-out;
   }
 
   .nav-list-open {
-    left: 0;
+    // left: 0;
+    visibility: visible;
   }
 
   .nav-list-close {
-    left: -100vw;
+    // left: -100%;
+    visibility: hidden;
   }
 }
