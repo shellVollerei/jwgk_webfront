@@ -10,31 +10,31 @@ class SiderNav extends React.PureComponent {
     this.state = {
       iconStyle: "icon-show",
       navStyle: "nav-list-curtain-close",
-      curtainStyle: "nav-list-close",
-      navOpen: "nav-list-curtain-open",
-      navClose: "nav-list-curtain-close",
-      curtainOpen: "nav-list-open",
-      curtainClose: "nav-list-close"
+      curtainStyle: "nav-list-close"
     };
   }
 
   closeCurtain = () => {
-    console.log("close");
+    // console.log("close");
+    // TODO: 隐藏幕布 & phoneSiderNav & 显示 Icon
     this.setState({
       navStyle: "nav-list-curtain-close",
       iconStyle: "icon-show",
       curtainStyle: "nav-list-close"
     });
-    // TODO: 隐藏幕布 & phoneSiderNav & 显示 Icon
   };
   openCurtain = () => {
-    console.log("open");
-    this.setState({
-      navStyle: "nav-list-curtain-open",
-      iconStyle: "icon-hide",
-      curtainStyle: "nav-list-open"
-    });
+    // console.log("open");
     // TODO: 给幕布curtain和导航phoneSiderNav加闪出事件，并隐藏 Icon
+    this.setState({
+      navStyle: "nav-list-open",
+      iconStyle: "icon-hide",
+      curtainStyle: "nav-list-curtain-open"
+    });
+  };
+
+  handleClick = () => {
+    // TODO: 点击跳转
   };
 
   render() {
@@ -44,7 +44,7 @@ class SiderNav extends React.PureComponent {
           <Icon
             type="database"
             theme="filled"
-            className={this.iconStyle}
+            className={[this.state.iconStyle, "icon"].join(" ")}
             onClick={this.openCurtain}
             style={{
               fontSize: 40,
@@ -55,8 +55,11 @@ class SiderNav extends React.PureComponent {
             }}
           />
         </div>
-        <div className={this.curtainStyle} onClick={this.closeCurtain}></div>
-        <div className={this.navStyle}>
+        <div
+          className={[this.state.curtainStyle, "nav-list-curtain"].join(" ")}
+          onClick={this.closeCurtain}
+        ></div>
+        <div className={[this.state.navStyle, "nav-list"].join(" ")}>
           <Menu
             onClick={this.handleClick}
             style={{ width: 256 }}

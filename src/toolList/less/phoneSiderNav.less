@@ -22,60 +22,58 @@
     width: 50px;
     height: 50px;
     overflow: hidden;
-    .right-icon {
+    .icon {
       font-size: 40;
       position: fixed;
       transform: translate(-50%, -50%);
       top: 50%;
       left: 50%;
     }
+    .icon-show {
+      visibility: visible;
+    }
+    .icon-hide {
+      visibility: hidden;
+    }
+  }
+
+  .nav-list-curtain {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    z-index: 1000;
+    position: fixed;
+    opacity: 0.3;
   }
 
   .nav-list-curtain-open {
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    z-index: 1000;
-    position: fixed;
-    opacity: 0.3;
+    visibility: visible;
   }
 
   .nav-list-curtain-close {
-    display: none;
-    width: 100%;
+    visibility: hidden;
+  }
+
+  .nav-list {
+    background-color: white;
+    height: 100vh;
+    opacity: 1;
+    width: auto;
     height: 100%;
-    background-color: black;
-    z-index: 1000;
     position: fixed;
-    opacity: 0.3;
+    left: 0;
+    z-index: 1001;
+    transition: 0 ease;
+    -moz-transition: 0 ease;
+    -webkit-transition: 0 ease;
+    -o-transition: 0 ease;
   }
 
   .nav-list-open {
-    background-color: white;
-    opacity: 1;
-    width: auto;
-    height: 100%;
-    position: fixed;
     left: 0;
-    z-index: 1001;
   }
 
   .nav-list-close {
-    display: none;
-    background-color: white;
-    opacity: 1;
-    width: auto;
-    height: 100%;
-    position: fixed;
-    left: 0;
-    z-index: 1001;
-  }
-
-  .icon-show {
-    display: block;
-  }
-
-  .icon-hide {
-    display: none;
+    left: -100vw;
   }
 }
