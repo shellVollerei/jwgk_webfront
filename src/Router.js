@@ -8,20 +8,20 @@ import {
 } from "react-router-dom";
 import { enquireScreen } from "enquire-js";
 
-import Header from "./Components/Nav3";
-// import Footer from "./Components/Footer2";
-import Footer from "./Components/Footer0";
-import "./Components/less/antMotionStyle.less";
+import Header from "./publicComponents/Nav3";
+// import Footer from "./publicComponents/Footer2";
+import Footer from "./publicComponents/Footer0";
+import "./publicComponents/less/antMotionStyle.less";
 
-import Income from "./Income";
-import Home from "./Home";
-import Introduce from "./Introduce";
-import Aboutus from "./Aboutus";
-import Activities from "./Activities";
-import Products from "./Products";
-import ToolList from "./toolList";
+import Income from "./pages/Income";
+import Home from "./pages/Home";
+import Introduce from "./pages/Introduce";
+import Aboutus from "./pages/Aboutus";
+import Activities from "./pages/Activities";
+import Products from "./pages/Products";
+import ToolList from "./pages/toolList";
 
-import { Nav30DataSource, Footer00DataSource } from "./Components/data.source";
+import { Nav30DataSource, Footer00DataSource } from "./publicComponents/data.source";
 
 let isMobile;
 enquireScreen(b => {
