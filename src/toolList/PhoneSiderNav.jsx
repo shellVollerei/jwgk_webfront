@@ -13,10 +13,10 @@ class SiderNav extends React.PureComponent {
       curtainStyle: "nav-list-close"
     };
   }
+  // TODO: 后期将此组件信息提取至 data.source.js 中，由 redux 统一进行管理
 
   closeCurtain = () => {
-    // console.log("close");
-    // TODO: 隐藏幕布 & phoneSiderNav & 显示 Icon
+    // 隐藏幕布 & phoneSiderNav & 显示 Icon
     this.setState({
       navStyle: "nav-list-curtain-close",
       iconStyle: "icon-show",
@@ -24,8 +24,7 @@ class SiderNav extends React.PureComponent {
     });
   };
   openCurtain = () => {
-    // console.log("open");
-    // TODO: 给幕布curtain和导航phoneSiderNav加闪出事件，并隐藏 Icon
+    // 给幕布curtain和导航phoneSiderNav加闪出事件，并隐藏 Icon
     this.setState({
       navStyle: "nav-list-open",
       iconStyle: "icon-hide",
@@ -34,7 +33,7 @@ class SiderNav extends React.PureComponent {
   };
 
   handleClick = () => {
-    // TODO: 点击跳转
+    // TODO: 点击跳转相应页面
   };
 
   render() {
