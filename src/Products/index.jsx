@@ -5,10 +5,6 @@ import { enquireScreen } from "enquire-js";
 
 
 import Feature0 from "./Feature0";
-// import Feature6 from "./Feature6";
-// import Feature3 from "./Feature3";
-// import Feature1 from "./Feature1";
-// import Point from "./Point";
 import {
   Feature00DataSource,
   // Feature60DataSource,
@@ -59,23 +55,6 @@ export default class Home extends React.Component {
         dataSource={Feature00DataSource}
         isMobile={this.state.isMobile}
       />,
-      // <Feature6
-      //   id="Feature6_0"
-      //   key="Feature6_0"
-      //   dataSource={Feature60DataSource}
-      //   isMobile={this.state.isMobile}
-      // />,
-      // <Feature1
-      //   id="Feature1_0"
-      //   key="Feature1_0"
-      //   dataSource={Feature10DataSource}
-      //   isMobile={this.state.isMobile}
-      // />,
-      // <Point
-      //   key="list"
-      //   // data={["Feature6_0", "Feature0_0", "Feature1_0"]}
-      //   data={["Feature6_0"]}
-      // />
     ];
     return (
       <div
