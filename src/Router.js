@@ -1,3 +1,10 @@
+/*
+ * @Author: fatewang
+ * @Date: 2019-12-20 11:16:01
+ * @Last Modified by: fatewang
+ * @Last Modified time: 2019-12-20 11:17:23
+ */
+
 import React, { Component } from "react";
 import {
   HashRouter as Router,
@@ -21,7 +28,10 @@ import Activities from "./pages/Activities";
 import Products from "./pages/Products";
 import ToolList from "./pages/toolList";
 
-import { Nav30DataSource, Footer00DataSource } from "./publicComponents/data.source";
+import {
+  Nav30DataSource,
+  Footer00DataSource
+} from "./publicComponents/data.source";
 
 let isMobile;
 enquireScreen(b => {
@@ -51,9 +61,12 @@ class App extends Component {
               key="Nav3_0"
               dataSource={Nav30DataSource}
               isMobile={this.state.isMobile}
-              style={{ position: 'fixed' }}
+              style={{ position: "fixed" }}
             />
-            <div className="nouse" style={{ width: "100%", height: "64px" }}></div>
+            <div
+              className="nouse"
+              style={{ width: "100%", height: "64px" }}
+            ></div>
             <Route
               exact
               path="/"
