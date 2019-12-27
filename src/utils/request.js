@@ -1,17 +1,22 @@
 /*
- * @Author: fatewang@tencent.com
- * @Date: 2019-04-19 11:17:56
- * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2019-10-27 16:50:26
+ * @Author       : fatewang
+ * @Github       : https://github.com/Burning-Shadow
+ * @Major        : Software Engineering
+ * @SchoolStatus : 2016
+ * @Date         : 2019-12-20 10:45:26
+ * @LastEditors  : fatewang
+ * @LastEditTime : 2019-12-27 22:24:46
+ * @Description  : This is a tool which is used to package axios
+ * @ContactMe    : siir_52721@qq.com
  */
 
 import qs from "qs";
 import axios from "axios";
-// import { Message } from "element-ui";
 
 import log from "@/utils/log";
 
 export const baseURL = process.env.NODE_ENV === "production" ? "/" : "/proxy";
+export const baseURL = "http://39.100.118.220/";
 
 // 创建一个错误
 function errorCreate(msg) {
@@ -27,14 +32,6 @@ function errorLog(err) {
     log.danger(">>>>>> Error >>>>>>");
     console.log(err);
   }
-  // 显示提示
-  alert({
-    message: err.message,
-    showClose: true,
-    type: "error",
-    duration: 5 * 1000,
-    offset: 100
-  });
 }
 
 // 创建一个 axios 实例
@@ -59,29 +56,23 @@ const service = axios.create({
 service.interceptors.response.use(
   response => {
     // dataAxios 是 axios 返回数据中的 data
-    const dataAxios = response.data;
+    const dataAxios = response;
     if (response.config.customResponse) {
       return dataAxios;
     }
     // 这个状态码是和后端约定的
-    const { code, status } = dataAxios;
+    const { code } = dataAxios;
     // 根据 code 进行判断
-    if (code === undefined && status === undefined) {
+    if (code === undefined) {
       return dataAxios;
     } else {
       let resCode = code;
-      if (code === undefined) {
-        resCode = status;
-      }
       // 有 code 代表这是一个后端接口 可以进行进一步的判断
       switch (resCode) {
-        case 0:
+        case 100:
           return dataAxios.data;
-        case 401:
-          window.location.href = dataAxios.data && dataAxios.data.redirect;
-          break;
         default:
-          // 不是正确的 code
+          // 错误状态码为400  由于后台只有这两种状态码故默认报错
           errorCreate(
             `${dataAxios.message || dataAxios.msg}: ${response.config.url}`
           );

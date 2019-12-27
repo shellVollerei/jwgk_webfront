@@ -1,9 +1,47 @@
+/*
+ * @Author       : fatewang
+ * @Github       : https://github.com/Burning-Shadow
+ * @Major        : Software Engineering
+ * @SchoolStatus : 2016
+ * @Date         : 2019-12-19 16:43:56
+ * @LastEditors  : fatewang
+ * @LastEditTime : 2019-12-27 23:03:30
+ * @Description  : Edit it for yourself
+ * @ContactMe    : siir_52721@qq.com
+ */
 import axios from "axios";
+import request from "../utils/request";
+
 import {
   GET_STUDENTS_LIST,
   GET_COURSES_LIST,
-  GET_STUDENT_LIST
+  GET_STUDENT_LIST,
+  GET_MAIN_NAV_LIST
 } from "./actionTypes";
+
+// 获取 nav 栏跳转链接
+const getMainNavListAction = data => ({
+  type: GET_MAIN_NAV_LIST,
+  data
+});
+
+export const getMainNavList = data => {
+  return dispatch => {
+    request.get("", {
+      params: {
+        post_type: "primary_menu"
+      }
+    }).then(resData=>{
+      const data = resData;
+      const action = getMainNavListAction(data);
+      dispatch(action);
+    }).finally(()=>{
+      // console.log("Now we are alreday get the MainNavList");
+    }).catch(e=>{
+      console.log(e);
+    })
+  }
+}
 
 // 获取学生列表
 const getStudentsListAction = data => ({
