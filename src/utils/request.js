@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-20 10:45:26
  * @LastEditors  : fatewang
- * @LastEditTime : 2019-12-27 22:24:46
+ * @LastEditTime : 2019-12-27 23:47:30
  * @Description  : This is a tool which is used to package axios
  * @ContactMe    : siir_52721@qq.com
  */
@@ -15,7 +15,7 @@ import axios from "axios";
 
 import log from "@/utils/log";
 
-export const baseURL = process.env.NODE_ENV === "production" ? "/" : "/proxy";
+// export const baseURL = process.env.NODE_ENV === "production" ? "/" : "/proxy";
 export const baseURL = "http://39.100.118.220/";
 
 // 创建一个错误
