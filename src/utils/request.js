@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-20 10:45:26
  * @LastEditors  : fatewang
- * @LastEditTime : 2019-12-27 23:47:30
+ * @LastEditTime : 2019-12-28 11:38:42
  * @Description  : This is a tool which is used to package axios
  * @ContactMe    : siir_52721@qq.com
  */
@@ -43,13 +43,17 @@ const service = axios.create({
   },
   transformRequest: function(data, config) {
     if (config["Content-Type"] === "application/x-www-form-urlencoded") {
-      return qs.stringify(data);
+      return escape(qs.stringify(data));
     } else if (config["Content-Type"] === "application/json") {
-      return JSON.stringify(data);
+      return escape(JSON.stringify(data));
     } else {
-      return data;
+      return escape(data);
     }
-  }
+  },
+  transformResponse: function (data) {
+    // 反编译汉字码
+    return JSON.parse(unescape(JSON.stringify(data)));
+  },
 });
 
 // 响应拦截器
@@ -74,7 +78,8 @@ service.interceptors.response.use(
         default:
           // 错误状态码为400  由于后台只有这两种状态码故默认报错
           errorCreate(
-            `${dataAxios.message || dataAxios.msg}: ${response.config.url}`
+            // `${dataAxios.message || dataAxios.msg}: ${response.config.url}`
+            `we have no message about backend, if u have any question plz contact backend provider`
           );
           break;
       }
