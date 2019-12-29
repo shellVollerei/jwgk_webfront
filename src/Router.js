@@ -7,13 +7,16 @@
 
 import React, { Component } from "react";
 import {
-  HashRouter as Router,
-  // BrowserRouter as Router,
+  // HashRouter as Router,
+  BrowserRouter as Router,
   Route,
   Switch,
   Redirect
 } from "react-router-dom";
 import { enquireScreen } from "enquire-js";
+
+import store from "./store/index";
+import { getMainNavList } from "./store/actionCreators";
 
 import Header from "./publicComponents/Nav3";
 // import Footer from "./publicComponents/Footer2";
@@ -44,7 +47,21 @@ class App extends Component {
     this.state = {
       isMobile
     };
+
+    this.state = store.getState().mainNavList;
+    store.subscribe(this.handleStoreChange);
   }
+
+  handleStoreChange = () => {
+    // 组件感知到 state 变化后，重新从 store 中获取 state 数据
+    this.setState(store.getState().mainNavList);
+  }
+
+  componentWillMount() {
+    const action = getMainNavList();
+    store.dispatch(action);
+  }
+
   componentDidMount() {
     // 适配手机屏幕;
     enquireScreen(b => {

@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-20 10:45:26
  * @LastEditors  : fatewang
- * @LastEditTime : 2019-12-28 11:38:42
+ * @LastEditTime : 2019-12-29 12:19:07
  * @Description  : This is a tool which is used to package axios
  * @ContactMe    : siir_52721@qq.com
  */
@@ -13,7 +13,7 @@
 import qs from "qs";
 import axios from "axios";
 
-import log from "@/utils/log";
+import log from "./log";
 
 // export const baseURL = process.env.NODE_ENV === "production" ? "/" : "/proxy";
 export const baseURL = "http://39.100.118.220/";

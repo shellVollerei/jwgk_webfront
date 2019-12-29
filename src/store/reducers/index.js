@@ -1,13 +1,19 @@
+/*
+ * @Author       : fatewang
+ * @Github       : https://github.com/Burning-Shadow
+ * @Major        : Software Engineering
+ * @SchoolStatus : 2016
+ * @Date         : 2019-12-19 16:43:56
+ * @LastEditors  : fatewang
+ * @LastEditTime : 2019-12-29 11:31:36
+ * @Description  : Edit it for yourself
+ * @ContactMe    : siir_52721@qq.com
+ */
 import { combineReducers } from "redux";
 
-import studentMessage from "./studentsMessage";
-import classMessage from "./classMessage";
-import graphMessage from "./graphMessage";
-import studentInfo from './studentInfo'
+
+import mainNavList from "./mainNavList";
 
 export default combineReducers({
-  studentMessage,
-  classMessage,
-  graphMessage,
-  studentInfo
+  mainNavList
 });
