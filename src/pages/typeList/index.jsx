@@ -55,11 +55,17 @@ export default class Home extends React.Component {
     ];
     return (
       <div>
+        {/* 手机屏 NavBar 适配 */}
+        <PhoneSiderNav />
         <Col
           className="left-side-bar"
           span={5}
           style={{ minWidth: 160, height: "100%" }}
+          ref={d => {
+            this.dom = d;
+          }}
         >
+          {/* 电脑屏 NavBar 适配 */}
           <SiderNav />
         </Col>
         <Col
@@ -72,7 +78,6 @@ export default class Home extends React.Component {
           {/* {this.props.children} */}
           {children}
         </Col>
-        <PhoneSiderNav />
       </div>
     );
   }

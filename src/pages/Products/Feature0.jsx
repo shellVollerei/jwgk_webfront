@@ -33,7 +33,7 @@ class Content extends React.PureComponent {
                 const { children: item, ...blockProps } = block;
                 return (
                   <Col key={i.toString()} {...blockProps}>
-                    <Link to={`/toollist`}>
+                    <Link to={`/typelist`}>
                       {/* TODO：这里加上路由 */}
                       <div {...item}>
                         {/* TODO: 后期更改一下 utils.js 文件把 getChildrenToRender 分离出来避免代码冗余。 */}
