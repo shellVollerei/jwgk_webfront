@@ -5,15 +5,15 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-29 15:39:44
  * @LastEditors  : fatewang
- * @LastEditTime : 2019-12-29 15:41:28
+ * @LastEditTime : 2019-12-31 18:02:10
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
 
 import { GET_FOOTER_MSG } from "../actionTypes";
-import { Footer00DataSource } from "../../publicComponents/data.source";
+import { Footer10DataSource } from "../../publicComponents/data.source";
 
-const defaultState = Footer00DataSource;
+const defaultState = Footer10DataSource;
 
 export default (state = defaultState, action) => {
   // state 为上一次所保存的数据（value），action 为用户所传递过来的描述（type）

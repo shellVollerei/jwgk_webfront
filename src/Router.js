@@ -1,8 +1,13 @@
 /*
- * @Author: fatewang
- * @Date: 2019-12-20 11:16:01
- * @Last Modified by: fatewang
- * @Last Modified time: 2019-12-20 11:17:23
+ * @Author       : fatewang
+ * @Github       : https://github.com/Burning-Shadow
+ * @Major        : Software Engineering
+ * @SchoolStatus : 2016
+ * @Date         : 2019-12-09 17:12:04
+ * @LastEditors  : fatewang
+ * @LastEditTime : 2019-12-31 17:53:50
+ * @Description  : Edit it for yourself
+ * @ContactMe    : siir_52721@qq.com
  */
 
 import React, { Component } from "react";
@@ -19,8 +24,7 @@ import store from "./store/index";
 import { getMainNavList } from "./store/actionCreators";
 
 import Header from "./publicComponents/Nav3";
-// import Footer from "./publicComponents/Footer2";
-import Footer from "./publicComponents/Footer0";
+import Footer from './publicComponents/Footer1';
 import "./publicComponents/less/antMotionStyle.less";
 
 import Income from "./pages/Income";
@@ -34,7 +38,7 @@ import TypeList from "./pages/TypeList";
 
 import {
   Nav30DataSource,
-  Footer00DataSource
+  Footer10DataSource
 } from "./publicComponents/data.source";
 
 let isMobile;
@@ -120,12 +124,18 @@ class App extends Component {
               <Route exact path="/typelist/:serve_type" component={TypeList} />
               <Route exact path="/detail/:pro_id" component={Detail} />
             </div>
-            <Footer
+            {/* <Footer
               id="Footer0_0"
               key="Footer0_0"
               dataSource={Footer00DataSource}
               isMobile={this.state.isMobile}
-            />
+            /> */}
+            <Footer
+              id="Footer1_0"
+              key="Footer1_0"
+              dataSource={Footer10DataSource}
+              isMobile={this.state.isMobile}
+            />,
           </div>
         </Switch>
       </Router>
