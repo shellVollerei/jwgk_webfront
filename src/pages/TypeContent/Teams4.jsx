@@ -1,8 +1,9 @@
-import React from 'react';
-import TweenOne from 'rc-tween-one';
-import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
-import { Row, Col } from 'antd';
-import QueueAnim from 'rc-queue-anim';
+import React from "react";
+import TweenOne from "rc-tween-one";
+import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
+import { Row, Col } from "antd";
+import QueueAnim from "rc-queue-anim";
+import { Link } from "react-router-dom";
 // import { getChildrenToRender } from './utils';
 
 class Content8 extends React.PureComponent {
@@ -14,18 +15,20 @@ class Content8 extends React.PureComponent {
     const liAnim = {
       y: 30,
       opacity: 0,
-      type: 'from',
-      ease: 'easeOutQuad',
-      delay,
+      type: "from",
+      ease: "easeOutQuad",
+      delay
     };
     return (
       <TweenOne component={Col} animation={liAnim} key={i.toString()} {...item}>
         <div {...children}>
-          <div className="image-wrapper" {...children.img}>
-            <img src={children.img.children} alt="img" />
-          </div>
-          <h2 {...children.title}>{children.title.children}</h2>
-          <div {...children.content}>{children.content.children}</div>
+          <Link to={item.href}>
+            <div className="image-wrapper" {...children.img} style={{cursor: "pointer"}}>
+              <img src={children.img.children} alt="img" />
+            </div>
+            <h2 {...children.title} style={{cursor: "pointer"}}>{children.title.children}</h2>
+            {/* <div {...children.content}>{children.content.children}</div> */}
+          </Link>
         </div>
       </TweenOne>
     );

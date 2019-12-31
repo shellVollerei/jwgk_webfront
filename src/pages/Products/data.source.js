@@ -16,6 +16,7 @@ export const Feature00DataSource = {
         className: "content0-block",
         md: 8,
         xs: 24,
+        href: "/typelist/xiaodugongyingzhongxin",
         children: {
           className: "content0-block-item",
           children: [
@@ -42,6 +43,7 @@ export const Feature00DataSource = {
         className: "content0-block",
         md: 8,
         xs: 24,
+        href: "/typelist/yuanganguanlike",
         children: {
           className: "content0-block-item",
           children: [
@@ -68,6 +70,7 @@ export const Feature00DataSource = {
         className: "content0-block k3tyxairvlt-editor_css",
         md: 8,
         xs: 24,
+        href: "/typelist/neijingzhongxin",
         children: {
           className: "content0-block-item",
           children: [
@@ -94,6 +97,7 @@ export const Feature00DataSource = {
         className: "content0-block",
         md: 8,
         xs: 24,
+        href: "/typelist/shoushushi",
         children: {
           className: "content0-block-item",
           children: [
@@ -120,6 +124,7 @@ export const Feature00DataSource = {
         className: "content0-block",
         md: 8,
         xs: 24,
+        href: "/typelist/kouqiangzhensuo",
         children: {
           className: "content0-block-item",
           children: [

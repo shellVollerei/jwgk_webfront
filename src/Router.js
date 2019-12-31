@@ -26,10 +26,11 @@ import "./publicComponents/less/antMotionStyle.less";
 import Income from "./pages/Income";
 import Home from "./pages/Home";
 import Introduce from "./pages/Introduce";
+import Detail from "./pages/Detail";
 import Aboutus from "./pages/Aboutus";
 import Activities from "./pages/Activities";
 import Products from "./pages/Products";
-import TypeList from "./pages/typeList";
+import TypeList from "./pages/TypeList";
 
 import {
   Nav30DataSource,
@@ -90,9 +91,9 @@ class App extends Component {
                 path="/"
                 render={() => <Redirect to="/Income"></Redirect>}
               ></Route>
+              <Route exact path="/income" component={Income} />
               {/* 
               <Route exact path="/home" component={Home} />
-              <Route exact path="/income" component={Income} />
               <Route exact path="/introduce" component={Introduce} /> 
                */}
               {/* <Route
@@ -116,7 +117,8 @@ class App extends Component {
               <Route exact path="/products" component={Products} />
               <Route exact path="/activities" component={Activities} />
               <Route exact path="/aboutus" component={Aboutus} />
-              <Route exact path="/typelist" component={TypeList} />
+              <Route exact path="/typelist/:serve_type" component={TypeList} />
+              <Route exact path="/detail/:pro_id" component={Detail} />
             </div>
             <Footer
               id="Footer0_0"

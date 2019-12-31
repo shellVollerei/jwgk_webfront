@@ -4,11 +4,12 @@ import React from "react";
 import { enquireScreen } from "enquire-js";
 import { Col } from "antd";
 
-import Teams4 from "./Teams4";
 import SiderNav from "./SiderNav";
 import PhoneSiderNav from "./PhoneSiderNav";
+import TypeContent from "../TypeContent/index";
 
-import { Teams4DataSource } from "./data.source";
+// TODO: SiderNavList 动态渲染给 NavBar
+import { SiderNavList } from "./data.source";
 import "./less/antMotionStyle.less";
 
 let isMobile;
@@ -45,14 +46,6 @@ export default class Home extends React.Component {
   }
 
   render() {
-    const children = [
-      <Teams4
-        id="Teams4_1"
-        key="Teams4_1"
-        dataSource={Teams4DataSource}
-        isMobile={this.state.isMobile}
-      />
-    ];
     return (
       <div>
         {/* 手机屏 NavBar 适配 */}
@@ -75,8 +68,8 @@ export default class Home extends React.Component {
             this.dom = d;
           }}
         >
-          {/* {this.props.children} */}
-          {children}
+          {/* 向 TypeContent 中传递列表相关参数，动态更新内容区域 */}
+          <TypeContent />
         </Col>
       </div>
     );

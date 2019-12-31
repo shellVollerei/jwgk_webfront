@@ -33,11 +33,9 @@ class Content extends React.PureComponent {
                 const { children: item, ...blockProps } = block;
                 return (
                   <Col key={i.toString()} {...blockProps}>
-                    <Link to={`/typelist`}>
-                      {/* TODO：这里加上路由 */}
+                    {/* Link :to=`/typelist/:serve_type` */}
+                    <Link to={block.href}>
                       <div {...item}>
-                        {/* TODO: 后期更改一下 utils.js 文件把 getChildrenToRender 分离出来避免代码冗余。 */}
-                        {/* TODO: 同时此处的 getChildrenToRender 要进行改造，使其渲染为带 link 标签的部分，以后台传递过来的字段进行路由跳转显示 */}
                         {item.children.map(getChildrenToRender)}
                       </div>
                     </Link>
