@@ -6,7 +6,7 @@ import { Col } from "antd";
 
 import SiderNav from "./SiderNav";
 import PhoneSiderNav from "./PhoneSiderNav";
-import TypeContent from "../TypeContent/index";
+import SkuList from "../SkuList/index"; // 产品列表
 
 // TODO: SiderNavList 动态渲染给 NavBar
 import { SiderNavList } from "./data.source";
@@ -68,8 +68,8 @@ export default class Home extends React.Component {
             this.dom = d;
           }}
         >
-          {/* 向 TypeContent 中传递列表相关参数，动态更新内容区域 */}
-          <TypeContent />
+          {/* TODO: 向 TypeContent 中传递列表相关参数，动态更新内容区域 */}
+          <SkuList />
         </Col>
       </div>
     );

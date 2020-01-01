@@ -5,14 +5,13 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-09 17:12:04
  * @LastEditors  : fatewang
- * @LastEditTime : 2019-12-31 17:53:50
+ * @LastEditTime : 2020-01-01 20:44:44
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
 
 import React, { Component } from "react";
 import {
-  // HashRouter as Router,
   BrowserRouter as Router,
   Route,
   Switch,
@@ -28,13 +27,11 @@ import Footer from './publicComponents/Footer1';
 import "./publicComponents/less/antMotionStyle.less";
 
 import Income from "./pages/Income";
-import Home from "./pages/Home";
-import Introduce from "./pages/Introduce";
 import Detail from "./pages/Detail";
 import Aboutus from "./pages/Aboutus";
 import Activities from "./pages/Activities";
 import Products from "./pages/Products";
-import TypeList from "./pages/TypeList";
+import ProdList from "./pages/ProdList";    // ProdList 为产品列表，SkuList 为货品列表
 
 import {
   Nav30DataSource,
@@ -96,40 +93,12 @@ class App extends Component {
                 render={() => <Redirect to="/Income"></Redirect>}
               ></Route>
               <Route exact path="/income" component={Income} />
-              {/* 
-              <Route exact path="/home" component={Home} />
-              <Route exact path="/introduce" component={Introduce} /> 
-               */}
-              {/* <Route
-                exact
-                path="/products"
-                render={() => (
-                  <Products>
-                    <Route path="/products/introduce" component={Introduce} />
-                  </Products>
-                )}
-              /> */}
-              {/* <Route
-                exact
-                path="/toollist"
-                render={() => (
-                  <ToolList>
-                    <Route path="/toollist/introduce" component={Introduce} />
-                  </ToolList>
-                )}
-              /> */}
               <Route exact path="/products" component={Products} />
               <Route exact path="/activities" component={Activities} />
               <Route exact path="/aboutus" component={Aboutus} />
-              <Route exact path="/typelist/:serve_type" component={TypeList} />
+              <Route exact path="/typelist/:serve_type" component={ProdList} />
               <Route exact path="/detail/:pro_id" component={Detail} />
             </div>
-            {/* <Footer
-              id="Footer0_0"
-              key="Footer0_0"
-              dataSource={Footer00DataSource}
-              isMobile={this.state.isMobile}
-            /> */}
             <Footer
               id="Footer1_0"
               key="Footer1_0"
