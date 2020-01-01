@@ -5,16 +5,17 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-19 16:43:56
  * @LastEditors  : fatewang
- * @LastEditTime : 2019-12-29 16:02:12
+ * @LastEditTime : 2020-01-01 21:16:14
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
 
-import request from "../utils/request";
+import $request from "../utils/request";
 
 import {
   GET_MAIN_NAV_LIST,
-  GET_FOOTER_MSG
+  GET_FOOTER_COM_MSG,
+  GET_FOOTER_CONTACT_MSG,
 } from "./actionTypes";
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -28,9 +29,10 @@ const getMainNavListAction = data => ({
 
 export const getMainNavList = () => {
   return dispatch => {
-    request.get("/post", {
+    $request
+      .get(`/post`, {
       params: {
-        post_type: "primary_menu"
+        post_type: "get_menu_main"
       }
     }).then(resData=>{
       const data = resData;
@@ -43,18 +45,19 @@ export const getMainNavList = () => {
     })
   }
 }
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Footer 底栏
 
 // 获取公司信息
 const getComMsgAction = data => ({
-  type: GET_FOOTER_MSG,
+  type: GET_FOOTER_COM_MSG,
   data
 });
 
 export const getComMsg = () => {
   return dispatch => {
-    request.get("/post", {
+    $request.get("/post", {
       params: {
         post_type: "footer_list"
       }
@@ -72,13 +75,13 @@ export const getComMsg = () => {
 
 // 获取联系人信息
 const getLinkmanMsgAction = data => ({
-  type: GET_FOOTER_MSG,
+  type: GET_FOOTER_CONTACT_MSG,
   data
 });
 
 export const getLinkmanMsg = () => {
   return dispatch => {
-    request.get("/post", {
+    $request.get("/post", {
       params: {
         post_type: "footer_contact"
       }

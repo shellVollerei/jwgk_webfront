@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-20 10:45:26
  * @LastEditors  : fatewang
- * @LastEditTime : 2019-12-29 12:19:07
+ * @LastEditTime : 2020-01-01 23:23:23
  * @Description  : This is a tool which is used to package axios
  * @ContactMe    : siir_52721@qq.com
  */
@@ -43,16 +43,20 @@ const service = axios.create({
   },
   transformRequest: function(data, config) {
     if (config["Content-Type"] === "application/x-www-form-urlencoded") {
-      return escape(qs.stringify(data));
+      // return escape(qs.stringify(data));
+      return qs.stringify(data);
     } else if (config["Content-Type"] === "application/json") {
-      return escape(JSON.stringify(data));
+      // return escape(JSON.stringify(data));
+      return JSON.stringify(data);
     } else {
-      return escape(data);
+      // return escape(data);
+      return data;
     }
   },
   transformResponse: function (data) {
     // 反编译汉字码
-    return JSON.parse(unescape(JSON.stringify(data)));
+    // return JSON.parse(unescape(JSON.stringify(data)));
+    return data;
   },
 });
 
