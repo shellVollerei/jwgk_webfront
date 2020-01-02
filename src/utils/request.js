@@ -3,10 +3,10 @@
  * @Github       : https://github.com/Burning-Shadow
  * @Major        : Software Engineering
  * @SchoolStatus : 2016
- * @Date         : 2019-12-20 10:45:26
+ * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-01 23:23:23
- * @Description  : This is a tool which is used to package axios
+ * @LastEditTime : 2020-01-02 21:11:25
+ * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
 

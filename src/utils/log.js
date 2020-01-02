@@ -1,8 +1,13 @@
 /*
- * @Author: fatewang@tencent.com
- * @Date: 2019-04-24 11:17:11
- * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2019-10-27 16:44:47
+ * @Author       : fatewang
+ * @Github       : https://github.com/Burning-Shadow
+ * @Major        : Software Engineering
+ * @SchoolStatus : 2016
+ * @Date         : 2020-01-02 15:49:09
+ * @LastEditors  : fatewang
+ * @LastEditTime : 2020-01-02 21:11:17
+ * @Description  : Edit it for yourself
+ * @ContactMe    : siir_52721@qq.com
  */
 
 const log = {};

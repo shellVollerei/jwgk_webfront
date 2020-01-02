@@ -1,12 +1,23 @@
+/*
+ * @Author       : fatewang
+ * @Github       : https://github.com/Burning-Shadow
+ * @Major        : Software Engineering
+ * @SchoolStatus : 2016
+ * @Date         : 2020-01-02 15:49:09
+ * @LastEditors  : fatewang
+ * @LastEditTime : 2020-01-02 21:14:04
+ * @Description  : Edit it for yourself
+ * @ContactMe    : siir_52721@qq.com
+ */
+
 /* eslint no-undef: 0 */
 /* eslint arrow-parens: 0 */
 import React from "react";
 import { enquireScreen } from "enquire-js";
 
-
 import Feature0 from "./Feature0";
 import {
-  Feature00DataSource,
+  Feature00DataSource
   // Feature60DataSource,
   // Feature30DataSource,
   // Feature10DataSource
@@ -54,7 +65,7 @@ export default class Home extends React.Component {
         key="Feature0_0"
         dataSource={Feature00DataSource}
         isMobile={this.state.isMobile}
-      />,
+      />
     ];
     return (
       <div

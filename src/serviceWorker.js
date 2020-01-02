@@ -1,3 +1,15 @@
+/*
+ * @Author       : fatewang
+ * @Github       : https://github.com/Burning-Shadow
+ * @Major        : Software Engineering
+ * @SchoolStatus : 2016
+ * @Date         : 2020-01-02 15:47:54
+ * @LastEditors  : fatewang
+ * @LastEditTime : 2020-01-02 21:10:45
+ * @Description  : Edit it for yourself
+ * @ContactMe    : siir_52721@qq.com
+ */
+
 // This optional code is used to register a service worker.
 // register() is not called by default.
 

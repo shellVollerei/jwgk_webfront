@@ -1,17 +1,27 @@
+/*
+ * @Author       : fatewang
+ * @Github       : https://github.com/Burning-Shadow
+ * @Major        : Software Engineering
+ * @SchoolStatus : 2016
+ * @Date         : 2020-01-02 15:49:09
+ * @LastEditors  : fatewang
+ * @LastEditTime : 2020-01-02 21:13:30
+ * @Description  : Edit it for yourself
+ * @ContactMe    : siir_52721@qq.com
+ */
+
 /* eslint no-undef: 0 */
 /* eslint arrow-parens: 0 */
-import React from 'react';
-import { enquireScreen } from 'enquire-js';
+import React from "react";
+import { enquireScreen } from "enquire-js";
 
-import Banner0 from './Banner0';
+import Banner0 from "./Banner0";
 
-import {
-  Banner00DataSource,
-} from './data.source';
-import './less/antMotionStyle.less';
+import { Banner00DataSource } from "./data.source";
+import "./less/antMotionStyle.less";
 
 let isMobile;
-enquireScreen((b) => {
+enquireScreen(b => {
   isMobile = b;
 });
 
@@ -22,13 +32,13 @@ export default class Home extends React.Component {
     super(props);
     this.state = {
       isMobile,
-      show: !location.port, // 如果不是 dva 2.0 请删除
+      show: !location.port // 如果不是 dva 2.0 请删除
     };
   }
 
   componentDidMount() {
     // 适配手机屏幕;
-    enquireScreen((b) => {
+    enquireScreen(b => {
       this.setState({ isMobile: !!b });
     });
     // dva 2.0 样式在组件渲染之后动态加载，导致滚动组件不生效；线上不影响；
@@ -37,7 +47,7 @@ export default class Home extends React.Component {
       // 样式 build 时间在 200-300ms 之间;
       setTimeout(() => {
         this.setState({
-          show: true,
+          show: true
         });
       }, 500);
     }
@@ -51,12 +61,12 @@ export default class Home extends React.Component {
         key="Banner0_0"
         dataSource={Banner00DataSource}
         isMobile={this.state.isMobile}
-      />,
+      />
     ];
     return (
       <div
         className="templates-wrapper"
-        ref={(d) => {
+        ref={d => {
           this.dom = d;
         }}
       >
