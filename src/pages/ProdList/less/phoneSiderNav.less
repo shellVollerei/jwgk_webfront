@@ -1,0 +1,82 @@
+@media screen and (min-width: 765px) {
+  .phone-sider-bar {
+    display: none;
+    position: fixed;
+    right: 10px;
+    top: 140px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+  }
+  .nav-list {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 764px) {
+  .phone-sider-bar {
+    display: block;
+    position: fixed;
+    right: 10px;
+    top: 140px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    .icon {
+      font-size: 40;
+      position: fixed;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+    .icon-show {
+      visibility: visible;
+    }
+    .icon-hide {
+      visibility: hidden;
+    }
+  }
+
+  .nav-list-curtain {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    z-index: 1000;
+    position: fixed;
+    opacity: 0.3;
+  }
+
+  .nav-list-curtain-open {
+    visibility: visible;
+  }
+
+  .nav-list-curtain-close {
+    visibility: hidden;
+  }
+
+  .nav-list {
+    background-color: white;
+    height: 100vh;
+    opacity: 1;
+    width: auto;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    z-index: 1001;
+    // 过度属性出了点问题？
+    // transition: left 4s ease-out;
+    // -moz-transition: left 4s ease-out;
+    // -o-transition: left 4s ease-out;
+    // -webkit-transition: left 4s ease-out;
+  }
+
+  .nav-list-open {
+    // left: 0;
+    visibility: visible;
+  }
+
+  .nav-list-close {
+    // left: -100%;
+    visibility: hidden;
+  }
+}
