@@ -1,3 +1,4 @@
+/* eslint-disable no-new-object */
 /*
  * @Author       : fatewang
  * @Github       : https://github.com/Burning-Shadow
@@ -5,7 +6,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-09 17:12:04
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-03 16:44:28
+ * @LastEditTime : 2020-01-04 00:16:34
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -34,7 +35,6 @@ import Products from "./pages/Products";
 import ProdList from "./pages/ProdList";    // ProdList 为产品列表，SkuList 为货品列表
 
 import {
-  Nav30DataSource,
   Footer10DataSource
 } from "./publicComponents/data.source";
 
@@ -48,20 +48,25 @@ class App extends Component {
     super(props);
     this.state = {
       isMobile,
-      headerNav: Nav30DataSource
+      headerNav: store.getState().mainNavList
     };
 
-    this.state = store.getState().mainNavList;
+    this.setState(()=>{
+      var state = store.getState().mainNavList;
+      state.headerNav = {};
+      return state;
+    });
     store.subscribe(this.handleStoreChange);
   }
 
   handleStoreChange = () => {
     // 组件感知到 state 变化后，重新从 store 中获取 state 数据
-    const headerNav = store.getState().mainNavList;
     this.setState({
-      headerNav: headerNav
+      headerNav: store.getState().mainNavList
     });
-    console.log(headerNav);
+    
+    let a = new Object(store.getState().mainNavList)
+    console.log(a);
   }
 
   // componentWillMount() {
