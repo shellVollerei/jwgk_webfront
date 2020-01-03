@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-27 20:51:24
  * @LastEditors  : fatewang
- * @LastEditTime : 2019-12-29 15:39:13
+ * @LastEditTime : 2020-01-03 15:35:08
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -23,12 +23,21 @@ export default (state = defaultState, action) => {
 
   switch (action.type) {
     case GET_MAIN_NAV_LIST:
-      const Data = action.data;
-      console.log(Data);
+      const Data = JSON.parse(action.data);
+      const trueData = Data.data;
 
-      // TODO: 一系列就数据更新操作，格式参考引入的 Nav30DataSource
-      // newState.xxx = xxx
+      let resTabList = trueData.tabList;
+      // console.log("resTabList = ", resTabList);
+      newState.logo.children = trueData.logoUrl;
 
+      newState.Menu.children.map((item, index) => {
+        item.name = resTabList[index].href.slice(1);
+        item.children.href = resTabList[index].href;
+        item.children.children[0] = { children: resTabList[index].name, name: "text" };
+        return item;
+      });
+      
+      console.log("newState = ", newState);
       break;
     default:
   }

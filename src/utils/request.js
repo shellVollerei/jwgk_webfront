@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-03 10:40:50
+ * @LastEditTime : 2020-01-03 11:42:28
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -65,7 +65,7 @@ const service = axios.create({
 service.interceptors.response.use(
   response => {
     // dataAxios 是 axios 返回数据中的 data
-    const dataAxios = response;
+    const dataAxios = response.data;
     if (response.config.customResponse) {
       return dataAxios;
     }

@@ -12,26 +12,26 @@ export const Nav30DataSource = {
     className: "header3-menu",
     children: [
       {
-        name: "products",
+        name: "aaa",
         className: "header3-item",
         children: {
-          href: "/products",
+          href: "/aaa",
           children: [{ children: "产品", name: "text" }]
         }
       },
       {
-        name: "activities",
+        name: "bbb",
         className: "header3-item",
         children: {
-          href: "/activities",
+          href: "/bbb",
           children: [{ children: "活动", name: "text" }]
         }
       },
       {
-        name: "aboutus",
+        name: "ccc",
         className: "header3-item",
         children: {
-          href: "/aboutus",
+          href: "/ccc",
           children: [{ children: "关于我们", name: "text" }]
         }
       }

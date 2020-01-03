@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-09 17:12:04
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-01 20:44:44
+ * @LastEditTime : 2020-01-03 16:44:28
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -47,7 +47,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isMobile
+      isMobile,
+      headerNav: Nav30DataSource
     };
 
     this.state = store.getState().mainNavList;
@@ -56,19 +57,26 @@ class App extends Component {
 
   handleStoreChange = () => {
     // 组件感知到 state 变化后，重新从 store 中获取 state 数据
-    this.setState(store.getState().mainNavList);
+    const headerNav = store.getState().mainNavList;
+    this.setState({
+      headerNav: headerNav
+    });
+    console.log(headerNav);
   }
 
-  componentWillMount() {
-    const action = getMainNavList();
-    store.dispatch(action);
-  }
+  // componentWillMount() {
+  //   const action = getMainNavList();
+  //   store.dispatch(action);
+  // }
 
   componentDidMount() {
+    const action = getMainNavList();
+    store.dispatch(action);
     // 适配手机屏幕;
     enquireScreen(b => {
       this.setState({ isMobile: !!b });
     });
+    
   }
   render() {
     return (
@@ -78,7 +86,7 @@ class App extends Component {
             <Header
               id="Nav3_0"
               key="Nav3_0"
-              dataSource={Nav30DataSource}
+              dataSource={this.state.headerNav}
               isMobile={this.state.isMobile}
               style={{ position: "fixed" }}
             />
