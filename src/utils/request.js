@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-02 21:11:25
+ * @LastEditTime : 2020-01-03 10:40:50
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -16,7 +16,8 @@ import axios from "axios";
 import log from "./log";
 
 // export const baseURL = process.env.NODE_ENV === "production" ? "/" : "/proxy";
-export const baseURL = "http://39.100.118.220/";
+// export const baseURL = "http://39.100.118.220/";
+export const baseURL = "/";
 
 // 创建一个错误
 function errorCreate(msg) {
