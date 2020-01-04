@@ -6,7 +6,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-09 17:12:04
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-04 00:16:34
+ * @LastEditTime : 2020-01-05 00:33:38
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -21,7 +21,7 @@ import {
 import { enquireScreen } from "enquire-js";
 
 import store from "./store/index";
-import { getMainNavList } from "./store/actionCreators";
+import { getMainNavList, getFooterMsg } from "./store/actionCreators";
 
 import Header from "./publicComponents/Nav3";
 import Footer from './publicComponents/Footer1';
@@ -48,7 +48,8 @@ class App extends Component {
     super(props);
     this.state = {
       isMobile,
-      headerNav: store.getState().mainNavList
+      headerNav: store.getState().mainNavList,
+      footerMsg: store.getState().footerMsg
     };
 
     this.setState(()=>{
@@ -56,27 +57,29 @@ class App extends Component {
       state.headerNav = {};
       return state;
     });
+    this.setState(()=>{
+      var state = store.getState().mainNavList;
+      state.footerMsg = {};
+      return state;
+    });
+    // console.log("state = ", store.getState().mainNavList);
     store.subscribe(this.handleStoreChange);
   }
 
   handleStoreChange = () => {
     // 组件感知到 state 变化后，重新从 store 中获取 state 数据
     this.setState({
-      headerNav: store.getState().mainNavList
+      headerNav: store.getState().mainNavList,
+      footerNav: store.getState().footerMsg
     });
-    
-    let a = new Object(store.getState().mainNavList)
-    console.log(a);
+    console.log(this.state.footerMsg)
   }
 
-  // componentWillMount() {
-  //   const action = getMainNavList();
-  //   store.dispatch(action);
-  // }
-
   componentDidMount() {
-    const action = getMainNavList();
-    store.dispatch(action);
+    const actionHeader = getMainNavList();
+    const actionFooter = getFooterMsg();
+    store.dispatch(actionHeader);
+    store.dispatch(actionFooter);
     // 适配手机屏幕;
     enquireScreen(b => {
       this.setState({ isMobile: !!b });
@@ -116,6 +119,7 @@ class App extends Component {
               id="Footer1_0"
               key="Footer1_0"
               dataSource={Footer10DataSource}
+              // dataSource={this.state.footerMsg}
               isMobile={this.state.isMobile}
             />,
           </div>

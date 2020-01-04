@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-19 16:43:56
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-03 10:43:26
+ * @LastEditTime : 2020-01-04 22:58:22
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -14,8 +14,7 @@ import $request from "../utils/request";
 
 import {
   GET_MAIN_NAV_LIST,
-  GET_FOOTER_COM_MSG,
-  GET_FOOTER_CONTACT_MSG,
+  GET_FOOTER_MSG,
 } from "./actionTypes";
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -38,8 +37,6 @@ export const getMainNavList = () => {
       const data = resData;
       const action = getMainNavListAction(data);
       dispatch(action);
-    }).finally(()=>{
-      // console.log("Now we are alreday get the MainNavList");
     }).catch(e=>{
       console.log(e);
     })
@@ -49,50 +46,50 @@ export const getMainNavList = () => {
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Footer 底栏
 
-// 获取公司信息
-const getComMsgAction = data => ({
-  type: GET_FOOTER_COM_MSG,
+// 汇总信息
+const getFooterMsgAction = data => ({
+  type: GET_FOOTER_MSG,
   data
 });
 
-export const getComMsg = () => {
+export const getFooterMsg = data => {
+  // 获取公司信息
+  var comMsg = $request.get("/post", {
+    params: {
+      post_type: "footer_list"
+    }
+  }).then(resData=>{
+    return resData;
+  }).catch(e=>{
+    console.log(e);
+  })
+
+  // 获取公司联系人信息
+  var contactMsg = $request.get("/post", {
+    params: {
+      post_type: "footer_contact"
+    }
+  }).then(resData=>{
+    return resData;
+  }).catch(e=>{
+    console.log(e);
+  })
+  
   return dispatch => {
-    $request.get("/post", {
-      params: {
-        post_type: "footer_list"
-      }
-    }).then(resData=>{
-      const data = resData;
-      const action = getComMsgAction(data);
-      dispatch(action);
-    }).finally(()=>{
-      // console.log("Now we are alreday get the MainNavList");
-    }).catch(e=>{
-      console.log(e);
-    })
+    Promise
+      .all([comMsg, contactMsg])
+      .then(val => {
+        // TODO: 映射 footerMsg
+        const footerData = {};
+        footerData.companyData = val[0];
+        footerData.contactsData = val[1];
+
+        // 务必转化为字符串
+        const action = getFooterMsgAction(JSON.stringify(footerData));
+        dispatch(action);
+      })
   }
 }
 
-// 获取联系人信息
-const getLinkmanMsgAction = data => ({
-  type: GET_FOOTER_CONTACT_MSG,
-  data
-});
-
-export const getLinkmanMsg = () => {
-  return dispatch => {
-    $request.get("/post", {
-      params: {
-        post_type: "footer_contact"
-      }
-    }).then(resData=>{
-      const data = resData;
-      const action = getLinkmanMsgAction(data);
-      dispatch(action);
-    }).finally(()=>{
-      // console.log("Now we are alreday get the MainNavList");
-    }).catch(e=>{
-      console.log(e);
-    })
-  }
-}
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 产品页
