@@ -1,4 +1,3 @@
-/* eslint-disable no-new-object */
 /*
  * @Author       : fatewang
  * @Github       : https://github.com/Burning-Shadow
@@ -6,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-09 17:12:04
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-05 00:33:38
+ * @LastEditTime : 2020-01-05 21:49:10
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -57,12 +56,13 @@ class App extends Component {
       state.headerNav = {};
       return state;
     });
+
     this.setState(()=>{
-      var state = store.getState().mainNavList;
+      var state = store.getState().footerMsg;
       state.footerMsg = {};
       return state;
     });
-    // console.log("state = ", store.getState().mainNavList);
+    
     store.subscribe(this.handleStoreChange);
   }
 
@@ -70,9 +70,12 @@ class App extends Component {
     // 组件感知到 state 变化后，重新从 store 中获取 state 数据
     this.setState({
       headerNav: store.getState().mainNavList,
-      footerNav: store.getState().footerMsg
+      footerMsg: store.getState().footerMsg
     });
-    console.log(this.state.footerMsg)
+
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    console.log("this.state ==== ", this.state);
+    // console.log("this.state.footerMsg = ", this.state.footerMsg);
   }
 
   componentDidMount() {
@@ -84,8 +87,8 @@ class App extends Component {
     enquireScreen(b => {
       this.setState({ isMobile: !!b });
     });
-    
   }
+  
   render() {
     return (
       <Router>

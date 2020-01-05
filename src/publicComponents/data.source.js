@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-04 17:15:54
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-04 17:55:38
+ * @LastEditTime : 2020-01-05 18:30:05
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -114,7 +114,7 @@ export const Footer10DataSource = {
     children: (
       <>
         <span>
-          ©2020 by <a href="#">JWGK Studio</a> All Rights
+          ©2020 by JWGK Studio All Rights
           Reserved
         </span>
       </>

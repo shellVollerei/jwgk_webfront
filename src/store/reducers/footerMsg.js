@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-29 15:39:44
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-05 00:35:54
+ * @LastEditTime : 2020-01-05 18:41:49
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -26,7 +26,7 @@ var getInfoList = (list, finalList) => {
 export default (state = defaultState, action) => {
 
   const newState = JSON.parse(JSON.stringify(state));
-  console.log("newState = ", newState);
+  // console.log("newState = ", newState);
   
   switch (action.type) {
     case GET_FOOTER_MSG:
