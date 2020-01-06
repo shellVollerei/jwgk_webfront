@@ -33,7 +33,7 @@ class Content extends React.PureComponent {
                 const { children: item, ...blockProps } = block;
                 return (
                   <Col key={i.toString()} {...blockProps}>
-                    {/* Link :to=`/typelist/:serve_type` */}
+                    {/* Link :to=`/prodlist/:serve_type` */}
                     <Link to={block.href}>
                       <div {...item}>
                         {item.children.map(getChildrenToRender)}

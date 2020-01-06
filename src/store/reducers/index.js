@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-19 16:43:56
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-04 23:03:45
+ * @LastEditTime : 2020-01-06 16:42:22
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -14,9 +14,19 @@ import { combineReducers } from "redux";
 
 import mainNavList from "./mainNavList";
 import footerMsg from "./footerMsg";
+import carouselList from "./carouselList";
+import categoryList from "./categoryList";
+import spuMenuList from "./spuMenuList";
+import spuList from "./spuList";
+import productDetail from "./productDetail";
 
 
 export default combineReducers({
   mainNavList,
   footerMsg,
+  carouselList,
+  categoryList,
+  spuMenuList,
+  spuList,
+  productDetail
 });

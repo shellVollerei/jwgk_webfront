@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-09 17:12:04
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-05 21:49:10
+ * @LastEditTime : 2020-01-06 11:25:29
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -32,10 +32,6 @@ import Aboutus from "./pages/Aboutus";
 import Activities from "./pages/Activities";
 import Products from "./pages/Products";
 import ProdList from "./pages/ProdList";    // ProdList 为产品列表，SkuList 为货品列表
-
-import {
-  Footer10DataSource
-} from "./publicComponents/data.source";
 
 let isMobile;
 enquireScreen(b => {
@@ -115,14 +111,13 @@ class App extends Component {
               <Route exact path="/products" component={Products} />
               <Route exact path="/activities" component={Activities} />
               <Route exact path="/aboutus" component={Aboutus} />
-              <Route exact path="/typelist/:serve_type" component={ProdList} />
+              <Route exact path="/prodlist/:serve_type" component={ProdList} />
               <Route exact path="/detail/:pro_id" component={Detail} />
             </div>
             <Footer
               id="Footer1_0"
               key="Footer1_0"
-              dataSource={Footer10DataSource}
-              // dataSource={this.state.footerMsg}
+              dataSource={this.state.footerMsg}
               isMobile={this.state.isMobile}
             />,
           </div>

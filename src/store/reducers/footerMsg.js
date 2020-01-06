@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-29 15:39:44
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-05 18:41:49
+ * @LastEditTime : 2020-01-06 00:18:09
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -48,9 +48,9 @@ export default (state = defaultState, action) => {
       getInfoList(MarketLeader, MarketLeaderDataList);
       getInfoList(SellLeaderData, SellLeaderDataList);
 
-      newState.block.children[0].childWrapper.children = SellLeaderDataList;
-      newState.block.children[1].childWrapper.children = MarketLeaderDataList;
-      newState.block.children[2].childWrapper.children = companyDataList;
+      newState.block.children[0].childWrapper.children = SellLeaderDataList.slice(1);
+      newState.block.children[1].childWrapper.children = MarketLeaderDataList.slice(1);
+      newState.block.children[2].childWrapper.children = companyDataList.slice(1);
 
       // console.log("footerMsg newState = ", newState);
       break;

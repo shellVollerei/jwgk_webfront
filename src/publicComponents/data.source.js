@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-04 17:15:54
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-05 18:30:05
+ * @LastEditTime : 2020-01-06 00:14:36
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -109,15 +109,5 @@ export const Footer10DataSource = {
   },
   copyrightWrapper: { className: 'copyright-wrapper' },
   copyrightPage: { className: 'home-page' },
-  copyright: {
-    className: 'copyright',
-    children: (
-      <>
-        <span>
-          ©2020 by JWGK Studio All Rights
-          Reserved
-        </span>
-      </>
-    ),
-  },
+  
 };

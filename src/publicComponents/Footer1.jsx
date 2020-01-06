@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-02 21:12:03
+ * @LastEditTime : 2020-01-06 00:14:59
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -66,11 +66,11 @@ class Footer extends React.Component {
             key="copyright"
             {...dataSource.copyrightWrapper}
           >
-            <div {...dataSource.copyrightPage}>
+            {/* <div {...dataSource.copyrightPage}>
               <div {...dataSource.copyright}>
                 {dataSource.copyright.children}
               </div>
-            </div>
+            </div> */}
           </TweenOne>
         </OverPack>
       </div>
