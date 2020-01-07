@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-02 21:14:25
+ * @LastEditTime : 2020-01-07 20:49:43
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -18,40 +18,55 @@ import Teams4 from "./Teams4";
 import { Teams4DataSource } from "./data.source";
 import "./less/antMotionStyle.less";
 
+// import store from "../../store";
+import store from "../../store/index"
+import { getSpuList } from "../../store/actionCreators";
+
 let isMobile;
 enquireScreen(b => {
   isMobile = b;
 });
 
-const { location } = window;
-
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isMobile
+      isMobile,
+      rightListCateId: this.props.rightListCateId,
+      spuList: store.getState().spuList
     };
+
+    this.setState(() => {
+      var state = store.getState().spuList;
+      state.spuList = {};
+      return state;
+    });
+
+    store.subscribe(this.handleStoreChange);
+  }
+
+  handleStoreChange = () => {
+    // 组件感知到 state 变化后，重新从 store 中获取 state 数据
+    this.setState({
+      spuList: store.getState().spuList
+    });
+
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    // console.log("this.state ==== ", this.state);
   }
 
   componentDidMount() {
+    const actionSpuList = getSpuList(this.props.rightListCateId);
+    store.dispatch(actionSpuList);
+
     // 适配手机屏幕;
     enquireScreen(b => {
       this.setState({ isMobile: !!b });
     });
-    // dva 2.0 样式在组件渲染之后动态加载，导致滚动组件不生效；线上不影响；
-    /* 如果不是 dva 2.0 请删除 start */
-    if (location.port) {
-      // 样式 build 时间在 200-300ms 之间;
-      setTimeout(() => {
-        this.setState({
-          show: true
-        });
-      }, 500);
-    }
-    /* 如果不是 dva 2.0 请删除 end */
   }
 
   render() {
+    console.log(this.props.rightListCateId);
     const children = [
       <Teams4
         id="Teams4_1"

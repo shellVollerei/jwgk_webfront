@@ -5,57 +5,59 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-02 21:14:04
+ * @LastEditTime : 2020-01-06 21:11:17
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
 
-/* eslint no-undef: 0 */
-/* eslint arrow-parens: 0 */
 import React from "react";
 import { enquireScreen } from "enquire-js";
 
 import Feature0 from "./Feature0";
-import {
-  Feature00DataSource
-  // Feature60DataSource,
-  // Feature30DataSource,
-  // Feature10DataSource
-} from "./data.source";
 import "./less/antMotionStyle.less";
+import store from "../../store";
+import { getCategoryList } from "../../store/actionCreators"
 
 let isMobile;
 enquireScreen(b => {
   isMobile = b;
 });
 
-const { location } = window;
-
-export default class Home extends React.Component {
+export default class Products extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isMobile,
-      show: !location.port // 如果不是 dva 2.0 请删除
+      categoryList: store.getState().categoryList
     };
+
+    this.setState(() => {
+      var state = store.getState().categoryList;
+      state.categoryList = {};
+      return state;
+    });
+
+    store.subscribe(this.handleStoreChange);
+  }
+
+  handleStoreChange = () => {
+    this.setState({
+      categoryList: store.getState().categoryList
+    });
+
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    // console.log("this.state ==== ", this.state);
   }
 
   componentDidMount() {
+    const actionCategoryList = getCategoryList();
+    store.dispatch(actionCategoryList);
+
     // 适配手机屏幕;
     enquireScreen(b => {
       this.setState({ isMobile: !!b });
     });
-    // dva 2.0 样式在组件渲染之后动态加载，导致滚动组件不生效；线上不影响；
-    /* 如果不是 dva 2.0 请删除 start */
-    if (location.port) {
-      // 样式 build 时间在 200-300ms 之间;
-      setTimeout(() => {
-        this.setState({
-          show: true
-        });
-      }, 500);
-    }
-    /* 如果不是 dva 2.0 请删除 end */
+    
   }
 
   render() {
@@ -63,7 +65,7 @@ export default class Home extends React.Component {
       <Feature0
         id="Feature0_0"
         key="Feature0_0"
-        dataSource={Feature00DataSource}
+        dataSource={this.state.categoryList}
         isMobile={this.state.isMobile}
       />
     ];
@@ -74,9 +76,7 @@ export default class Home extends React.Component {
           this.dom = d;
         }}
       >
-        {/* 如果不是 dva 2.0 替换成 {children} start */}
-        {this.state.show && children}
-        {/* 如果不是 dva 2.0 替换成 {children} end */}
+        {children}
       </div>
     );
   }

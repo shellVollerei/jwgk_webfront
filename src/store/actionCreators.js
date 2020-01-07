@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-19 16:43:56
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-06 17:30:07
+ * @LastEditTime : 2020-01-07 19:29:46
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -147,7 +147,7 @@ export const getCategoryList = () => {
     $request
       .get(`/post`, {
         params: {
-          post_type: "product_get_cate_list"
+          post_type: "product_get_department_list"
         }
       })
       .then(resData => {
@@ -169,13 +169,13 @@ const getSpuMenuListAction = data => ({
 });
 
 // TODO: 产品分类列表 (左侧菜单列表部分)
-export const getSpuMenuList = () => {
+export const getSpuMenuList = (spuListId) => {
   return dispatch => {
     $request
       .get(`/post`, {
         params: {
-          post_type: "product_get_menu_prod",
-          cate_id: localStorage.spu_menu_id
+          post_type: "get_menu_prod",
+          cate_id: spuListId
         }
       })
       .then(resData => {
@@ -196,13 +196,13 @@ const getSpuListAction = data => ({
 });
 
 // 产品菜单
-export const getSpuList = () => {
+export const getSpuList = rightListCateId => {
   return dispatch => {
     $request
       .get(`/post`, {
         params: {
-          post_typroduct_get_specific_spupe: "get_spu_list",
-          cate_id: localStorage.spu_list_id,
+          post_type: "product_get_spu_list",
+          cate_id: rightListCateId,
           page: 0,
           limit: 10000
         }
@@ -225,7 +225,7 @@ const getProductDetailAction = data => ({
 });
 
 // 产品菜单
-export const getProductDetai = () => {
+export const getProductDetail = () => {
   return dispatch => {
     $request
       .get(`/post`, {

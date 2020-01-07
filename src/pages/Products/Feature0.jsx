@@ -6,6 +6,15 @@ import { getChildrenToRender } from "./utils";
 import { Link } from "react-router-dom";
 
 class Content extends React.PureComponent {
+
+  setProdMenuList = (href) => {
+    // console.log("href = ", href)
+    var str = href.slice(10);
+    // console.log("str = ", str)
+    // TODO: 这里把 prod_menu_list_id 存储至第三方存储对象中，传递给其父组件 index，再由
+    localStorage.setItem('prod_menu_list_id', str);
+  }
+
   render() {
     const { dataSource, isMobile, ...props } = this.props;
     const {
@@ -34,7 +43,7 @@ class Content extends React.PureComponent {
                 return (
                   <Col key={i.toString()} {...blockProps}>
                     {/* Link :to=`/prodlist/:serve_type` */}
-                    <Link to={block.href}>
+                    <Link to={block.href} onClick={() => this.setProdMenuList(block.href)} >
                       <div {...item}>
                         {item.children.map(getChildrenToRender)}
                       </div>

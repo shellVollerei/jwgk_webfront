@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-09 17:12:04
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-06 11:25:29
+ * @LastEditTime : 2020-01-06 18:09:25
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -70,8 +70,7 @@ class App extends Component {
     });
 
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    console.log("this.state ==== ", this.state);
-    // console.log("this.state.footerMsg = ", this.state.footerMsg);
+    // console.log("this.state ==== ", this.state);
   }
 
   componentDidMount() {

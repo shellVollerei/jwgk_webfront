@@ -5,15 +5,15 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-29 15:39:44
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-06 17:45:44
+ * @LastEditTime : 2020-01-07 20:48:30
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
 
 import { GET_SPU_MENU_LIST } from "../actionTypes";
-import { Footer10DataSource } from "../../publicComponents/data.source";
+import { SiderNavList } from "../../pages/ProdList/data.source";
 
-const defaultState = Footer10DataSource;
+const defaultState = SiderNavList;
 
 export default (state = defaultState, action) => {
 
@@ -22,8 +22,10 @@ export default (state = defaultState, action) => {
   
   switch (action.type) {
     case GET_SPU_MENU_LIST:
-      // const Data = JSON.parse(action.data);
-      // TODO: 映射轮播列表
+      var Data = JSON.parse(action.data);
+      var finalData = Data.data.menuList;
+      newState.cateMenuList = finalData;
+      // console.log(Data);
       break;
     default:
   }

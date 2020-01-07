@@ -1,14 +1,20 @@
 import React from "react";
-import { Col, Menu, Icon } from "antd";
-const { SubMenu } = Menu;
+import { Col, Menu, Icon, List } from "antd";
 // import QueueAnim from "rc-queue-anim";
 // import { getChildrenToRender } from './utils';
 
 class SiderNav extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      openKeys: ["1"]
+    };
+  }
+
   rootSubmenuKeys = ["sub1", "sub2", "sub4"];
 
   state = {
-    openKeys: ["sub1"]
+    openKeys: ["1"]
   };
 
   onOpenChange = openKeys => {
@@ -25,6 +31,9 @@ class SiderNav extends React.PureComponent {
   };
 
   render() {
+    // console.log(this.props);
+    const { dataSource, rightListShow } = this.props;
+    const { cateMenuList } = dataSource;
     return (
       <Col>
         <Menu
@@ -33,21 +42,19 @@ class SiderNav extends React.PureComponent {
           onOpenChange={this.onOpenChange}
           style={{ width: 256, position: "fixed" }}
         >
-          <Menu.Item key="1">Option 1</Menu.Item>
-          <Menu.Item key="2">Option 2</Menu.Item>
-          <Menu.Item key="3">Option 3</Menu.Item>
-          <Menu.Item key="4">Option 4</Menu.Item>
-
-          <Menu.Item key="5">Option 5</Menu.Item>
-          <Menu.Item key="6">Option 6</Menu.Item>
-
-          <Menu.Item key="7">Option 7</Menu.Item>
-          <Menu.Item key="8">Option 8</Menu.Item>
-
-          <Menu.Item key="9">Option 9</Menu.Item>
-          <Menu.Item key="10">Option 10</Menu.Item>
-          <Menu.Item key="11">Option 11</Menu.Item>
-          <Menu.Item key="12">Option 12</Menu.Item>
+          {cateMenuList.map(item => {
+            return (
+              <Menu.Item
+                key={item.cate_id}
+                onClick={()=>
+                  rightListShow && rightListShow(item.cate_id)
+                }
+              >
+                {item.name}
+              </Menu.Item>
+            );
+          })}
+          {/* <Menu.Item key="1">aaa</Menu.Item> */}
         </Menu>
       </Col>
     );

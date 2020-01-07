@@ -1,6 +1,5 @@
 import React from "react";
 import { Menu, Icon } from "antd";
-const { SubMenu } = Menu;
 // import QueueAnim from "rc-queue-anim";
 // import { getChildrenToRender } from './utils';
 
@@ -37,6 +36,9 @@ class SiderNav extends React.PureComponent {
   };
 
   render() {
+    const { dataSource, rightListShow } = this.props;
+    const { cateMenuList } = dataSource;
+
     return (
       <div>
         <div className="phone-sider-bar">
@@ -66,20 +68,19 @@ class SiderNav extends React.PureComponent {
             defaultOpenKeys={["sub1"]}
             mode="inline"
           >
-            {/* <Menu.ItemGroup key="g1" title="Item 1"> */}
-            <Menu.Item key="1">Option 1</Menu.Item>
-            <Menu.Item key="2">Option 2</Menu.Item>
-            <Menu.Item key="3">Option 3</Menu.Item>
-            <Menu.Item key="4">Option 4</Menu.Item>
-            <Menu.Item key="5">Option 5</Menu.Item>
-            <Menu.Item key="6">Option 6</Menu.Item>
-            <Menu.Item key="7">Option 7</Menu.Item>
-            <Menu.Item key="8">Option 8</Menu.Item>
-            <Menu.Item key="9">Option 9</Menu.Item>
-            <Menu.Item key="10">Option 10</Menu.Item>
-            <Menu.Item key="11">Option 11</Menu.Item>
-            <Menu.Item key="12">Option 12</Menu.Item>
-            {/* </Menu.ItemGroup> */}
+            {cateMenuList.map((item, i) => {
+              return (
+                <Menu.Item
+                  key={item.cate_id}
+                  onClick={()=>
+                    rightListShow && rightListShow(item.cate_id)
+                  }
+                >
+                  {item.name}
+                </Menu.Item>
+              );
+            })}
+            {/* <Menu.Item key="1">aaa</Menu.Item> */}
           </Menu>
         </div>
       </div>
