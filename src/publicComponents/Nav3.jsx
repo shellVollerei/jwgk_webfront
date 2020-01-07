@@ -1,3 +1,15 @@
+/*
+ * @Author       : fatewang
+ * @Github       : https://github.com/Burning-Shadow
+ * @Major        : Software Engineering
+ * @SchoolStatus : 2016
+ * @Date         : 2020-01-02 15:49:09
+ * @LastEditors  : fatewang
+ * @LastEditTime : 2020-01-07 21:50:12
+ * @Description  : Edit it for yourself
+ * @ContactMe    : siir_52721@qq.com
+ */
+
 import React from "react";
 import TweenOne from "rc-tween-one";
 import { Menu } from "antd";

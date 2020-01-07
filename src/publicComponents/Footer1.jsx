@@ -1,3 +1,15 @@
+/*
+ * @Author       : fatewang
+ * @Github       : https://github.com/Burning-Shadow
+ * @Major        : Software Engineering
+ * @SchoolStatus : 2016
+ * @Date         : 2020-01-02 15:49:09
+ * @LastEditors  : fatewang
+ * @LastEditTime : 2020-01-07 21:50:02
+ * @Description  : Edit it for yourself
+ * @ContactMe    : siir_52721@qq.com
+ */
+
 import React from 'react';
 import TweenOne from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
@@ -54,11 +66,11 @@ class Footer extends React.Component {
             key="copyright"
             {...dataSource.copyrightWrapper}
           >
-            <div {...dataSource.copyrightPage}>
+            {/* <div {...dataSource.copyrightPage}>
               <div {...dataSource.copyright}>
                 {dataSource.copyright.children}
               </div>
-            </div>
+            </div> */}
           </TweenOne>
         </OverPack>
       </div>

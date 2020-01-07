@@ -1,15 +1,28 @@
+/*
+ * @Author       : fatewang
+ * @Github       : https://github.com/Burning-Shadow
+ * @Major        : Software Engineering
+ * @SchoolStatus : 2016
+ * @Date         : 2020-01-02 15:49:09
+ * @LastEditors  : fatewang
+ * @LastEditTime : 2020-01-07 21:49:08
+ * @Description  : Edit it for yourself
+ * @ContactMe    : siir_52721@qq.com
+ */
+
 /* eslint no-undef: 0 */
 /* eslint arrow-parens: 0 */
 import React from "react";
 import { enquireScreen } from "enquire-js";
 import { Col } from "antd";
 
+import store from "../../store/index";
+import { getSpuMenuList } from "../../store/actionCreators";
+
 import SiderNav from "./SiderNav";
 import PhoneSiderNav from "./PhoneSiderNav";
-import SkuList from "../SkuList/index"; // 产品列表
+import SkuList from "../SkuList/index"; // 右侧产品列表
 
-// TODO: SiderNavList 动态渲染给 NavBar
-import { SiderNavList } from "./data.source";
 import "./less/antMotionStyle.less";
 
 let isMobile;
@@ -17,39 +30,60 @@ enquireScreen(b => {
   isMobile = b;
 });
 
-const { location } = window;
-
-export default class Home extends React.Component {
+export default class ProdList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isMobile
+      isMobile,
+      spuMenuList: store.getState().spuMenuList,
+      spuLeftMenuId: window.location.pathname.slice(10),
+      openKey: store.getState().spuMenuList.cateMenuList[0].cate_id // 默认为左侧列表的第一个 id
+      // rightListData: store.getState().spuList
     };
+
+    this.setState(() => {
+      var state = store.getState().spuMenuList;
+      state.spuMenuList = {};
+      return state;
+    });
+
+    store.subscribe(this.handleStoreChange);
   }
 
+  handleStoreChange = () => {
+    this.setState({
+      spuMenuList: store.getState().spuMenuList
+    });
+
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    console.log("这个为什么会打印三次呢？ this.state ==== ", this.state);
+  };
+
+  getOpenKey = openKey => {
+    this.setState({
+      openKey
+    });
+  };
+
   componentDidMount() {
+    // 左侧列表通过截取 url 上的 pathname 属性进行 $request 请求发送
+    const actionMenuList = getSpuMenuList(window.location.pathname.slice(10));
+    store.dispatch(actionMenuList);
+
     // 适配手机屏幕;
     enquireScreen(b => {
       this.setState({ isMobile: !!b });
     });
-    // dva 2.0 样式在组件渲染之后动态加载，导致滚动组件不生效；线上不影响；
-    /* 如果不是 dva 2.0 请删除 start */
-    if (location.port) {
-      // 样式 build 时间在 200-300ms 之间;
-      setTimeout(() => {
-        this.setState({
-          show: true
-        });
-      }, 500);
-    }
-    /* 如果不是 dva 2.0 请删除 end */
   }
 
   render() {
     return (
       <div>
         {/* 手机屏 NavBar 适配 */}
-        <PhoneSiderNav />
+        <PhoneSiderNav
+          dataSource={this.state.spuMenuList}
+          rightListShow={this.getOpenKey}
+        />
         <Col
           className="left-side-bar"
           span={5}
@@ -59,7 +93,10 @@ export default class Home extends React.Component {
           }}
         >
           {/* 电脑屏 NavBar 适配 */}
-          <SiderNav />
+          <SiderNav
+            dataSource={this.state.spuMenuList}
+            rightListShow={this.getOpenKey}
+          />
         </Col>
         <Col
           span={19}
@@ -69,7 +106,10 @@ export default class Home extends React.Component {
           }}
         >
           {/* TODO: 向 TypeContent 中传递列表相关参数，动态更新内容区域 */}
-          <SkuList />
+          <SkuList
+            dataSource={this.state.spuListId}
+            rightListCateId={this.state.openKey}
+          />
         </Col>
       </div>
     );

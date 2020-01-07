@@ -1,3 +1,14 @@
+/*
+ * @Author       : fatewang
+ * @Github       : https://github.com/Burning-Shadow
+ * @Major        : Software Engineering
+ * @SchoolStatus : 2016
+ * @Date         : 2020-01-04 17:15:54
+ * @LastEditors  : fatewang
+ * @LastEditTime : 2020-01-07 21:49:50
+ * @Description  : Edit it for yourself
+ * @ContactMe    : siir_52721@qq.com
+ */
 import React from "react";
 
 export const Nav30DataSource = {
@@ -12,26 +23,26 @@ export const Nav30DataSource = {
     className: "header3-menu",
     children: [
       {
-        name: "products",
+        name: "aaa",
         className: "header3-item",
         children: {
-          href: "/products",
+          href: "/aaa",
           children: [{ children: "产品", name: "text" }]
         }
       },
       {
-        name: "activities",
+        name: "bbb",
         className: "header3-item",
         children: {
-          href: "/activities",
+          href: "/bbb",
           children: [{ children: "活动", name: "text" }]
         }
       },
       {
-        name: "aboutus",
+        name: "ccc",
         className: "header3-item",
         children: {
-          href: "/aboutus",
+          href: "/ccc",
           children: [{ children: "关于我们", name: "text" }]
         }
       }
@@ -52,18 +63,13 @@ export const Footer10DataSource = {
         xs: 24,
         md: 6,
         className: 'block',
-        title: {
-          className: 'logo',
-          children:
-            'https://zos.alipayobjects.com/rmsportal/qqaimmXZVSwAhpL.svg',
-        },
+        title: { children: '渠道' },
         childWrapper: {
-          className: 'slogan',
           children: [
-            {
-              name: 'content0',
-              children: 'Animation specification and components of Ant Design.',
-            },
+            { href: '#', name: 'link0', children: 'name: 魏建军' },
+            { href: '#', name: 'link0', children: 'position: 全国渠道经理' },
+            { href: '#', name: 'link0', children: 'telephone: 15321658159' },
+            { href: '#', name: 'link0', children: 'email: hytcfx@163.com' },
           ],
         },
       },
@@ -72,39 +78,30 @@ export const Footer10DataSource = {
         xs: 24,
         md: 6,
         className: 'block',
-        title: { children: '产品' },
+        title: { children: '市场' },
         childWrapper: {
           children: [
-            { name: 'link0', href: '#', children: '产品更新记录' },
-            { name: 'link1', href: '#', children: 'API文档' },
-            { name: 'link2', href: '#', children: '快速入门' },
-            { name: 'link3', href: '#', children: '参考指南' },
+            { href: '#', name: 'link0', children: 'name: 张倩' },
+            { href: '#', name: 'link0', children: 'position: 市场部经理' },
+            { href: '#', name: 'link0', children: 'telephone: 13716815786' },
+            { href: '#', name: 'link0', children: 'email: hytcs3@163.com' },
           ],
         },
       },
       {
         name: 'block2',
         xs: 24,
-        md: 6,
+        md: 12,
         className: 'block',
-        title: { children: '关于' },
+        title: { children: '公司信息' },
         childWrapper: {
           children: [
-            { href: '#', name: 'link0', children: 'FAQ' },
-            { href: '#', name: 'link1', children: '联系我们' },
-          ],
-        },
-      },
-      {
-        name: 'block3',
-        xs: 24,
-        md: 6,
-        className: 'block',
-        title: { children: '资源' },
-        childWrapper: {
-          children: [
-            { href: '#', name: 'link0', children: 'Ant Design' },
-            { href: '#', name: 'link1', children: 'Ant Motion' },
+            { name: 'link1', href: '#', children: 'slogan: 我们专注临床实践中的问题，围绕这些问题寻访适合的产品、理念和技术，为临床提供高效、方便实施的解决方案。' },
+            { name: 'link2', href: '#', children: 'address: 北京市西城区西直门外大街110号中糖大厦401室' },
+            { name: 'link3', href: '#', children: 'worktime: 周一至周五：8:00-18:00' },
+            { name: 'link4', href: '#', children: 'telephone: 010-88382778' },
+            { name: 'link5', href: '#', children: 'fax1: 010-88384086' },
+            { name: 'link6', href: '#', children: 'fax2: 88382778-802' },
           ],
         },
       },
@@ -112,15 +109,5 @@ export const Footer10DataSource = {
   },
   copyrightWrapper: { className: 'copyright-wrapper' },
   copyrightPage: { className: 'home-page' },
-  copyright: {
-    className: 'copyright',
-    children: (
-      <>
-        <span>
-          ©2018 by <a href="https://motion.ant.design">Ant Motion</a> All Rights
-          Reserved
-        </span>
-      </>
-    ),
-  },
+  
 };

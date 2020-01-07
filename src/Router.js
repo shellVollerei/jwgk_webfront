@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-09 17:12:04
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-01 20:44:44
+ * @LastEditTime : 2020-01-07 21:48:06
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -20,7 +20,7 @@ import {
 import { enquireScreen } from "enquire-js";
 
 import store from "./store/index";
-import { getMainNavList } from "./store/actionCreators";
+import { getMainNavList, getFooterMsg } from "./store/actionCreators";
 
 import Header from "./publicComponents/Nav3";
 import Footer from './publicComponents/Footer1';
@@ -33,11 +33,6 @@ import Activities from "./pages/Activities";
 import Products from "./pages/Products";
 import ProdList from "./pages/ProdList";    // ProdList 为产品列表，SkuList 为货品列表
 
-import {
-  Nav30DataSource,
-  Footer10DataSource
-} from "./publicComponents/data.source";
-
 let isMobile;
 enquireScreen(b => {
   isMobile = b;
@@ -47,29 +42,48 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isMobile
+      isMobile,
+      headerNav: store.getState().mainNavList,
+      footerMsg: store.getState().footerMsg
     };
 
-    this.state = store.getState().mainNavList;
+    this.setState(()=>{
+      var state = store.getState().mainNavList;
+      state.headerNav = {};
+      return state;
+    });
+
+    this.setState(()=>{
+      var state = store.getState().footerMsg;
+      state.footerMsg = {};
+      return state;
+    });
+    
     store.subscribe(this.handleStoreChange);
   }
 
   handleStoreChange = () => {
     // 组件感知到 state 变化后，重新从 store 中获取 state 数据
-    this.setState(store.getState().mainNavList);
-  }
+    this.setState({
+      headerNav: store.getState().mainNavList,
+      footerMsg: store.getState().footerMsg
+    });
 
-  componentWillMount() {
-    const action = getMainNavList();
-    store.dispatch(action);
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    // console.log("this.state ==== ", this.state);
   }
 
   componentDidMount() {
+    const actionHeader = getMainNavList();
+    const actionFooter = getFooterMsg();
+    store.dispatch(actionHeader);
+    store.dispatch(actionFooter);
     // 适配手机屏幕;
     enquireScreen(b => {
       this.setState({ isMobile: !!b });
     });
   }
+  
   render() {
     return (
       <Router>
@@ -78,7 +92,7 @@ class App extends Component {
             <Header
               id="Nav3_0"
               key="Nav3_0"
-              dataSource={Nav30DataSource}
+              dataSource={this.state.headerNav}
               isMobile={this.state.isMobile}
               style={{ position: "fixed" }}
             />
@@ -96,13 +110,13 @@ class App extends Component {
               <Route exact path="/products" component={Products} />
               <Route exact path="/activities" component={Activities} />
               <Route exact path="/aboutus" component={Aboutus} />
-              <Route exact path="/typelist/:serve_type" component={ProdList} />
+              <Route exact path="/prodlist/:serve_type" component={ProdList} />
               <Route exact path="/detail/:pro_id" component={Detail} />
             </div>
             <Footer
               id="Footer1_0"
               key="Footer1_0"
-              dataSource={Footer10DataSource}
+              dataSource={this.state.footerMsg}
               isMobile={this.state.isMobile}
             />,
           </div>
