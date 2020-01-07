@@ -80,7 +80,6 @@ class SiderNav extends React.PureComponent {
                 </Menu.Item>
               );
             })}
-            {/* <Menu.Item key="1">aaa</Menu.Item> */}
           </Menu>
         </div>
       </div>
