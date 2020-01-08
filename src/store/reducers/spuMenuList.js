@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-29 15:39:44
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-08 23:49:37
+ * @LastEditTime : 2020-01-09 00:11:12
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -24,8 +24,8 @@ export default (state = defaultState, action) => {
     case GET_SPU_MENU_LIST:
       var Data = JSON.parse(action.data);
       console.log(Data);
-      if(Data.data.code === 400){
-        return newState;
+      if(Data.data.length < 1){
+        break;
       }
       var finalData = Data.data.menuList;
       newState.cateMenuList = finalData;

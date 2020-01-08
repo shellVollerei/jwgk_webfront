@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-08 23:54:40
+ * @LastEditTime : 2020-01-09 00:00:55
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -36,7 +36,7 @@ export default class Department extends React.Component {
     this.state = {
       isMobile,
       spuMenuList: store.getState().spuMenuList,
-      spuLeftMenuId: window.location.pathname.slice(12),
+      spuLeftMenuId: this.getDepartmentId(),
       openKey: store.getState().spuMenuList.cateMenuList[0].cate_id // 默认为左侧列表的第一个 id
       // rightListData: store.getState().spuList
     };
@@ -65,9 +65,13 @@ export default class Department extends React.Component {
     });
   };
 
+  getDepartmentId = () => {
+    return window.location.pathname.slice(12);
+  }
+
   componentDidMount() {
     // 左侧列表通过截取 url 上的 pathname 属性进行 $request 请求发送
-    const actionMenuList = getSpuMenuList(window.location.pathname.slice(12));
+    const actionMenuList = getSpuMenuList(this.getDepartmentId());
     store.dispatch(actionMenuList);
 
     // 适配手机屏幕;
