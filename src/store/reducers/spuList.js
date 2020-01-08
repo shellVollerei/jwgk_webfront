@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-29 15:39:44
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-06 17:45:15
+ * @LastEditTime : 2020-01-08 23:37:51
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -22,8 +22,11 @@ export default (state = defaultState, action) => {
   
   switch (action.type) {
     case GET_SPU_LIST:
-      // const Data = JSON.parse(action.data);
+      const Data = JSON.parse(action.data);
       // TODO: 映射轮播列表
+
+      console.log(Data)
+
       break;
     default:
   }

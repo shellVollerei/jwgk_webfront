@@ -24,7 +24,7 @@ var updataCategoryList = (Data) => {
       className: "content0-block",
       md: 8,
       xs: 24,
-      href: `/prodlist/${item.cate_id}`,
+      href: `/department/${item.cate_id}`,
       children: {
         className: "content0-block-item",
         children: [

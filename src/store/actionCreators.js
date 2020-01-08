@@ -162,7 +162,7 @@ export const getCategoryList = () => {
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// 产品页 /* prodlist/:prod_id */ 
+// 产品页 /* department/:department_id */ 
 const getSpuMenuListAction = data => ({
   type: GET_SPU_MENU_LIST,
   data
