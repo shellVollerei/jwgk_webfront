@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-09 17:12:04
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-07 21:48:06
+ * @LastEditTime : 2020-01-09 18:37:06
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -27,11 +27,11 @@ import Footer from './publicComponents/Footer1';
 import "./publicComponents/less/antMotionStyle.less";
 
 import Income from "./pages/Income";
-import Detail from "./pages/Detail";
 import Aboutus from "./pages/Aboutus";
 import Activities from "./pages/Activities";
 import Products from "./pages/Products";
-import ProdList from "./pages/ProdList";    // ProdList 为产品列表，SkuList 为货品列表
+import Department from "./pages/Department";    // Department 为产品列表，SkuList 为货品列表
+import Detail from "./pages/Detail";
 
 let isMobile;
 enquireScreen(b => {
@@ -110,7 +110,7 @@ class App extends Component {
               <Route exact path="/products" component={Products} />
               <Route exact path="/activities" component={Activities} />
               <Route exact path="/aboutus" component={Aboutus} />
-              <Route exact path="/prodlist/:serve_type" component={ProdList} />
+              <Route exact path="/department/:department_id" component={Department} />
               <Route exact path="/detail/:pro_id" component={Detail} />
             </div>
             <Footer

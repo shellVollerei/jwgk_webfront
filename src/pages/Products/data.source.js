@@ -16,7 +16,7 @@ export const Feature00DataSource = {
         className: "content0-block",
         md: 8,
         xs: 24,
-        href: "/prodlist/xiaodugongyingzhongxin",
+        href: "/department/xiaodugongyingzhongxin",
         children: {
           className: "content0-block-item",
           children: [
@@ -43,7 +43,7 @@ export const Feature00DataSource = {
         className: "content0-block",
         md: 8,
         xs: 24,
-        href: "/prodlist/yuanganguanlike",
+        href: "/department/yuanganguanlike",
         children: {
           className: "content0-block-item",
           children: [
@@ -70,7 +70,7 @@ export const Feature00DataSource = {
         className: "content0-block k3tyxairvlt-editor_css",
         md: 8,
         xs: 24,
-        href: "/prodlist/neijingzhongxin",
+        href: "/department/neijingzhongxin",
         children: {
           className: "content0-block-item",
           children: [
@@ -97,7 +97,7 @@ export const Feature00DataSource = {
         className: "content0-block",
         md: 8,
         xs: 24,
-        href: "/prodlist/shoushushi",
+        href: "/department/shoushushi",
         children: {
           className: "content0-block-item",
           children: [
@@ -124,7 +124,7 @@ export const Feature00DataSource = {
         className: "content0-block",
         md: 8,
         xs: 24,
-        href: "/prodlist/kouqiangzhensuo",
+        href: "/department/kouqiangzhensuo",
         children: {
           className: "content0-block-item",
           children: [
