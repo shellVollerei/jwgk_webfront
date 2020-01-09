@@ -20,6 +20,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
+    "init": "npm install antd enquire-js rc-queue-anim rc-scroll-anim rc-tween-one rc-banner-anim babel-plugin-import --save",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
