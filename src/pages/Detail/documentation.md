@@ -3,14 +3,13 @@
  * @Github       : https://github.com/Burning-Shadow
  * @Major        : Software Engineering
  * @SchoolStatus : 2016
- * @Date         : 2020-01-02 15:49:09
+ * @Date         : 2020-01-09 22:40:04
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-11 21:46:01
+ * @LastEditTime : 2020-01-09 22:54:35
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  -->
-## 伪首页
+## 产品详情页
 
-- 用于跳转产品页的伪首页
-
-
+- URL：/detail/:detail_id
+- 用于展示产品详情

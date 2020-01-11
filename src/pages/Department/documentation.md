@@ -1,4 +1,15 @@
-# 如何使用：
+<!--
+ * @Author       : fatewang
+ * @Github       : https://github.com/Burning-Shadow
+ * @Major        : Software Engineering
+ * @SchoolStatus : 2016
+ * @Date         : 2020-01-09 18:36:27
+ * @LastEditors  : fatewang
+ * @LastEditTime : 2020-01-11 21:48:41
+ * @Description  : Edit it for yourself
+ * @ContactMe    : siir_52721@qq.com
+ -->
+## 科室页详情页
 
-- umi 里如何使用[请查看](https://landing.ant.design/docs/use/umi)。
-- 其它脚手架使用[请查看](https://landing.ant.design/docs/use/getting-started)。
+- URL：/department/:department_id
+- 主体分为两部分，左侧的SiderNavBar和右侧的相应门类产品
