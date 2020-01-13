@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-07 20:49:43
+ * @LastEditTime : 2020-01-13 22:55:01
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -66,12 +66,13 @@ export default class Home extends React.Component {
   }
 
   render() {
-    console.log(this.props.rightListCateId);
+    console.log("rightListCateId = ", this.props.rightListCateId);
     const children = [
       <Teams4
         id="Teams4_1"
         key="Teams4_1"
         dataSource={Teams4DataSource}
+        // dataSource={this.state.spuList}
         isMobile={this.state.isMobile}
       />
     ];
