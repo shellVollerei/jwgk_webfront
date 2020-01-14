@@ -8,9 +8,7 @@ import { Link } from "react-router-dom";
 class Content extends React.PureComponent {
 
   setProdMenuList = (href) => {
-    // console.log("href = ", href)
     var str = href.slice(12);
-    // console.log("str = ", str)
     // TODO: 这里把 prod_menu_list_id 存储至第三方存储对象中，传递给其父组件 index，再由父组件传递给右侧渲染列表 SpuList
     localStorage.setItem('prod_menu_list_id', str);
   }
@@ -38,6 +36,7 @@ class Content extends React.PureComponent {
               component={Row}
               componentProps={childWrapper}
             >
+              {/* TODO: 这部分改成三目运算符，动态判断是否有数据 */}
               {childWrapper.children.map((block, i) => {
                 const { children: item, ...blockProps } = block;
                 return (
