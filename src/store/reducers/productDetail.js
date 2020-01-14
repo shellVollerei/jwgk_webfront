@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-29 15:39:44
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-06 17:30:36
+ * @LastEditTime : 2020-01-14 12:00:29
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -23,7 +23,7 @@ export default (state = defaultState, action) => {
   switch (action.type) {
     case GET_PRODUCT_DETAIL:
       // const Data = JSON.parse(action.data);
-      // TODO: 映射轮播列表
+      // TODO: 映射产品详情页信息。数据结构暂且未完善，留坑
       break;
     default:
   }

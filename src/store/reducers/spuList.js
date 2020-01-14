@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-29 15:39:44
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-08 23:37:51
+ * @LastEditTime : 2020-01-14 12:01:19
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -23,7 +23,7 @@ export default (state = defaultState, action) => {
   switch (action.type) {
     case GET_SPU_LIST:
       const Data = JSON.parse(action.data);
-      // TODO: 映射轮播列表
+      // TODO: 映射 /department/department_id 右侧展示列表。与之配合的是需要先获取 category_id
 
       console.log(Data)
 

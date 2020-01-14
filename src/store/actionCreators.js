@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-19 16:43:56
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-07 19:29:46
+ * @LastEditTime : 2020-01-14 12:01:48
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -94,7 +94,7 @@ export const getFooterMsg = () => {
         Promise
           .all([comMsg, contactMsg])
           .then(val => {
-            // TODO: 映射 footerMsg
+            // 映射 footerMsg
             const footerData = {};
             footerData.companyData = val[0];
             footerData.contactsData = val[1];
@@ -168,7 +168,7 @@ const getSpuMenuListAction = data => ({
   data
 });
 
-// TODO: 产品分类列表 (左侧菜单列表部分)
+// 产品分类列表 (左侧菜单列表部分)
 export const getSpuMenuList = (spuListId) => {
   return dispatch => {
     $request
@@ -189,7 +189,7 @@ export const getSpuMenuList = (spuListId) => {
   }
 }
 
-// TODO: 产品菜单（右侧 Content 部分）
+// 产品菜单（右侧 Content 部分）
 const getSpuListAction = data => ({
   type: GET_SPU_LIST,
   data

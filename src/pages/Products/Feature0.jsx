@@ -11,7 +11,7 @@ class Content extends React.PureComponent {
     // console.log("href = ", href)
     var str = href.slice(12);
     // console.log("str = ", str)
-    // TODO: 这里把 prod_menu_list_id 存储至第三方存储对象中，传递给其父组件 index，再由
+    // TODO: 这里把 prod_menu_list_id 存储至第三方存储对象中，传递给其父组件 index，再由父组件传递给右侧渲染列表 SpuList
     localStorage.setItem('prod_menu_list_id', str);
   }
 

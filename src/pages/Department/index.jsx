@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-09 18:37:19
+ * @LastEditTime : 2020-01-14 12:22:22
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -109,7 +109,6 @@ export default class Department extends React.Component {
             this.dom = d;
           }}
         >
-          {/* TODO: 向 TypeContent 中传递列表相关参数，动态更新内容区域 */}
           <SkuList
             dataSource={this.state.spuListId}
             rightListCateId={this.state.openKey}

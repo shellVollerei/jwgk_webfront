@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-07 20:49:43
+ * @LastEditTime : 2020-01-14 11:51:55
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -32,7 +32,7 @@ export default class Home extends React.Component {
     super(props);
     this.state = {
       isMobile,
-      rightListCateId: this.props.rightListCateId,
+      rightListCateId: props.rightListCateId,
       spuList: store.getState().spuList
     };
 
@@ -55,8 +55,19 @@ export default class Home extends React.Component {
     // console.log("this.state ==== ", this.state);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.rightListCateId !== this.props.rightListCateId) {
+      this.setState({
+        rightListCateId: nextProps.rightListCateId
+      });
+      // TODO: 异步操作获取数据，渲染页面
+      // TODO: 将相应的 rightListCateId 存储至 redux 中，保证刷新后自动加载相应页面
+      console.log("右侧列表ID rightListCateId = ", nextProps.rightListCateId);
+    }
+  }
+
   componentDidMount() {
-    const actionSpuList = getSpuList(this.props.rightListCateId);
+    const actionSpuList = getSpuList(this.state.rightListCateId);
     store.dispatch(actionSpuList);
 
     // 适配手机屏幕;
@@ -66,12 +77,13 @@ export default class Home extends React.Component {
   }
 
   render() {
-    console.log(this.props.rightListCateId);
+    console.log("rightListCateId = ", this.props.rightListCateId);
     const children = [
       <Teams4
         id="Teams4_1"
         key="Teams4_1"
         dataSource={Teams4DataSource}
+        // dataSource={this.state.spuList}
         isMobile={this.state.isMobile}
       />
     ];
