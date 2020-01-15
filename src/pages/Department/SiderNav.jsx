@@ -1,13 +1,13 @@
 import React from "react";
 import { Col, Menu, Icon, List } from "antd";
-// import QueueAnim from "rc-queue-anim";
-// import { getChildrenToRender } from './utils';
+import store from "../../store/index";
 
 class SiderNav extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      openKeys: ["1"]
+      // TODO: openKeys 应从父组件中动态获取，然后渲染至子组件中
+      openKeys: [store.getState().spuMenuList.cateMenuList[0].cate_id] // 默认为左侧列表的第一个 id]
     };
   }
 

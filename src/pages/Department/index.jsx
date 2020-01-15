@@ -5,13 +5,11 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-14 12:02:30
+ * @LastEditTime : 2020-01-15 19:13:20
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
 
-/* eslint no-undef: 0 */
-/* eslint arrow-parens: 0 */
 import React from "react";
 import { enquireScreen } from "enquire-js";
 import { Col } from "antd";
@@ -37,6 +35,7 @@ export default class Department extends React.Component {
       isMobile,
       spuMenuList: store.getState().spuMenuList,
       spuLeftMenuId: this.getDepartmentId(),
+      // TODO: openKeys 应该建立相应的 redux action, 随后动态传递给子组件
       openKey: store.getState().spuMenuList.cateMenuList[0].cate_id // 默认为左侧列表的第一个 id
       // rightListData: store.getState().spuList
     };
@@ -66,12 +65,16 @@ export default class Department extends React.Component {
   };
 
   getDepartmentId = () => {
-    return window.location.pathname.slice(12);
+    // 替换掉 /department/, 只留下相应的 department_id 用以获取左侧下方列表
+    console.log(window.location.pathname.replace(/\/\bdepartment\b\//g, ""));
+    return window.location.pathname.replace(/\/\bdepartment\b\//g, "");
   }
 
   componentDidMount() {
     // 左侧列表通过截取 url 上的 pathname 属性进行 $request 请求发送
     const actionMenuList = getSpuMenuList(this.getDepartmentId());
+    // 将相应的 departmentId 存至 localStorage 中，下次刷新时取用即可
+    localStorage.setItem("department_id", this.getDepartmentId());
     store.dispatch(actionMenuList);
 
     // 适配手机屏幕;
