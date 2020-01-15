@@ -1,7 +1,6 @@
 import React from "react";
 import { Menu, Icon } from "antd";
-// import QueueAnim from "rc-queue-anim";
-// import { getChildrenToRender } from './utils';
+import store from "../../store/index";
 
 class SiderNav extends React.PureComponent {
   constructor(props) {
@@ -27,7 +26,8 @@ class SiderNav extends React.PureComponent {
     this.setState({
       navStyle: "nav-list-open",
       iconStyle: "icon-hide",
-      curtainStyle: "nav-list-curtain-open"
+      curtainStyle: "nav-list-curtain-open",
+      openKeys: [store.getState().spuMenuList.cateMenuList[0].cate_id] // 默认为左侧列表的第一个 id]
     });
   };
 
@@ -64,7 +64,8 @@ class SiderNav extends React.PureComponent {
           <Menu
             onClick={this.handleClick}
             style={{ width: 256 }}
-            defaultSelectedKeys={["1"]}
+            selectedKeys={this.state.openKeys}
+            defaultSelectedKeys={this.state.openKeys}
             defaultOpenKeys={["sub1"]}
             mode="inline"
           >
