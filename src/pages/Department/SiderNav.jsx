@@ -13,10 +13,6 @@ class SiderNav extends React.PureComponent {
 
   rootSubmenuKeys = ["sub1", "sub2", "sub4"];
 
-  state = {
-    openKeys: ["1"]
-  };
-
   onOpenChange = openKeys => {
     const latestOpenKey = openKeys.find(
       key => this.state.openKeys.indexOf(key) === -1
@@ -38,6 +34,7 @@ class SiderNav extends React.PureComponent {
       <Col>
         <Menu
           mode="inline"
+          selectedKeys={this.state.openKeys}
           openKeys={this.state.openKeys}
           onOpenChange={this.onOpenChange}
           style={{ width: 256, position: "fixed" }}

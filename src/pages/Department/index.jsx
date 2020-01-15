@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-15 19:13:20
+ * @LastEditTime : 2020-01-15 23:08:35
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -66,7 +66,7 @@ export default class Department extends React.Component {
 
   getDepartmentId = () => {
     // 替换掉 /department/, 只留下相应的 department_id 用以获取左侧下方列表
-    console.log(window.location.pathname.replace(/\/\bdepartment\b\//g, ""));
+    // console.log(window.location.pathname.replace(/\/\bdepartment\b\/|\?.*$/g, ""));
     return window.location.pathname.replace(/\/\bdepartment\b\//g, "");
   }
 
