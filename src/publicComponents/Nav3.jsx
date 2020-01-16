@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-03 15:59:50
+ * @LastEditTime : 2020-01-16 12:00:08
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -164,7 +164,7 @@ class Header3 extends React.Component {
             <Menu
               mode={isMobile ? "inline" : "horizontal"}
               // defaultSelectedKeys={["products"]}
-              selectedKeys={[currentKey]}
+              selectedKeys={currentKey}
               onClick={this.tabClick}
               theme="light"
             >

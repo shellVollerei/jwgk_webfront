@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-15 23:08:35
+ * @LastEditTime : 2020-01-16 22:13:50
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -62,12 +62,13 @@ export default class Department extends React.Component {
     this.setState({
       openKey
     });
+    localStorage.setItem("open_key", openKey);
   };
 
   getDepartmentId = () => {
-    // 替换掉 /department/, 只留下相应的 department_id 用以获取左侧下方列表
-    // console.log(window.location.pathname.replace(/\/\bdepartment\b\/|\?.*$/g, ""));
-    return window.location.pathname.replace(/\/\bdepartment\b\//g, "");
+    // 替换掉 /department/department_, 只留下相应的 department_id 用以获取左侧下方列表
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", window.location.pathname.replace(/\/department\/department_/g, ""));
+    return window.location.pathname.replace(/\/department\/department_/g, "");
   }
 
   componentDidMount() {
@@ -85,11 +86,12 @@ export default class Department extends React.Component {
 
   render() {
     return (
-      <div>
+      <div >
         {/* 手机屏 NavBar 适配 */}
         <PhoneSiderNav
           dataSource={this.state.spuMenuList}
           rightListShow={this.getOpenKey}
+          openKey={this.state.openKey}
         />
         <Col
           className="left-side-bar"
@@ -103,10 +105,12 @@ export default class Department extends React.Component {
           <SiderNav
             dataSource={this.state.spuMenuList}
             rightListShow={this.getOpenKey}
+            openKey={this.state.openKey}
           />
         </Col>
         <Col
           span={19}
+          style={{  width: "calc(100% - 160)"}}
           className="templates-wrapper"
           ref={d => {
             this.dom = d;

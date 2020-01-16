@@ -28,16 +28,19 @@ class SiderNav extends React.PureComponent {
 
   render() {
     // console.log(this.props);
-    const { dataSource, rightListShow } = this.props;
+    const { dataSource, rightListShow, openKey } = this.props;
+    const storageOpenKey = localStorage.getItem("open_key");
+    console.log("openKey =============================================== ",Object.prototype.toString.call(openKey));
+    console.log("storageOpenKey =============================================== ", Object.prototype.toString.call(storageOpenKey));
     const { cateMenuList } = dataSource;
     return (
       <Col>
         <Menu
           mode="inline"
-          selectedKeys={this.state.openKeys}
-          openKeys={this.state.openKeys}
+          defaultOpenKeys={openKey.toString() === storageOpenKey? openKey: storageOpenKey}
+          selectedKeys={openKey.toString() === storageOpenKey? openKey: storageOpenKey}
           onOpenChange={this.onOpenChange}
-          style={{ width: 256, position: "fixed" }}
+          style={{ minWidth: 160, position: "relative" }}
         >
           {cateMenuList.map(item => {
             return (
