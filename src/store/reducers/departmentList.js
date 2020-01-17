@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-29 15:39:44
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-07 12:03:25
+ * @LastEditTime : 2020-01-17 21:11:50
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -15,7 +15,7 @@ import { Feature00DataSource } from "../../pages/Products/data.source";
 
 const defaultState = Feature00DataSource;
 
-var updataCategoryList = (Data) => {
+var updateDepartmentList = (Data) => {
   var cateArr = [];
 
   for(var item of Data){
@@ -58,7 +58,7 @@ export default (state = defaultState, action) => {
       var Data = JSON.parse(action.data);
       Data = Data.data.departmentList;
 
-      var cateArr = updataCategoryList(Data);
+      var cateArr = updateDepartmentList(Data);
 
       newState.childWrapper.children = cateArr;
 

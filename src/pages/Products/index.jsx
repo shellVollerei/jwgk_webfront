@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-06 21:11:17
+ * @LastEditTime : 2020-01-17 21:12:54
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -16,7 +16,7 @@ import { enquireScreen } from "enquire-js";
 import Feature0 from "./Feature0";
 import "./less/antMotionStyle.less";
 import store from "../../store";
-import { getCategoryList } from "../../store/actionCreators"
+import { getDepartmentList } from "../../store/actionCreators"
 
 let isMobile;
 enquireScreen(b => {
@@ -28,12 +28,12 @@ export default class Products extends React.Component {
     super(props);
     this.state = {
       isMobile,
-      categoryList: store.getState().categoryList
+      departmentList: store.getState().departmentList
     };
 
     this.setState(() => {
-      var state = store.getState().categoryList;
-      state.categoryList = {};
+      var state = store.getState().departmentList;
+      state.departmentList = {};
       return state;
     });
 
@@ -42,7 +42,7 @@ export default class Products extends React.Component {
 
   handleStoreChange = () => {
     this.setState({
-      categoryList: store.getState().categoryList
+      departmentList: store.getState().departmentList
     });
 
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -50,8 +50,8 @@ export default class Products extends React.Component {
   }
 
   componentDidMount() {
-    const actionCategoryList = getCategoryList();
-    store.dispatch(actionCategoryList);
+    const actionDepartmentList = getDepartmentList();
+    store.dispatch(actionDepartmentList);
 
     // 适配手机屏幕;
     enquireScreen(b => {
@@ -65,7 +65,7 @@ export default class Products extends React.Component {
       <Feature0
         id="Feature0_0"
         key="Feature0_0"
-        dataSource={this.state.categoryList}
+        dataSource={this.state.departmentList}
         isMobile={this.state.isMobile}
       />
     ];
