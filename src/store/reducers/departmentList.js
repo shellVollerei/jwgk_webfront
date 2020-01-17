@@ -5,12 +5,12 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-29 15:39:44
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-17 21:11:50
+ * @LastEditTime : 2020-01-17 21:17:41
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
 
-import { GET_CATEGORY_LIST } from "../actionTypes";
+import { GET_DEPARTMENT_LIST } from "../actionTypes";
 import { Feature00DataSource } from "../../pages/Products/data.source";
 
 const defaultState = Feature00DataSource;
@@ -54,7 +54,7 @@ export default (state = defaultState, action) => {
   const newState = JSON.parse(JSON.stringify(state));
   
   switch (action.type) {
-    case GET_CATEGORY_LIST:
+    case GET_DEPARTMENT_LIST:
       var Data = JSON.parse(action.data);
       Data = Data.data.departmentList;
 

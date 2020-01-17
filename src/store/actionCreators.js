@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-19 16:43:56
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-17 21:10:56
+ * @LastEditTime : 2020-01-17 21:17:33
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -16,7 +16,7 @@ import {
   GET_MAIN_NAV_LIST,
   GET_FOOTER_MSG,
   GET_CAROUSEL_LIST,
-  GET_CATEGORY_LIST,
+  GET_DEPARTMENT_LIST,
   GET_SPU_MENU_LIST,
   GET_SPU_LIST,
   GET_PRODUCT_DETAIL
@@ -137,7 +137,7 @@ export const getCarouselList = () => {
 
 // 下方科室列表生成
 const getDepartmentListAction = data => ({
-  type: GET_CATEGORY_LIST,
+  type: GET_DEPARTMENT_LIST,
   data
 });
 
