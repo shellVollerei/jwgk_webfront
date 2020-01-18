@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-19 16:43:56
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-14 12:01:48
+ * @LastEditTime : 2020-01-17 21:17:33
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -16,7 +16,7 @@ import {
   GET_MAIN_NAV_LIST,
   GET_FOOTER_MSG,
   GET_CAROUSEL_LIST,
-  GET_CATEGORY_LIST,
+  GET_DEPARTMENT_LIST,
   GET_SPU_MENU_LIST,
   GET_SPU_LIST,
   GET_PRODUCT_DETAIL
@@ -136,13 +136,13 @@ export const getCarouselList = () => {
 }
 
 // 下方科室列表生成
-const getCategoryListAction = data => ({
-  type: GET_CATEGORY_LIST,
+const getDepartmentListAction = data => ({
+  type: GET_DEPARTMENT_LIST,
   data
 });
 
 // 科室列表
-export const getCategoryList = () => {
+export const getDepartmentList = () => {
   return dispatch => {
     $request
       .get(`/post`, {
@@ -152,7 +152,7 @@ export const getCategoryList = () => {
       })
       .then(resData => {
         const data = resData;
-        const action = getCategoryListAction(data);
+        const action = getDepartmentListAction(data);
         dispatch(action);
       })
       .catch(e => {

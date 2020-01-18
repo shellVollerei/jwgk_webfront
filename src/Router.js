@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-09 17:12:04
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-09 18:37:06
+ * @LastEditTime : 2020-01-18 23:32:41
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -96,11 +96,7 @@ class App extends Component {
               isMobile={this.state.isMobile}
               style={{ position: "fixed" }}
             />
-            <div
-              className="nouse"
-              style={{ width: "100%", height: "64px" }}
-            ></div>
-            <div style={{width: "100%", height: "calc(100% - 144px)"}}>
+            <div style={{ height: "calc(100% - 144px)", maxWidth: 1200, margin: "64px auto"}}>
               <Route
                 exact
                 path="/"

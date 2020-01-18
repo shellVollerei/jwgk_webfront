@@ -36,7 +36,7 @@ class SiderNav extends React.PureComponent {
   };
 
   render() {
-    const { dataSource, rightListShow } = this.props;
+    const { dataSource, rightListShow, openKey } = this.props;
     const { cateMenuList } = dataSource;
 
     return (
@@ -64,9 +64,8 @@ class SiderNav extends React.PureComponent {
           <Menu
             onClick={this.handleClick}
             style={{ width: 256 }}
-            selectedKeys={this.state.openKeys}
-            defaultSelectedKeys={this.state.openKeys}
-            defaultOpenKeys={["sub1"]}
+            selectedKeys={openKey}
+            defaultSelectedKeys={openKey}
             mode="inline"
           >
             {cateMenuList.map((item, i) => {
