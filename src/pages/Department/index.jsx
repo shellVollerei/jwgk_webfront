@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-17 20:58:27
+ * @LastEditTime : 2020-01-18 22:54:29
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -20,6 +20,7 @@ import { getSpuMenuList } from "../../store/actionCreators";
 import SiderNav from "./SiderNav";
 import PhoneSiderNav from "./PhoneSiderNav";
 import SkuList from "../SkuList/index"; // 右侧产品列表
+import DetailContent from "./DetailContent";
 
 import "./less/antMotionStyle.less";
 
@@ -68,6 +69,7 @@ export default class Department extends React.Component {
   getDepartmentId = () => {
     // 替换掉 /department/department_, 只留下相应的 department_id 用以获取左侧下方列表
     console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", window.location.pathname.replace(/\/department\/department_/g, ""));
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", window.location);
     return window.location.pathname.replace(/\/department\/department_/g, "");
   }
 
@@ -87,8 +89,9 @@ export default class Department extends React.Component {
   render() {
     return (
       <div >
-        {/* 手机屏 NavBar 适配 */}
-        <PhoneSiderNav
+        <DetailContent dataSource={this.state.spuMenuList} />
+
+        {/* <PhoneSiderNav
           dataSource={this.state.spuMenuList}
           rightListShow={this.getOpenKey}
           openKey={this.state.openKey}
@@ -101,7 +104,7 @@ export default class Department extends React.Component {
             this.dom = d;
           }}
         >
-          {/* 电脑屏 NavBar 适配 */}
+          
           <SiderNav
             dataSource={this.state.spuMenuList}
             rightListShow={this.getOpenKey}
@@ -120,7 +123,7 @@ export default class Department extends React.Component {
             dataSource={this.state.spuListId}
             rightListCateId={this.state.openKey}
           />
-        </Col>
+        </Col> */}
       </div>
     );
   }

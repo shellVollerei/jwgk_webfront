@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-14 11:51:55
+ * @LastEditTime : 2020-01-18 23:29:53
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -56,14 +56,9 @@ export default class Home extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.rightListCateId !== this.props.rightListCateId) {
-      this.setState({
-        rightListCateId: nextProps.rightListCateId
-      });
-      // TODO: 异步操作获取数据，渲染页面
-      // TODO: 将相应的 rightListCateId 存储至 redux 中，保证刷新后自动加载相应页面
-      console.log("右侧列表ID rightListCateId = ", nextProps.rightListCateId);
-    }
+    console.log("SkuList ============== ", window.location);
+    // TODO: 从 location 中提取 href ，截取得到相应的 cate_id 进行异步数据请求。将 URL 上的 href 作为唯一来源
+    console.log("右侧列表ID rightListCateId = ", nextProps.rightListCateId);
   }
 
   componentDidMount() {
