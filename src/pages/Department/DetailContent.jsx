@@ -34,7 +34,7 @@ class SiderNav extends React.PureComponent {
       navStyle: "nav-list-open",
       iconStyle: "icon-hide",
       curtainStyle: "nav-list-curtain-open",
-      cate_id: [this.state.cate_id] // 默认为左侧列表的第一个 id]
+      cate_id: this.state.cate_id // 默认为左侧列表的第一个 id]
     });
   };
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 手机端 end >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -49,7 +49,7 @@ class SiderNav extends React.PureComponent {
   };
 
   rightListShow = (openKey) => {
-    window.history.pushState(null, null, `${this.props.location.pathname}?openKey=${openKey}`);
+    window.history.pushState(null, null, `${window.location.pathname}?openKey=${openKey}`);
     
     this.setState({
       cate_id: openKey

@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-19 17:46:58
+ * @LastEditTime : 2020-01-19 18:33:10
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -30,11 +30,7 @@ export default class Department extends React.Component {
     super(props);
     this.state = {
       isMobile,
-      spuMenuList: store.getState().spuMenuList,
-      spuLeftMenuId: this.getDepartmentId(),
-      // TODO: openKeys 应该建立相应的 redux action, 随后动态传递给子组件
-      openKey: store.getState().spuMenuList.cateMenuList[0].cate_id // 默认为左侧列表的第一个 id
-      // rightListData: store.getState().spuList
+      spuMenuList: store.getState().spuMenuList
     };
 
     this.setState(() => {
