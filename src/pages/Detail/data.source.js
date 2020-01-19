@@ -5,12 +5,11 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-31 17:42:48
  * @LastEditors  : fatewang
- * @LastEditTime : 2019-12-31 18:14:36
+ * @LastEditTime : 2020-01-19 18:28:39
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
 
-import React from 'react';
 export const Pricing00DataSource = {
   wrapper: { className: 'home-page-wrapper pricing0-wrapper' },
   OverPack: { playScale: 0.3, className: 'home-page pricing0' },

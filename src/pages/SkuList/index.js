@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-18 23:29:53
+ * @LastEditTime : 2020-01-19 12:09:21
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -56,9 +56,8 @@ export default class Home extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("SkuList ============== ", window.location);
-    // TODO: 从 location 中提取 href ，截取得到相应的 cate_id 进行异步数据请求。将 URL 上的 href 作为唯一来源
     console.log("右侧列表ID rightListCateId = ", nextProps.rightListCateId);
+    // TODO：通过传递而来的 rightListCateId 进行异步请求
   }
 
   componentDidMount() {
@@ -72,7 +71,6 @@ export default class Home extends React.Component {
   }
 
   render() {
-    console.log("rightListCateId = ", this.props.rightListCateId);
     const children = [
       <Teams4
         id="Teams4_1"

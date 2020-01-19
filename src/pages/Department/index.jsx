@@ -5,21 +5,17 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-18 22:54:29
+ * @LastEditTime : 2020-01-19 17:46:58
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
 
 import React from "react";
 import { enquireScreen } from "enquire-js";
-import { Col } from "antd";
 
 import store from "../../store/index";
 import { getSpuMenuList } from "../../store/actionCreators";
 
-import SiderNav from "./SiderNav";
-import PhoneSiderNav from "./PhoneSiderNav";
-import SkuList from "../SkuList/index"; // 右侧产品列表
 import DetailContent from "./DetailContent";
 
 import "./less/antMotionStyle.less";
@@ -59,25 +55,14 @@ export default class Department extends React.Component {
     console.log("这个为什么会打印三次呢？ this.state ==== ", this.state);
   };
 
-  getOpenKey = openKey => {
-    this.setState({
-      openKey
-    });
-    localStorage.setItem("open_key", openKey);
-  };
-
   getDepartmentId = () => {
     // 替换掉 /department/department_, 只留下相应的 department_id 用以获取左侧下方列表
-    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", window.location.pathname.replace(/\/department\/department_/g, ""));
-    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", window.location);
     return window.location.pathname.replace(/\/department\/department_/g, "");
   }
 
   componentDidMount() {
     // 左侧列表通过截取 url 上的 pathname 属性进行 $request 请求发送
     const actionMenuList = getSpuMenuList(this.getDepartmentId());
-    // 将相应的 departmentId 存至 localStorage 中，下次刷新时取用即可
-    localStorage.setItem("department_id", this.getDepartmentId());
     store.dispatch(actionMenuList);
 
     // 适配手机屏幕;
@@ -89,41 +74,9 @@ export default class Department extends React.Component {
   render() {
     return (
       <div >
-        <DetailContent dataSource={this.state.spuMenuList} />
-
-        {/* <PhoneSiderNav
-          dataSource={this.state.spuMenuList}
-          rightListShow={this.getOpenKey}
-          openKey={this.state.openKey}
+        <DetailContent 
+          dataSource={this.state.spuMenuList} 
         />
-        <Col
-          className="left-side-bar"
-          span={5}
-          style={{ minWidth: 160, height: "100%" }}
-          ref={d => {
-            this.dom = d;
-          }}
-        >
-          
-          <SiderNav
-            dataSource={this.state.spuMenuList}
-            rightListShow={this.getOpenKey}
-            openKey={this.state.openKey}
-          />
-        </Col>
-        <Col
-          span={19}
-          style={{  width: "calc(100% - 160)"}}
-          className="templates-wrapper"
-          ref={d => {
-            this.dom = d;
-          }}
-        >
-          <SkuList
-            dataSource={this.state.spuListId}
-            rightListCateId={this.state.openKey}
-          />
-        </Col> */}
       </div>
     );
   }

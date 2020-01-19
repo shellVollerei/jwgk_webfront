@@ -1,6 +1,5 @@
 import React from "react";
-import { Col, Menu, Icon, List } from "antd";
-import { withRouter } from "react-router-dom";
+import { Col, Menu, Icon } from "antd";
 
 import store from "../../store/index";
 import SkuList from "../SkuList/index"; // 右侧产品列表
@@ -11,15 +10,16 @@ class SiderNav extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      openKeys: [store.getState().spuMenuList.cateMenuList[0].cate_id],
       iconStyle: "icon-show",
       navStyle: "nav-list-curtain-close",
       curtainStyle: "nav-list-close",
-      cate_id: store.getState().spuMenuList.cateMenuList[0].cate_id
+      cate_id: window.location.search.replace(/\?openKey=/g, "") === "" ?
+        store.getState().spuMenuList.cateMenuList[0].cate_id :
+        window.location.search.replace(/\?openKey=/g, "")
     };
   }
 
-  // >>>>>>>>>>>>>>>>> 手机端 >>>>>>>>>>>>>>>>>>>>>>>>>>
+  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 手机端 start >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   closeCurtain = () => {
     // 隐藏幕布 & phoneSiderNav & 显示 Icon
     this.setState({
@@ -34,9 +34,10 @@ class SiderNav extends React.PureComponent {
       navStyle: "nav-list-open",
       iconStyle: "icon-hide",
       curtainStyle: "nav-list-curtain-open",
-      openKeys: [store.getState().spuMenuList.cateMenuList[0].cate_id] // 默认为左侧列表的第一个 id]
+      cate_id: [this.state.cate_id] // 默认为左侧列表的第一个 id]
     });
   };
+  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 手机端 end >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
   onOpenChange = openKeys => {
     const latestOpenKey = openKeys.find(
@@ -47,25 +48,15 @@ class SiderNav extends React.PureComponent {
     });
   };
 
-  rightListShow = (cate_id) => {
-    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", cate_id);
-    console.log("this.props ========== ", this.props);
-    this.props.history.push({
-      name: "111"
-    })
-    this.props.history.location.search = "aaa=111"
-    // browserHistory.push('/department/department_:department_id?name=111');
-    // window.location.href = `${this.props.location.pathname}?cate_id=${cate_id}`
-    window.history.pushState(null, null, `${this.props.location.pathname}?cate_id=${cate_id}`);
-    console.log("this.props.history.location.search ========== ", this.props.history.location.search);
+  rightListShow = (openKey) => {
+    window.history.pushState(null, null, `${this.props.location.pathname}?openKey=${openKey}`);
+    
     this.setState({
-      cate_id,
-      openKeys: [cate_id]
+      cate_id: openKey
     })
   }
 
   render() {
-    // console.log(this.props);
     const { dataSource } = this.props;
     const { cateMenuList } = dataSource;
     return (
@@ -95,8 +86,8 @@ class SiderNav extends React.PureComponent {
             <Menu
               onClick={this.handleClick}
               style={{ width: 256 }}
-              defaultOpenKeys={this.state.openKeys}
-              selectedKeys={this.state.openKeys}
+              defaultOpenKeys={[this.state.cate_id]}
+              selectedKeys={[this.state.cate_id]}
               onOpenChange={this.onOpenChange}
               mode="inline"
             >
@@ -125,8 +116,8 @@ class SiderNav extends React.PureComponent {
         >
           <Menu
             mode="inline"
-            defaultOpenKeys={this.state.openKeys}
-            selectedKeys={this.state.openKeys}
+            defaultOpenKeys={[this.state.cate_id]}
+            selectedKeys={[this.state.cate_id]}
             onOpenChange={this.onOpenChange}
             style={{ minWidth: 160, position: "relative" }}
           >
@@ -153,7 +144,8 @@ class SiderNav extends React.PureComponent {
         >
           <SkuList 
             dataSource={this.state.spuListId}
-            rightListCateId={this.state.openKeys}
+            // 此处是否需要传递
+            rightListCateId={this.state.cate_id}
           />
         </Col>
       </div>
@@ -161,4 +153,4 @@ class SiderNav extends React.PureComponent {
   }
 }
 
-export default withRouter(SiderNav);
+export default SiderNav;
