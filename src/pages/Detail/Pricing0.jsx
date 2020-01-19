@@ -2,7 +2,7 @@ import React from 'react';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
-import { Row, Col } from 'antd';
+import { Carousel, Row, Col } from 'antd';
 import { getChildrenToRender } from './utils';
 
 function Pricing0(props) {
@@ -40,9 +40,18 @@ function Pricing0(props) {
             xs: dataSource.imgWrapper.xs,
           }}
         >
-          <span {...dataSource.img}>
-            <img src={dataSource.img.children} width="100%" alt="img" />
-          </span>
+          {/* TODO: 此部分替换为轮播图 */}
+          <Carousel autoplay>
+            {
+              dataSource.carouselList.map((item, i) => {
+                return (
+                  <div style={{backgroundColor: 'red', width: "100%", height: 80}}>
+                    <img src={item.children} width="100%" alt="img" key={i} />
+                  </div>
+                )
+              })
+            }
+          </Carousel>
         </TweenOne>
         <QueueAnim
           key="text"

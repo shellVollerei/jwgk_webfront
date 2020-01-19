@@ -48,7 +48,7 @@ class SiderNav extends React.PureComponent {
     });
   };
 
-  rightListShow = (openKey) => {
+  rightListOpenKey = (openKey) => {
     window.history.pushState(null, null, `${window.location.pathname}?openKey=${openKey}`);
     
     this.setState({
@@ -96,7 +96,7 @@ class SiderNav extends React.PureComponent {
                   <Menu.Item
                     key={item.cate_id}
                     onClick={()=>
-                      this.rightListShow(item.cate_id)
+                      this.rightListOpenKey(item.cate_id)
                     }
                   >
                     {item.name}
@@ -126,7 +126,7 @@ class SiderNav extends React.PureComponent {
                 <Menu.Item
                   key={item.cate_id}
                   onClick={()=>
-                    this.rightListShow(item.cate_id)
+                    this.rightListOpenKey(item.cate_id)
                   }
                 >
                   {item.name}

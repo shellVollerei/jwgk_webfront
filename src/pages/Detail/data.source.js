@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-31 17:42:48
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-19 18:28:39
+ * @LastEditTime : 2020-01-19 23:44:50
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -14,12 +14,38 @@ export const Pricing00DataSource = {
   wrapper: { className: 'home-page-wrapper pricing0-wrapper' },
   OverPack: { playScale: 0.3, className: 'home-page pricing0' },
   imgWrapper: { className: 'pricing0-img-wrapper', md: 12, xs: 24 },
-  img: {
-    className: 'pricing0-img',
-    name: 'image',
-    children:
-      'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*OnyWT4Nsxy0AAAAAAAAAAABjARQnAQ',
-  },
+  carouselList: [
+    {
+      className: 'pricing0-img',
+      name: 'image',
+      children:
+        'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*OnyWT4Nsxy0AAAAAAAAAAABjARQnAQ',
+    },
+    {
+      className: 'pricing0-img',
+      name: 'image',
+      children:
+        'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*OnyWT4Nsxy0AAAAAAAAAAABjARQnAQ',
+    },
+    {
+      className: 'pricing0-img',
+      name: 'image',
+      children:
+        'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*OnyWT4Nsxy0AAAAAAAAAAABjARQnAQ',
+    },
+    {
+      className: 'pricing0-img',
+      name: 'image',
+      children:
+        'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*OnyWT4Nsxy0AAAAAAAAAAABjARQnAQ',
+    },
+    {
+      className: 'pricing0-img',
+      name: 'image',
+      children:
+        'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*OnyWT4Nsxy0AAAAAAAAAAABjARQnAQ',
+    },
+  ],
   childWrapper: {
     className: 'pricing0-text-wrapper',
     md: 12,
@@ -27,13 +53,13 @@ export const Pricing00DataSource = {
     children: [
       {
         name: 'title',
-        children: 'OceanBase 服务器',
+        children: 'Mac-Pro 2019特惠版',
         className: 'pricing0-title',
       },
       {
         name: 'content',
         children:
-          '云资源集中编排、弹性伸缩、持续发布和部署，高可用及容灾。按金融企业安全要求打造的完整云上安全体系，全方位保障金融应用及数据安全。<br/>500-5Gbps，10 GB-50TB（含），1TB流量包，国内按峰值。',
+          '144Hz，16英寸。轻便小巧，配置中高，现购买即可获得价值300的京东E卡，同时赠送16寸电脑包',
         className: 'pricing0-content',
       },
       { name: 'pricing', children: '¥2,200', className: 'pricing0-pricing' },
