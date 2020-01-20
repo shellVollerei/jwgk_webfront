@@ -2,7 +2,7 @@ import React from 'react';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
-import { Carousel, Row, Col } from 'antd';
+import { Carousel, Row, Col, Radio } from 'antd';
 import { getChildrenToRender } from './utils';
 
 function Pricing0(props) {
@@ -10,6 +10,9 @@ function Pricing0(props) {
   const { dataSource, isMobile } = tagProps;
   delete tagProps.dataSource;
   delete tagProps.isMobile;
+  // const handleSizeChange = e => {
+  //   this.setState({ size: e.target.value });
+  // };
   const animType = {
     queue: isMobile ? 'bottom' : 'right',
     one: isMobile
@@ -63,6 +66,11 @@ function Pricing0(props) {
             xs: dataSource.childWrapper.xs,
           }}
         >
+          {/* <Radio.Group value={size} onChange={handleSizeChange}>
+            <Radio.Button value="large">Large</Radio.Button>
+            <Radio.Button value="default">Default</Radio.Button>
+            <Radio.Button value="small">Small</Radio.Button>
+          </Radio.Group> */}
           {dataSource.childWrapper.children.map(getChildrenToRender)}
         </QueueAnim>
       </OverPack>
