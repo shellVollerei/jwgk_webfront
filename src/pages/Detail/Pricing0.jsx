@@ -45,9 +45,7 @@ function Pricing0(props) {
             {
               dataSource.carouselList.map((item, i) => {
                 return (
-                  <div style={{backgroundColor: 'red', width: "100%", height: 80}}>
                     <img src={item.children} width="100%" alt="img" key={i} />
-                  </div>
                 )
               })
             }
