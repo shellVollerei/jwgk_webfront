@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-31 17:42:48
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-02 21:13:05
+ * @LastEditTime : 2020-01-20 18:00:43
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -38,17 +38,6 @@ export default class Home extends React.Component {
     enquireScreen(b => {
       this.setState({ isMobile: !!b });
     });
-    // dva 2.0 样式在组件渲染之后动态加载，导致滚动组件不生效；线上不影响；
-    /* 如果不是 dva 2.0 请删除 start */
-    if (location.port) {
-      // 样式 build 时间在 200-300ms 之间;
-      setTimeout(() => {
-        this.setState({
-          show: true
-        });
-      }, 500);
-    }
-    /* 如果不是 dva 2.0 请删除 end */
   }
 
   render() {
@@ -67,9 +56,7 @@ export default class Home extends React.Component {
           this.dom = d;
         }}
       >
-        {/* 如果不是 dva 2.0 替换成 {children} start */}
-        {this.state.show && children}
-        {/* 如果不是 dva 2.0 替换成 {children} end */}
+        {children}
       </div>
     );
   }

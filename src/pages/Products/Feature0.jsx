@@ -30,7 +30,7 @@ class Content extends React.PureComponent {
               component={Row}
               componentProps={childWrapper}
             >
-              {/* TODO: 这部分改成三目运算符，动态判断是否有数据 */}
+              {/* TODO: 这部分改成三目运算符，动态判断是否有数据 —— 将 dataSource 中的渲染部分改为空数组，通过长度判别 */}
               {childWrapper.children.map((block, i) => {
                 const { children: item, ...blockProps } = block;
                 return (

@@ -5,11 +5,10 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-04 17:15:54
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-07 21:49:50
+ * @LastEditTime : 2020-01-19 18:28:23
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
-import React from "react";
 
 export const Nav30DataSource = {
   wrapper: { className: "header3 home-page-wrapper" },
