@@ -10,9 +10,7 @@ function Pricing0(props) {
   const { dataSource, isMobile } = tagProps;
   delete tagProps.dataSource;
   delete tagProps.isMobile;
-  // const handleSizeChange = e => {
-  //   this.setState({ size: e.target.value });
-  // };
+ 
   const animType = {
     queue: isMobile ? 'bottom' : 'right',
     one: isMobile
@@ -43,7 +41,6 @@ function Pricing0(props) {
             xs: dataSource.imgWrapper.xs,
           }}
         >
-          {/* TODO: 此部分替换为轮播图 */}
           <Carousel autoplay>
             {
               dataSource.carouselList.map((item, i) => {
@@ -53,6 +50,7 @@ function Pricing0(props) {
               })
             }
           </Carousel>
+          {/* TODO: 这部分酌情考虑是否可以成为小图 */}
         </TweenOne>
         <QueueAnim
           key="text"
@@ -66,12 +64,16 @@ function Pricing0(props) {
             xs: dataSource.childWrapper.xs,
           }}
         >
-          {/* <Radio.Group value={size} onChange={handleSizeChange}>
-            <Radio.Button value="large">Large</Radio.Button>
-            <Radio.Button value="default">Default</Radio.Button>
-            <Radio.Button value="small">Small</Radio.Button>
-          </Radio.Group> */}
           {dataSource.childWrapper.children.map(getChildrenToRender)}
+          <Radio.Group value={props.spu} onChange={props.handleSpuChange} style={{marginTop: 30}}>
+            {
+              props.spuList.map((item, i) => {
+                return (
+                  <Radio.Button value={item} key={i}>{item}</Radio.Button>
+                )
+              })
+            }
+          </Radio.Group>
         </QueueAnim>
       </OverPack>
     </div>

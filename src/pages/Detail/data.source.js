@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-31 17:42:48
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-20 11:26:20
+ * @LastEditTime : 2020-01-20 23:04:21
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -62,14 +62,14 @@ export const Pricing00DataSource = {
           '听诊器是一种医学仪器，用以聆听身体内的声音，例如：心脏、呼吸及肠胃等等。听诊器由法国医生雷奈克（Laennec）于1816年创造，于1819年公布。听诊器是医生检查病人、诊断疾病的一种重要方法。听诊器主要由铜、橡胶管、弹簧片和听头等材料组成。听诊器更分“单用听诊器”、“双用听诊器”、“三用听诊器”、“立式听诊器”和“多用听诊器”等多种，用于在不同环境听诊不同状况的病人。',
         className: 'pricing0-content',
       },
-      { name: 'pricing', children: '¥2,200', className: 'pricing0-pricing' },
+      { name: 'pricing', children: '', className: 'pricing0-pricing' },
       {
         name: 'button',
         children: {
-          icon: 'shopping-cart',
+          icon: 'download',
           href: '#',
           type: 'primary',
-          children: '立即购买',
+          children: '相关资料',
         },
       },
     ],

@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-31 17:42:48
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-20 18:00:43
+ * @LastEditTime : 2020-01-20 23:15:36
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -22,14 +22,13 @@ enquireScreen(b => {
   isMobile = b;
 });
 
-const { location } = window;
-
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isMobile,
-      show: !location.port // 如果不是 dva 2.0 请删除
+      spu: "large",
+      spuList: ["Large", "Default", "Small"]
     };
   }
 
@@ -40,6 +39,12 @@ export default class Home extends React.Component {
     });
   }
 
+  handleSpuChange = e => {
+    this.setState({ spu: e.target.value });
+    window.history.pushState(null, null, `${window.location.pathname}?spuid=${e.target.value}`);
+    console.log(e.target.value);
+  };
+
   render() {
     const children = [
       <Pricing0
@@ -47,6 +52,9 @@ export default class Home extends React.Component {
         key="Pricing0_0"
         dataSource={Pricing00DataSource}
         isMobile={this.state.isMobile}
+        handleSpuChange={this.handleSpuChange}
+        spu={this.state.spu}
+        spuList={this.state.spuList}
       />
     ];
     return (
