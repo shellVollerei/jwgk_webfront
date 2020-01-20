@@ -6,7 +6,10 @@
     "antd": "^3.26.0",
     "axios": "^0.19.0",
     "babel-plugin-import": "^1.13.0",
+    "customize-cra": "^0.9.1",
     "enquire-js": "^0.2.1",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
     "qs": "^6.9.1",
     "query-string": "^6.10.1",
     "rc-banner-anim": "^2.4.2",
@@ -14,6 +17,7 @@
     "rc-scroll-anim": "^2.7.4",
     "rc-tween-one": "^2.6.5",
     "react": "^16.12.0",
+    "react-app-rewired": "^2.1.5",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
@@ -21,7 +25,6 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "init_env": "cnpm install react-app-rewired customize-cra --save",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
