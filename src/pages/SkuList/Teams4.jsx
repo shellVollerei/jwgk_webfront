@@ -1,12 +1,20 @@
 import React from "react";
 import TweenOne from "rc-tween-one";
 import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
-import { Row, Col } from "antd";
+import { Row, Col, Pagination } from "antd";
 import QueueAnim from "rc-queue-anim";
 import { Link } from "react-router-dom";
 // import { getChildrenToRender } from './utils';
 
 class Content8 extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentPage: 1,
+      total: 50
+    };
+  }
+
   getDelay = (e, b) => (e % b) * 100 + Math.floor(e / b) * 100 + b * 100;
 
   getBlockChildren = (item, i) => {
@@ -52,6 +60,13 @@ class Content8 extends React.PureComponent {
                 {children}
               </Row>
             </QueueAnim>
+            <Pagination
+              style={{textAlign: "center"}}
+              total={this.state.total}
+              showTotal={total => `Total ${this.state.total} items`}
+              pageSize={8}
+              defaultCurrent={this.state.currentPage}
+            />
           </OverPack>
         </div>
       </div>
