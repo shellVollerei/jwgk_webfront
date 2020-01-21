@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-09 17:12:04
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-18 23:32:41
+ * @LastEditTime : 2020-01-21 23:00:29
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -32,6 +32,7 @@ import Activities from "./pages/Activities";
 import Products from "./pages/Products";
 import Department from "./pages/Department";    // Department 为产品列表，SkuList 为货品列表
 import Detail from "./pages/Detail";
+import NotFound from "./pages/NotFound";
 
 let isMobile;
 enquireScreen(b => {
@@ -87,36 +88,33 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Switch>
-          <div style={{ overflow: "hidden" }}>
-            <Header
-              id="Nav3_0"
-              key="Nav3_0"
-              dataSource={this.state.headerNav}
-              isMobile={this.state.isMobile}
-              style={{ position: "fixed" }}
-            />
-            <div style={{ height: "calc(100% - 144px)", maxWidth: 1200, margin: "64px auto"}}>
-              <Route
-                exact
-                path="/"
-                render={() => <Redirect to="/Income"></Redirect>}
-              ></Route>
+        <div style={{ overflow: "hidden" }}>
+          <Header
+            id="Nav3_0"
+            key="Nav3_0"
+            dataSource={this.state.headerNav}
+            isMobile={this.state.isMobile}
+            style={{ position: "fixed" }}
+          />
+          <div style={{ height: "calc(100% - 144px)", maxWidth: 1200, margin: "64px auto"}}>
+            <Switch>
               <Route exact path="/income" component={Income} />
               <Route exact path="/products" component={Products} />
               <Route exact path="/activities" component={Activities} />
               <Route exact path="/aboutus" component={Aboutus} />
               <Route exact path="/department/:department_id" component={Department} />
               <Route exact path="/detail/:pro_id" component={Detail} />
-            </div>
-            <Footer
-              id="Footer1_0"
-              key="Footer1_0"
-              dataSource={this.state.footerMsg}
-              isMobile={this.state.isMobile}
-            />,
+              <Redirect from="/" to="/Income"></Redirect>
+              <Route exact component={NotFound} />
+            </Switch>
           </div>
-        </Switch>
+          <Footer
+            id="Footer1_0"
+            key="Footer1_0"
+            dataSource={this.state.footerMsg}
+            isMobile={this.state.isMobile}
+          />,
+        </div>
       </Router>
     );
   }
