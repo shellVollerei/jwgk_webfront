@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-02 15:49:09
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-21 21:52:51
+ * @LastEditTime : 2020-01-21 23:49:02
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -26,7 +26,7 @@ export default class Home extends React.Component {
         <div style={{position: "relative", top: "50%", transform: "translateY(-50%)"}}>
           <div style={{fontSize: 100, textAlign: "center"}}>404</div>
           <div style={{fontSize: 40, textAlign: "center"}}>Page Not Found</div>
-          <div style={{fontSize: 30, textAlign: "center"}}>Please check your URL is correct</div>
+          <div style={{fontSize: 30, textAlign: "center"}}>Make sure your URL is correct</div>
         </div>
       </div>
     );
