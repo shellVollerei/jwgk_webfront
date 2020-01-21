@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-09 17:12:04
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-21 23:00:29
+ * @LastEditTime : 2020-01-21 23:08:24
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -14,8 +14,7 @@ import React, { Component } from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
-  Redirect
+  Switch
 } from "react-router-dom";
 import { enquireScreen } from "enquire-js";
 
@@ -98,13 +97,12 @@ class App extends Component {
           />
           <div style={{ height: "calc(100% - 144px)", maxWidth: 1200, margin: "64px auto"}}>
             <Switch>
-              <Route exact path="/income" component={Income} />
+              <Route exact path="/" component={Income} />
               <Route exact path="/products" component={Products} />
               <Route exact path="/activities" component={Activities} />
               <Route exact path="/aboutus" component={Aboutus} />
               <Route exact path="/department/:department_id" component={Department} />
               <Route exact path="/detail/:pro_id" component={Detail} />
-              <Redirect from="/" to="/Income"></Redirect>
               <Route exact component={NotFound} />
             </Switch>
           </div>
