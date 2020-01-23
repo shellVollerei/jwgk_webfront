@@ -5,7 +5,7 @@
  * @SchoolStatus : 2016
  * @Date         : 2020-01-04 17:15:54
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-19 18:28:23
+ * @LastEditTime : 2020-01-23 11:16:43
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
@@ -22,26 +22,26 @@ export const Nav30DataSource = {
     className: "header3-menu",
     children: [
       {
-        name: "aaa",
+        name: "products",
         className: "header3-item",
         children: {
-          href: "/aaa",
+          href: "/products",
           children: [{ children: "产品", name: "text" }]
         }
       },
       {
-        name: "bbb",
+        name: "activities",
         className: "header3-item",
         children: {
-          href: "/bbb",
+          href: "/activities",
           children: [{ children: "活动", name: "text" }]
         }
       },
       {
-        name: "ccc",
+        name: "aboutus",
         className: "header3-item",
         children: {
-          href: "/ccc",
+          href: "/aboutus",
           children: [{ children: "关于我们", name: "text" }]
         }
       }

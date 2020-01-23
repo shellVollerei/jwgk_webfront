@@ -5,14 +5,15 @@
  * @SchoolStatus : 2016
  * @Date         : 2019-12-09 17:12:04
  * @LastEditors  : fatewang
- * @LastEditTime : 2020-01-21 23:08:24
+ * @LastEditTime : 2020-01-23 11:18:15
  * @Description  : Edit it for yourself
  * @ContactMe    : siir_52721@qq.com
  */
 
 import React, { Component } from "react";
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Switch
 } from "react-router-dom";
