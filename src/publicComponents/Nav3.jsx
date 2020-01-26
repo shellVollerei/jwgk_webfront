@@ -43,8 +43,8 @@ class Header3 extends React.Component {
   };
 
   componentWillMount() {
-    const currentKey = window.location.hash.replace(/#|\?.*$/g, ""); // hash模式
-    // const currentKey = window.location.pathname.replace(/#|\?.*$/g, ""); // Browser模式
+    // const currentKey = window.location.hash.replace(/#|\?.*$/g, ""); // hash模式
+    const currentKey = window.location.pathname.replace(/#|\?.*$/g, ""); // Browser模式
 
     this.setState({
       currentKey

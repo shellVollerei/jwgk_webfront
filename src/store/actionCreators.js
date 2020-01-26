@@ -19,7 +19,8 @@ import {
   GET_DEPARTMENT_LIST,
   GET_SPU_MENU_LIST,
   GET_SPU_LIST,
-  GET_PRODUCT_DETAIL
+  GET_PRODUCT_DETAIL,
+  GET_CEO_WISHES
 } from "./actionTypes";
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -33,13 +34,10 @@ const getMainNavListAction = data => ({
 
 export const getMainNavList = () => {
   return dispatch => {
-    $request
-      .get(`/msg/public/mainMenu`)
-      .then(resData => {
-        const data = resData;
-        const action = getMainNavListAction(data);
-        dispatch(action);
-      })
+    $request.get(`/msg/public/mainMenu`).then(resData => {
+      const action = getMainNavListAction(resData);
+      dispatch(action);
+    });
   };
 };
 
@@ -96,10 +94,9 @@ export const getCarouselList = () => {
         }
       })
       .then(resData => {
-        const data = resData;
-        const action = getCarouselListAction(data);
+        const action = getCarouselListAction(resData);
         dispatch(action);
-      })
+      });
   };
 };
 
@@ -119,10 +116,9 @@ export const getDepartmentList = () => {
         }
       })
       .then(resData => {
-        const data = resData;
-        const action = getDepartmentListAction(data);
+        const action = getDepartmentListAction(resData);
         dispatch(action);
-      })
+      });
   };
 };
 
@@ -144,10 +140,9 @@ export const getSpuMenuList = spuListId => {
         }
       })
       .then(resData => {
-        const data = resData;
-        const action = getSpuMenuListAction(data);
+        const action = getSpuMenuListAction(resData);
         dispatch(action);
-      })
+      });
   };
 };
 
@@ -170,10 +165,9 @@ export const getSpuList = rightListCateId => {
         }
       })
       .then(resData => {
-        const data = resData;
-        const action = getSpuListAction(data);
+        const action = getSpuListAction(resData);
         dispatch(action);
-      })
+      });
   };
 };
 
@@ -194,9 +188,27 @@ export const getProductDetail = () => {
         }
       })
       .then(resData => {
-        const data = resData;
-        const action = getProductDetailAction(data);
+        const action = getProductDetailAction(resData);
         dispatch(action);
-      })
+      });
+  };
+};
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// 关于我们
+
+// 总裁寄语
+const getCeoWishesAction = data => ({
+  type: GET_CEO_WISHES,
+  data
+});
+
+// img、desc、name、position
+export const getCeoWishes = () => {
+  return dispatch => {
+    $request.post(`/msg/simple/aphorismDetail`).then(resData => {
+      const action = getCeoWishesAction(resData);
+      dispatch(action);
+    });
   };
 };
