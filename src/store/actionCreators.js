@@ -34,21 +34,14 @@ const getMainNavListAction = data => ({
 export const getMainNavList = () => {
   return dispatch => {
     $request
-      .get(`/post`, {
-        params: {
-          post_type: "get_menu_main"
-        }
-      })
-      .then(resData=>{
+      .get(`/msg/public/mainMenu`)
+      .then(resData => {
         const data = resData;
         const action = getMainNavListAction(data);
         dispatch(action);
       })
-      .catch(e=>{
-        console.log(e);
-      })
-  }
-}
+  };
+};
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Footer 底栏
@@ -61,50 +54,28 @@ const getFooterMsgAction = data => ({
 
 export const getFooterMsg = () => {
   // 获取公司信息
-  var comMsg = 
-    $request
-      .get("/post", {
-        params: {
-          post_type: "footer_list"
-        }
-      })
-      .then(resData=>{
-        return resData;
-      })
-      .catch(e=>{
-        console.log(e);
-      })
+  var comMsg = $request.get(`/msg/public/basicCompanyMsg`).then(resData => {
+    return resData;
+  });
 
   // 获取公司联系人信息
-  var contactMsg = 
-    $request
-      .get("/post", {
-        params: {
-          post_type: "footer_contact"
-        }
-      })
-      .then(resData=>{
-        return resData;
-      })
-      .catch(e=>{
-        console.log(e);
-      })
-      
-      return dispatch => {
-        Promise
-          .all([comMsg, contactMsg])
-          .then(val => {
-            // 映射 footerMsg
-            const footerData = {};
-            footerData.companyData = val[0];
-            footerData.contactsData = val[1];
+  var contactMsg = $request.get(`/msg/public/linkman`).then(resData => {
+    return resData;
+  });
 
-            // 务必转化为字符串
-            const action = getFooterMsgAction(JSON.stringify(footerData));
-            dispatch(action);
-          })
-  }
-}
+  return dispatch => {
+    Promise.all([comMsg, contactMsg]).then(val => {
+      // 映射 footerMsg
+      const footerData = {};
+      footerData.companyData = val[0];
+      footerData.contactsData = val[1];
+
+      // 务必转化为字符串
+      const action = getFooterMsgAction(JSON.stringify(footerData));
+      dispatch(action);
+    });
+  };
+};
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // 产品页
@@ -129,11 +100,8 @@ export const getCarouselList = () => {
         const action = getCarouselListAction(data);
         dispatch(action);
       })
-      .catch(e => {
-        console.log(e);
-      })
-  }
-}
+  };
+};
 
 // 下方科室列表生成
 const getDepartmentListAction = data => ({
@@ -155,21 +123,18 @@ export const getDepartmentList = () => {
         const action = getDepartmentListAction(data);
         dispatch(action);
       })
-      .catch(e => {
-        console.log(e);
-      })
-  }
-}
+  };
+};
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// 产品页 /* department/:department_id */ 
+// 产品页 /* department/:department_id */
 const getSpuMenuListAction = data => ({
   type: GET_SPU_MENU_LIST,
   data
 });
 
 // 产品分类列表 (左侧菜单列表部分)
-export const getSpuMenuList = (spuListId) => {
+export const getSpuMenuList = spuListId => {
   return dispatch => {
     $request
       .get(`/post`, {
@@ -183,11 +148,8 @@ export const getSpuMenuList = (spuListId) => {
         const action = getSpuMenuListAction(data);
         dispatch(action);
       })
-      .catch(e => {
-        console.log(e);
-      })
-  }
-}
+  };
+};
 
 // 产品菜单（右侧 Content 部分）
 const getSpuListAction = data => ({
@@ -212,11 +174,8 @@ export const getSpuList = rightListCateId => {
         const action = getSpuListAction(data);
         dispatch(action);
       })
-      .catch(e => {
-        console.log(e);
-      })
-  }
-}
+  };
+};
 
 // TODO: 产品详情
 const getProductDetailAction = data => ({
@@ -239,8 +198,5 @@ export const getProductDetail = () => {
         const action = getProductDetailAction(data);
         dispatch(action);
       })
-      .catch(e => {
-        console.log(e);
-      })
-  }
-}
+  };
+};

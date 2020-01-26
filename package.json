@@ -45,6 +45,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://39.100.118.220/",
+  "proxy": "http://39.108.96.43:8080/jwgk/",
   "homepage": "."
 }

@@ -16,7 +16,7 @@ import axios from "axios";
 import log from "./log";
 
 // export const baseURL = process.env.NODE_ENV === "production" ? "/" : "/proxy";
-// export const baseURL = "http://39.100.118.220/";
+
 export const baseURL = "/";
 
 // 创建一个错误
@@ -44,50 +44,34 @@ const service = axios.create({
   },
   transformRequest: function(data, config) {
     if (config["Content-Type"] === "application/x-www-form-urlencoded") {
-      // return escape(qs.stringify(data));
       return qs.stringify(data);
     } else if (config["Content-Type"] === "application/json") {
-      // return escape(JSON.stringify(data));
       return JSON.stringify(data);
     } else {
-      // return escape(data);
       return data;
     }
   },
-  transformResponse: function (data) {
-    // 反编译汉字码
-    // return JSON.parse(unescape(JSON.stringify(data)));
+  transformResponse: function(data) {
     return data;
-  },
+  }
 });
 
 // 响应拦截器
 service.interceptors.response.use(
   response => {
     // dataAxios 是 axios 返回数据中的 data
-    const dataAxios = response.data;
+    const dataAxios = JSON.parse(response.data);
     if (response.config.customResponse) {
       return dataAxios;
     }
     // 这个状态码是和后端约定的
-    const { code } = dataAxios;
+    const { success } = dataAxios;
     // 根据 code 进行判断
-    if (code === undefined) {
-      return dataAxios;
+    if (success) {
+      return dataAxios.data;
     } else {
-      let resCode = code;
-      // 有 code 代表这是一个后端接口 可以进行进一步的判断
-      switch (resCode) {
-        case 100:
-          return dataAxios.data;
-        default:
-          // 错误状态码为400  由于后台只有这两种状态码故默认报错
-          errorCreate(
-            // `${dataAxios.message || dataAxios.msg}: ${response.config.url}`
-            `we have no message about backend, if u have any question plz contact backend provider`
-          );
-          break;
-      }
+      errorCreate(`${dataAxios.msg}: ${response.config.url}`);
+      return dataAxios;
     }
   },
   error => {

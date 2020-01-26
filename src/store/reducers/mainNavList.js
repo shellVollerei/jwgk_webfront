@@ -15,25 +15,26 @@ import { Nav30DataSource } from "../../publicComponents/data.source";
 const defaultState = Nav30DataSource;
 
 export default (state = defaultState, action) => {
-
   const newState = JSON.parse(JSON.stringify(state));
 
   switch (action.type) {
     case GET_MAIN_NAV_LIST:
-      const Data = JSON.parse(action.data);
-      const trueData = Data.data;
+      const Data = action.data;
 
-      let resTabList = trueData.tabList;
-      
-      newState.logo.children = trueData.logoUrl;
+      let resTabList = Data.tabList;
+
+      newState.logo.children = Data.logoUrl;
 
       newState.Menu.children.map((item, index) => {
         item.name = resTabList[index].href.slice(1);
         item.children.href = resTabList[index].href;
-        item.children.children[0] = { children: resTabList[index].name, name: "text" };
+        item.children.children[0] = {
+          children: resTabList[index].name,
+          name: "text"
+        };
         return item;
       });
-      
+
       // console.log("manNav newState = ", newState);
       break;
     default:
